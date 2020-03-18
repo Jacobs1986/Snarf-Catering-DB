@@ -1,8 +1,8 @@
 // Dependencies
 let Sequelize = require("sequelize");
 
-let sequelize = new Sequelize("qz276lgm571d9vgd", "sks189o0f67vhr2a", "qf7lar750f9w36ez", {
-    host: "qbhol6k6vexd5qjs.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+let sequelize = new Sequelize("pbkfl9z27inc3ygc", "kk0lc638htfr0zt9", "la8hu15cv90gth1t", {
+    host: "dno6xji1n8fm828n.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     port: 3306,
     dialect: "mysql",
     pool: {
