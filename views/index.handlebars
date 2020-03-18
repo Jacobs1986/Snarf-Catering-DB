@@ -19,7 +19,9 @@
     <hr class="my-4">
 
     <div id="client-list">
-        
+        {{#each client}}
+          <h4>{{this.name}}</h4>
+        {{/each}}
     </div>
 </div>
 

@@ -7,6 +7,7 @@ module.exports = (app) => {
     // Get all client info
     app.get("/api/all", (request, response) => {
         Client.findAll({}).then(results => {
+            console.log(response);
             response.json(results);
         })
     })
