@@ -13,13 +13,15 @@
             <label for="searchDB" id="searchLabel">Search Database</label>
             <input type="text" class="form-control" id="searchDB">
         </div>
-        <button type="submit" class="btn btn-primary">Search</button>
+        <button type="submit" class="btn btn-primary edit">Search</button>
     </form>
 
     <hr class="my-4">
 
     <div id="client-list">
-        
+        {{#each client}}
+          <h4>{{this.name}}</h4>
+        {{/each}}
     </div>
 </div>
 

@@ -1,4 +1,5 @@
 const express = require("express");
+const Client = require("../models/clients.js");
 
 let router = express.Router();
 

@@ -7,3 +7,8 @@
 #searchLabel {
     font-weight: bold;
 }
+
+/* Buttons */
+#edit-button {
+    margin-right: 13px;
+}

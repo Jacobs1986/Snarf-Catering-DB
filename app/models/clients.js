@@ -4,7 +4,7 @@ const Sequelize = require("sequelize");
 const sequelize = require("../config/connection.js");
 
 // Create client table
-let Client = sequelize.define("client", {
+let Client = sequelize.define("clients", {
     name: Sequelize.STRING,
     organization: Sequelize.STRING,
     address: Sequelize.STRING,
