@@ -5,12 +5,7 @@ let router = express.Router();
 
 // create the routes
 router.get("/", (request, response) => {
-    Client.findAll({}).then(function (results) {
-        let clientObj = {
-            client: results
-        }
-        response.render("index", clientObj)
-    })
+    response.render("index")
 })
 
 module.exports = router;
