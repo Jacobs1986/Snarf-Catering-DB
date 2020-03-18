@@ -26,7 +26,9 @@ $(function () {
     // edit button
     $(document).on("click", ".edit-button", function (event) {
         event.preventDefault()
-        console.log("You will update this client.")
-        console.log(`The id is ${this.id}`);
+        let clientid = this.id;
+        $.get("/api/" + clientid, function(data) {
+            console.log(data);
+        })
     })
 })
