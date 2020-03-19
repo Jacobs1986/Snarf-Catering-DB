@@ -1,0 +1,32 @@
+/* index page */
+#jumboindex {
+    background-color: #b3d7ff;
+    padding: 4rem 2rem 1rem 2rem;
+}
+
+#searchLabel,
+.bold {
+    font-weight: bold;
+}
+
+/* client cards */
+.card-title {
+    color: blue;
+    text-decoration: underline;
+}
+.card-content {
+    margin-left: 3em;
+}
+
+.content-p {
+    margin-bottom: 0em;
+}
+
+.edit-btn {
+    margin-bottom: 1em;
+}
+
+/* Buttons */
+#edit-button {
+    margin-right: 13px;
+}
