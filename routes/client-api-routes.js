@@ -18,4 +18,15 @@ module.exports = function(app) {
             response.json(result);
         });
     });
+
+    // find the information for a single client
+    app.get("/api/clients/:id", (request, response) => {
+        db.Client.findOne({
+            where: {
+                id: request.params.id
+            }
+        }).then(result => {
+            response.json(result);
+        });
+    });
 }
