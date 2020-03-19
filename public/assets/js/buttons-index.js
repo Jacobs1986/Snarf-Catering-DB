@@ -26,6 +26,11 @@ $(document).on("click", ".edit-btn", function(event) {
     let id = $(this).attr("id");
     $.get(`/api/clients/${id}`, data => {
        console.log(data);
-       console.log(data.contactname);
+       $("#update-name").val(data.contactname);
+       $("#update-organization").val(data.organization);
+       $("#update-address").val(data.address);
+       $("#update-email").val(data.email);
+       $("#update-phone").val(data.phone);
+       $("#modal-client-edit").modal("show");
     })
 })
