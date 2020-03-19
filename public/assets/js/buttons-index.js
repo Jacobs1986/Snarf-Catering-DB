@@ -1,5 +1,3 @@
-console.log("FILE IS LINKED!");
-
 // add a new client
 $("#add-client-btn").on("click", event => {
     console.log("This button is linked");
