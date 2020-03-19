@@ -29,4 +29,18 @@ module.exports = function(app) {
             response.json(result);
         });
     });
+
+    // route for updating a client information
+   app.put("/api/clients", (request, response) => {
+       db.Client.update(
+           request.body,
+           {
+               where: {
+                   id: request.body.id
+               }
+           }
+       ).then(results => {
+           response.json(results)
+       })
+   })
 }
