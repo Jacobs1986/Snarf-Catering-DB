@@ -1,0 +1,14 @@
+/* index page */
+#jumboindex {
+    background-color: #b3d7ff;
+    padding: 4rem 2rem 1rem 2rem;
+}
+
+#searchLabel {
+    font-weight: bold;
+}
+
+/* Buttons */
+#edit-button {
+    margin-right: 13px;
+}
