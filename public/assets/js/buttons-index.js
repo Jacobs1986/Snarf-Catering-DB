@@ -1,4 +1,7 @@
 // add a new client
+
+var newInfo;
+
 $("#add-client-btn").on("click", event => {
     console.log("This button is linked");
     let newClient = {
@@ -19,5 +22,10 @@ $("#add-client-btn").on("click", event => {
 $(document).on("click", ".edit-btn", function(event) {
     event.preventDefault();
     console.log("This button is linked!");
-    console.log(this.id);
+    let classType = $(this).attr("class");
+    let id = $(this).attr("id");
+    $.get(`/api/clients/${id}`, data => {
+       console.log(data);
+       console.log(data.contactname);
+    })
 })
