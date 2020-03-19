@@ -15,3 +15,9 @@ $("#add-client-btn").on("click", event => {
         location.reload();
     })
 })
+
+$(document).on("click", ".edit-btn", function(event) {
+    event.preventDefault();
+    console.log("This button is linked!");
+    console.log(this.id);
+})

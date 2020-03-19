@@ -22,6 +22,10 @@
     margin-bottom: 0em;
 }
 
+.edit-btn {
+    margin-bottom: 1em;
+}
+
 /* Buttons */
 #edit-button {
     margin-right: 13px;
