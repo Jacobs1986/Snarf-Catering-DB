@@ -4,8 +4,22 @@
     padding: 4rem 2rem 1rem 2rem;
 }
 
-#searchLabel {
+#searchLabel,
+.bold {
     font-weight: bold;
+}
+
+/* client cards */
+.card-title {
+    color: blue;
+    text-decoration: underline;
+}
+.card-content {
+    margin-left: 3em;
+}
+
+.content-p {
+    margin-bottom: 0em;
 }
 
 /* Buttons */

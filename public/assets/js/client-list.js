@@ -5,11 +5,13 @@ $.get("/api/clients", data => {
     console.log(data);
     data.forEach(element => {
         let clientCard = $("<div>");
-        clientCard.append(`<h5>${element.organization}</h5>`);
-        clientCard.append(`<p><span>Contact Name</span>: ${element.contactname}`);
-        clientCard.append(`<p><span>Address</span>: ${element.address}</p>`);
-        clientCard.append(`<p><span>Email</span>: ${element.email}</p>`);
-        clientCard.append(`<p><span>Phone</span>: ${element.phone}</p>`);
+        let cardContent = $("<div class='card-content'>");
+        clientCard.append(`<h5 class='card-title'>${element.organization}</h5>`);
+        cardContent.append(`<p class='content-p'><span class='bold'>Contact Name</span>: ${element.contactname}`);
+        cardContent.append(`<p class='content-p'><span class='bold'>Address</span>: ${element.address}</p>`);
+        cardContent.append(`<p class='content-p'><span class='bold'>Email</span>: ${element.email}</p>`);
+        cardContent.append(`<p><span class='bold'>Phone</span>: ${element.phone}</p>`);
+        clientCard.append(cardContent);
         $("#client-list").append(clientCard);
     })
 })
