@@ -22,6 +22,24 @@ $("#add-client-btn").on("click", event => {
 // apply updates to a client
 $("#update-client-btn").on("click", event => {
     console.log("This button is linked")
+    console.log(`The id that will be updated is ${id}`)
+    let updateClient = {
+        id: id,
+        contactname: $("#update-name").val().trim(""),
+        organization: $("#update-organization").val().trim(""),
+        address: $("#update-address").val().trim(""),
+        email: $("#update-email").val().trim(""),
+        phone: $("#update-phone").val().trim("")
+    }
+    console.log(updateClient);
+    // send to the database
+    $.ajax({
+        url: "/api/clients",
+        method: "PUT",
+        data: updateClient
+    }).then(data => {
+        console.log(data);
+    })
 })
 
 // show the information of a single client
