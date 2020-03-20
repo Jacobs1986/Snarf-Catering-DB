@@ -39,6 +39,7 @@ $("#update-client-btn").on("click", event => {
         data: updateClient
     }).then(data => {
         console.log(data);
+        location.reload()
     })
 })
 
@@ -65,4 +66,5 @@ $(document).on("click", ".delete-btn", function(event) {
     console.log("The button is live!");
     id = $(this).attr("id");
     console.log(`The id for this button is ${id}`);
+    $("#modal-client-delete")
 })
