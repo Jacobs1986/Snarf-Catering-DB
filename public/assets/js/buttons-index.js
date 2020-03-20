@@ -58,3 +58,11 @@ $(document).on("click", ".edit-btn", function(event) {
        $("#modal-client-edit").modal("show");
     })
 })
+
+// delete a client
+$(document).on("click", ".delete-btn", function(event) {
+    event.preventDefault();
+    console.log("The button is live!");
+    id = $(this).attr("id");
+    console.log(`The id for this button is ${id}`);
+})
