@@ -22,12 +22,11 @@
     margin-bottom: 0em;
 }
 
+.last-p {
+    margin-bottom: 6px;
+}
+
 .edit-btn {
     margin-bottom: 1em;
     margin-right: 2em;
-}
-
-/* Buttons */
-#edit-button {
-    margin-right: 13px;
 }
