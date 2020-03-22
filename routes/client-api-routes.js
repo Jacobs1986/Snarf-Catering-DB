@@ -45,7 +45,7 @@ module.exports = function (app) {
     });
 
     // route for deleting client information
-    app.delete("/api/clients/:id", (request, response) => {
+    app.delete("/api/clients", (request, response) => {
         db.Client.destroy({
             where: {
                 id: request.params.id

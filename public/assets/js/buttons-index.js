@@ -1,6 +1,7 @@
 // add a new client
 
 var id;
+var deleteid;
 
 $("#add-client-btn").on("click", event => {
     console.log("This button is linked");
@@ -60,11 +61,23 @@ $(document).on("click", ".edit-btn", function(event) {
     })
 })
 
-// delete a client
+// launch delete modal
 $(document).on("click", ".delete-btn", function(event) {
     event.preventDefault();
     console.log("The button is live!");
-    id = $(this).attr("id");
-    console.log(`The id for this button is ${id}`);
+    deleteid = $(this).attr("id");
+    console.log(`The id for this button is ${deleteid}`);
     $("#modal-client-delete").modal("show");
+})
+
+// delete a client button
+$("#delete-client-btn").on("click", (event) => {
+    console.log("Delete button was clicked.");
+    clientDelete = {
+        id: deleteid
+    };
+    console.log(clientDelete);
+    $.ajax({
+        url: `/api/clients/`
+    })
 })
