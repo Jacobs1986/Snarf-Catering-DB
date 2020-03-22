@@ -79,6 +79,6 @@ $("#delete-client-btn").on("click", (event) => {
         method: "DELETE"
     }).then(data => {
         console.log(data);
-        location.reload()
+        location.reload();
     })
 })
