@@ -73,11 +73,12 @@ $(document).on("click", ".delete-btn", function(event) {
 // delete a client button
 $("#delete-client-btn").on("click", (event) => {
     console.log("Delete button was clicked.");
-    clientDelete = {
-        id: deleteid
-    };
-    console.log(clientDelete);
+    console.log(deleteid);
     $.ajax({
-        url: `/api/clients/`
+        url: `/api/clients/${deleteid}`,
+        method: "DELETE"
+    }).then(data => {
+        console.log(data);
+        location.reload()
     })
 })
