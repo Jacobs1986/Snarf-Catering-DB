@@ -66,5 +66,5 @@ $(document).on("click", ".delete-btn", function(event) {
     console.log("The button is live!");
     id = $(this).attr("id");
     console.log(`The id for this button is ${id}`);
-    $("#modal-client-delete")
+    $("#modal-client-delete").modal("show");
 })
