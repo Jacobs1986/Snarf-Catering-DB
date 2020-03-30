@@ -17,7 +17,7 @@ app.use(express.static("public"));
 require("./routes/html-routes.js")(app);
 require("./routes/customer-api-routes.js")(app);
 
-let syncOptions = { force: true };
+let syncOptions = { force: false };
 
 // sync the models
 db.sequelize.sync(syncOptions).then(function() {
