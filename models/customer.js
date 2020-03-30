@@ -1,10 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
-    let Client = sequelize.define("Client", {
+    let Customer = sequelize.define("Customer", {
         contactname: DataTypes.STRING,
         organization: DataTypes.STRING,
         address: DataTypes.STRING,
         email: DataTypes.STRING,
         phone: DataTypes.STRING
     });
-    return Client
+    return Customer
 }

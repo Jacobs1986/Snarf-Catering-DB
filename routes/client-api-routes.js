@@ -3,25 +3,25 @@ var db = require("../models");
 
 // Routes
 module.exports = function (app) {
-    // get all the information on clients
-    app.get("/api/clients", (request, response) => {
-        db.Client.findAll({}).then(results => {
+    // get all the information on customers
+    app.get("/api/customers", (request, response) => {
+        db.Customer.findAll({}).then(results => {
             response.json(results);
         })
     })
 
-    // Save a new client information to the database
-    app.post("/api/addclient", (request, response) => {
-        let newClient = request.body
-        console.log(newClient);
-        db.Client.create(newClient).then(result => {
+    // Save a new customer information to the database
+    app.post("/api/addcustomer", (request, response) => {
+        let newCustomer = request.body
+        console.log(newCustomer);
+        db.Customer.create(newCustomer).then(result => {
             response.json(result);
         });
     });
 
-    // find the information for a single client
-    app.get("/api/clients/:id", (request, response) => {
-        db.Client.findOne({
+    // find the information for a single customer
+    app.get("/api/customers/:id", (request, response) => {
+        db.Customer.findOne({
             where: {
                 id: request.params.id
             }
@@ -30,9 +30,9 @@ module.exports = function (app) {
         });
     });
 
-    // route for updating a client information
-    app.put("/api/clients", (request, response) => {
-        db.Client.update(
+    // route for updating a customer information
+    app.put("/api/customers", (request, response) => {
+        db.Customer.update(
             request.body,
             {
                 where: {
@@ -44,9 +44,9 @@ module.exports = function (app) {
         });
     });
 
-    // route for deleting client information
-    app.delete("/api/clients/:id", (request, response) => {
-        db.Client.destroy({
+    // route for deleting customer information
+    app.delete("/api/customers/:id", (request, response) => {
+        db.Customer.destroy({
             where: {
                 id: request.params.id
             }

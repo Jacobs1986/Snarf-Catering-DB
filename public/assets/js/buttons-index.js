@@ -1,30 +1,30 @@
-// add a new client
+// add a new customer
 
 var id;
 var deleteid;
 
-$("#add-client-btn").on("click", event => {
+$("#add-customer-btn").on("click", event => {
     console.log("This button is linked");
-    let newClient = {
-        contactname: $("#client-name").val().trim(""),
-        organization: $("#client-organization").val().trim(""),
-        address: $("#client-address").val().trim(""),
-        email: $("#client-email").val().trim(""),
-        phone: $("#client-phone").val().trim("")
+    let newcustomer = {
+        contactname: $("#customer-name").val().trim(""),
+        organization: $("#customer-organization").val().trim(""),
+        address: $("#customer-address").val().trim(""),
+        email: $("#customer-email").val().trim(""),
+        phone: $("#customer-phone").val().trim("")
     }
-    console.log(newClient);
+    console.log(newcustomer);
     // Send to the database
-    $.post("/api/addclient", newClient).then(data => {
+    $.post("/api/addcustomer", newcustomer).then(data => {
         console.log(data);
         location.reload();
     })
 })
 
-// apply updates to a client
-$("#update-client-btn").on("click", event => {
+// apply updates to a customer
+$("#update-customer-btn").on("click", event => {
     console.log("This button is linked")
     console.log(`The id that will be updated is ${id}`)
-    let updateClient = {
+    let updatecustomer = {
         id: id,
         contactname: $("#update-name").val().trim(""),
         organization: $("#update-organization").val().trim(""),
@@ -32,32 +32,32 @@ $("#update-client-btn").on("click", event => {
         email: $("#update-email").val().trim(""),
         phone: $("#update-phone").val().trim("")
     }
-    console.log(updateClient);
+    console.log(updatecustomer);
     // send to the database
     $.ajax({
-        url: "/api/clients",
+        url: "/api/customers",
         method: "PUT",
-        data: updateClient
+        data: updatecustomer
     }).then(data => {
         console.log(data);
         location.reload()
     })
 })
 
-// show the information of a single client
+// show the information of a single customer
 $(document).on("click", ".edit-btn", function(event) {
     event.preventDefault();
     console.log("This button is linked!");
     let classType = $(this).attr("class");
     id = $(this).attr("id");
-    $.get(`/api/clients/${id}`, data => {
+    $.get(`/api/customers/${id}`, data => {
        console.log(data);
        $("#update-name").val(data.contactname);
        $("#update-organization").val(data.organization);
        $("#update-address").val(data.address);
        $("#update-email").val(data.email);
        $("#update-phone").val(data.phone);
-       $("#modal-client-edit").modal("show");
+       $("#modal-customer-edit").modal("show");
     })
 })
 
@@ -67,15 +67,15 @@ $(document).on("click", ".delete-btn", function(event) {
     console.log("The button is live!");
     deleteid = $(this).attr("id");
     console.log(`The id for this button is ${deleteid}`);
-    $("#modal-client-delete").modal("show");
+    $("#modal-customer-delete").modal("show");
 })
 
-// delete a client button
-$("#delete-client-btn").on("click", (event) => {
+// delete a customer button
+$("#delete-customer-btn").on("click", (event) => {
     console.log("Delete button was clicked.");
     console.log(deleteid);
     $.ajax({
-        url: `/api/clients/${deleteid}`,
+        url: `/api/customers/${deleteid}`,
         method: "DELETE"
     }).then(data => {
         console.log(data);
