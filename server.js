@@ -15,10 +15,12 @@ app.use(express.static("public"));
 
 // Routes
 require("./routes/html-routes.js")(app);
-require("./routes/client-api-routes.js")(app);
+require("./routes/customer-api-routes.js")(app);
+
+let syncOptions = { force: false };
 
 // sync the models
-db.sequelize.sync({ force: false }).then(function() {
+db.sequelize.sync(syncOptions).then(function() {
     // Starting the Express App
     app.listen(PORT, function() {
         console.log(`App listening on PORT http://localhost:${PORT}`)
