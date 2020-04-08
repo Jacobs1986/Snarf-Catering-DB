@@ -29,6 +29,10 @@ $(document).ready(function () {
         console.log(order);
         $.post("/api/submit-order", order).then(data => {
             displayTable(apiURL);
+            let array = ["#orderdate", "#numberofitems", "#total", "#notes"]
+            array.forEach(input => {
+                $(input).val("")
+            })
         });
     });
 })
@@ -42,7 +46,6 @@ const displayTable = (url) => {
         orderHistory.forEach(element => {
             $("tbody").append(
                 `<tr>
-                    <td><a href='#'>${element.id}</a></td>
                     <td>${element.date}</td>
                     <td>${element.orderType}</td>
                     <td>${element.total}</td>
