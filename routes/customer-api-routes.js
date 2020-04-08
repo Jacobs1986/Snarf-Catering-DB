@@ -28,7 +28,10 @@ module.exports = function (app) {
             include: [
                 {
                     model: db.Orders
-                }
+                },
+            ],
+            order: [
+                [{model: db.Orders}, 'date', 'ASC']
             ]
         }).then(result => {
             response.json(result);
