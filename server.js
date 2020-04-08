@@ -18,7 +18,7 @@ require("./routes/html-routes.js")(app);
 require("./routes/customer-api-routes.js")(app);
 require("./routes/order-api-routes.js")(app)
 
-let syncOptions = { force: false };
+let syncOptions = { force: true };
 
 // sync the models
 db.sequelize.sync(syncOptions).then(function() {
