@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Info</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- JQUERY -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- <h1>Customer information goes here</h1>
+    <ul>
+        <li>Contact name</li>
+        <li>Address</li>
+        <li>Email</li>
+        <li>Phone</li>
+    </ul> -->
+    <div class="jumbotron">
+        <h1 class="display-5" id="organization">Customer Name</h1>
+        <h4>Contact: <span id="name">Test Name</span></h4>
+        <h4>Address: <span id="address">Test Address</span></h4>
+        <h4>Email: <span id="email">Test Email</span></h4>
+        <h4>Phone: <span id="phone">Test Phone</span></h4>
+    </div>
+
+    <!-- Make div scrollable with class="overflow-auto", maybe make a table -->
+    <!-- <ul>
+        <li>Order Date</li>
+        <li>Type of Order (Platter/Lunch Box)</li>
+        <li>Total Amount ($)</li>
+        <li>Notes</li>
+        <li>Needs to have edit and delete buttons</li>
+    </ul> -->
+    <div class="container overflow-auto" style="height: 20em;">
+        <h3>Order History</h3>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Type of Order</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container">
+        <form>
+            <h3>Post a new Order</h3>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label for="orderdate">Order Date:</label><br>
+                        <input type="date" name="orderdate" class="form-control" id="orderdate" style="width: 68%;">
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label for="ordertype">Type of Order:</label><br>
+                        <select name="ordertype" id="ordertype" class="form-control">
+                            <option value="platter">Platter</option>
+                            <option value="box-lunch">Box Lunch</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label for="numberofitems">Number of Items:</label><br>
+                        <input type="number" id="numberofitems" class="form-control" style="width: 35%;">
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label for="total">Total:</label><br>
+                        <input type="text" name="total" id="total" class="form-control" style="width: 35%;">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="notes">Notes</label>
+                        <textarea name="notes" id="notes" class="form-control" cols="30" rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" id="add-order">Add Order</button>
+        </form>
+        <!-- <ul>
+            <li>Order Date</li>
+            <li>Type of Order</li>
+            <li>Total Amount</li>
+            <li>Notes</li>
+        </ul> -->
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- JQUERY File -->
+    <script src="./assets/js/order-page.js"></script>
+</body>
+
+</html>
