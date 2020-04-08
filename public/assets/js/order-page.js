@@ -23,7 +23,10 @@ $(document).ready(function () {
             CustomerId: customerId
         }
         console.log(order);
-    })
+        $.post("/api/submit-order", order).then(data => {
+            console.log(data);
+        });
+    });
 })
 
 var getInfo = (input) => $(input).val().trim("")

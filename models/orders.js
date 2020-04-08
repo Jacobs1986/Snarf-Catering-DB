@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var Order = sequelize.define("Order", {
+    var Orders = sequelize.define("Orders", {
         date: {
             type: DataTypes.DATEONLY,
             allowNull: false
@@ -22,8 +22,8 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-    Order.associate = models => {
-        models.Order.belongsTo(models.Customer, {
+    Orders.associate = models => {
+        models.Orders.belongsTo(models.Customer, {
             onDelete: "CASCADE",
             foreginKey: {
                 allowNull: false
@@ -31,5 +31,5 @@ module.exports = function(sequelize, DataTypes) {
         });
     };
 
-    return Order
+    return Orders
 }
