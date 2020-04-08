@@ -4,7 +4,7 @@ $.get("/api/customers", data => {
     data.forEach(element => {
         let customerCard = $("<div>");
         let cardContent = $("<div class='card-content'>");
-        customerCard.append(`<a href='/'><h5 class='card-title'>${element.organization}</h5></a>`);
+        customerCard.append(`<a href='/orders?customer_id=${element.id}'><h5 class='card-title'>${element.organization}</h5></a>`);
         cardContent.append(`<p class='content-p'><span class='bold'>Contact Name</span>: ${element.contactname}`);
         cardContent.append(`<p class='content-p'><span class='bold'>Address</span>: ${element.address}</p>`);
         cardContent.append(`<p class='content-p'><span class='bold'>Email</span>: ${element.email}</p>`);
@@ -14,9 +14,4 @@ $.get("/api/customers", data => {
         customerCard.append(cardContent);
         $("#customer-list").append(customerCard);
     })
-})
-
-$(document).on("click", "a", function(event) {
-    event.preventDefault();
-    console.log($(this).text());
 })
