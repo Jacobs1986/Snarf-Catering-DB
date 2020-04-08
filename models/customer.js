@@ -6,5 +6,10 @@ module.exports = function(sequelize, DataTypes) {
         email: DataTypes.STRING,
         phone: DataTypes.STRING
     });
+
+    Customer.associate = models => {
+        models.Customer.hasMany(models.Order);
+    }
+    
     return Customer
 }
