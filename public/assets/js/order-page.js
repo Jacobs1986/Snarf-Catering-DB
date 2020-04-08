@@ -2,14 +2,18 @@ $(document).ready(function () {
     // first get the customer id from the url
     var url = window.location.search;
     var customerId = url.split("=")[1];
+    var apiURL = `/api/customers/${customerId}`;
 
-    $.get(`/api/customers/${customerId}`, data => {
+    $.get(apiURL, data => {
         $("#organization").text(data.organization);
         $("#name").text(data.contactname);
         $("#address").text(data.address);
         $("#email").text(data.email);
         $("#phone").text(data.phone);
+        console.log(data);
     })
+
+    displayTable(apiURL);
 
     $("#add-order").on("click", event => {
         event.preventDefault();
@@ -24,9 +28,25 @@ $(document).ready(function () {
         }
         console.log(order);
         $.post("/api/submit-order", order).then(data => {
-            console.log(data);
+            displayTable(apiURL);
         });
     });
 })
 
 var getInfo = (input) => $(input).val().trim("")
+
+const displayTable = (url) => {
+    $("tbody").empty();
+    $.get(url, data => {
+        let orderHistory = data.Orders;
+        orderHistory.forEach(element => {
+            $("tbody").append(
+                `<tr>
+                    <td><a href='#'>${element.id}</a></td>
+                    <td>${element.date}</td>
+                    <td>${element.orderType}</td>
+                    <td>${element.total}</td>
+                </tr>`)
+        })
+    })
+}

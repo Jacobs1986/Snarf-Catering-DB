@@ -24,7 +24,12 @@ module.exports = function (app) {
         db.Customer.findOne({
             where: {
                 id: request.params.id
-            }
+            },
+            include: [
+                {
+                    model: db.Orders
+                }
+            ]
         }).then(result => {
             response.json(result);
         });
