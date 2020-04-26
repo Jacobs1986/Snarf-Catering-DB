@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Hnc13rt!*",
+    "password": "technopagan",
     "database": "snarf",
     "host": "localhost",
     "dialect": "mysql",
