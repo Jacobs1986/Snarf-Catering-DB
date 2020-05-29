@@ -15,11 +15,13 @@ $(document).ready(function () {
 
     displayTable(apiURL);
 
+    // Add order information
     $("#add-order").on("click", event => {
         event.preventDefault();
         console.log("The button is working")
         let order = {
             date: getInfo("#orderdate"),
+            orderNumber: getInfo("#ordernumber"),
             orderType: getInfo("#ordertype"),
             numofItems: getInfo("#numberofitems"),
             total: getInfo("#total"),
@@ -29,7 +31,7 @@ $(document).ready(function () {
         console.log(order);
         $.post("/api/submit-order", order).then(data => {
             displayTable(apiURL);
-            let array = ["#orderdate", "#numberofitems", "#total", "#notes"]
+            let array = ["#orderdate", "ordernumber", "#numberofitems", "#total", "#notes"]
             array.forEach(input => {
                 $(input).val("")
             })
@@ -47,6 +49,7 @@ const displayTable = (url) => {
             $("tbody").append(
                 `<tr>
                     <td>${element.date}</td>
+                    <td>${element.orderNumber}</td>
                     <td>${element.orderType}</td>
                     <td>${element.total}</td>
                 </tr>`)
