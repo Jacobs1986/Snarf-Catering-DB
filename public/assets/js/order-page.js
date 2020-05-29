@@ -10,7 +10,7 @@ $(document).ready(function () {
         $("#address").text(data.address);
         $("#email").text(data.email);
         $("#phone").text(data.phone);
-        console.log(data);
+        // console.log(data);
     })
 
     displayTable(apiURL);
@@ -44,12 +44,13 @@ var getInfo = (input) => $(input).val().trim("")
 const displayTable = (url) => {
     $("tbody").empty();
     $.get(url, data => {
+        console.log(data);
         let orderHistory = data.Orders;
         orderHistory.forEach(element => {
             $("tbody").append(
                 `<tr>
                     <td>${element.date}</td>
-                    <td><a href="#">${element.orderNumber}</a></td>
+                    <td><a href="#" class="historyLink" id="${element.id}">${element.orderNumber}</a></td>
                     <td>${element.orderType}</td>
                     <td>${element.total}</td>
                 </tr>`)
