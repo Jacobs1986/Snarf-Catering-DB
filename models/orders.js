@@ -4,6 +4,10 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.DATEONLY,
             allowNull: false
         },
+        orderNumber: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         orderType: {
             type: DataTypes.STRING,
             allowNull: false
