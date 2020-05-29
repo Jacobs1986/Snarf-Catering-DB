@@ -46,7 +46,7 @@ var getInfo = (input) => $(input).val().trim("")
 const displayTable = (url) => {
     $("tbody").empty();
     $.get(url, data => {
-        console.log(data);
+        // console.log(data);
         let orderHistory = data.Orders;
         orderHistory.forEach(element => {
             $("tbody").append(
@@ -62,6 +62,7 @@ const displayTable = (url) => {
 
 loadModal = (event) => {
     event.preventDefault();
-    console.log("You clicked the link!")
-    console.log(`The id for the link is ${event.target.id}`);
+    $.get(`/api/orders/${event.target.id}`).then(data => {
+        console.log(data);
+    })
 }
