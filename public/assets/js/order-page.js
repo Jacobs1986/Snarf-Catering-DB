@@ -37,6 +37,8 @@ $(document).ready(function () {
             })
         });
     });
+
+    // Pull up modal that will allow the user to view order information.
 })
 
 var getInfo = (input) => $(input).val().trim("")
@@ -50,10 +52,16 @@ const displayTable = (url) => {
             $("tbody").append(
                 `<tr>
                     <td>${element.date}</td>
-                    <td><a href="#" class="historyLink" id="${element.id}">${element.orderNumber}</a></td>
+                    <td><a href="#" onclick="loadModal(event);" id='${element.id}'>${element.orderNumber}</a></td>
                     <td>${element.orderType}</td>
                     <td>${element.total}</td>
                 </tr>`)
         })
     })
+}
+
+loadModal = (event) => {
+    event.preventDefault();
+    console.log("You clicked the link!")
+    console.log(`The id for the link is ${event.target.id}`);
 }
