@@ -64,5 +64,11 @@ loadModal = (event) => {
     event.preventDefault();
     $.get(`/api/orders/${event.target.id}`).then(data => {
         console.log(data);
+        $("#modal-date").text(data.date);
+        $("#modal-type").text(data.orderType);
+        $("#modal-number").text(data.numofItems);
+        $("#modal-total").text(data.total)
+        $("#modal-order-info").modal("show");
+        $("#modal-notes").text(data.notes);
     })
 }
