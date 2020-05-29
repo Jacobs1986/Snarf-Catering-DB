@@ -8,4 +8,15 @@ module.exports = function(app) {
             res.json(dbOrders);
         });
     });
+
+    // get the information for an order
+    app.get("/api/orders/:id", (request, response) => {
+        db.Orders.findOne({
+            where: {
+                id: request.params.id
+            }
+        }).then(result => {
+            response.json(result);
+        });
+    });
 }
