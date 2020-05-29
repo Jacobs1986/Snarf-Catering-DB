@@ -49,7 +49,7 @@ const displayTable = (url) => {
             $("tbody").append(
                 `<tr>
                     <td>${element.date}</td>
-                    <td>${element.orderNumber}</td>
+                    <td><a href="#">${element.orderNumber}</a></td>
                     <td>${element.orderType}</td>
                     <td>${element.total}</td>
                 </tr>`)
