@@ -22,7 +22,6 @@ module.exports = function(app) {
 
     // update information
     app.put("/api/orders", (request, response) => {
-        console.log(request.body);
         db.Orders.update(
             request.body, 
             {
@@ -34,4 +33,17 @@ module.exports = function(app) {
             response.json("Update was sucessful!");
         })
     })
+
+    // delete an order
+    app.delete("/api/orders/:id", (request, response) => {
+        db.Orders.destroy({
+            where: {
+                id: request.params.id
+            }
+        }).then(results => {
+            response.json("The order has been removed.")
+        }).catch(err => {
+            response.status(422).json(err);
+        });
+    });
 }
