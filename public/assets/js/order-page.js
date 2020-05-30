@@ -68,7 +68,37 @@ loadModal = (event) => {
         $("#modal-type").text(data.orderType);
         $("#modal-number").text(data.numofItems);
         $("#modal-total").text(data.total)
-        $("#modal-order-info").modal("show");
         $("#modal-notes").text(data.notes);
+        $("#modal-order-info").modal("show");
     })
 }
+
+$("#modal-edit").on("click", event => {
+    event.preventDefault();
+    // First I need to get the text from the CURRENT paragraphs
+    var date = $("#modal-date").text();
+    var type = $("#modal-type").text();
+    var number = $("#modal-number").text();
+    var total = $("#modal-total").text();
+    var note = $("#modal-notes").text();
+    // The paragraphs need to be replaced with inputs containing the text
+    $("#modal-date").replaceWith("<input type='date' id='modal-date'>");
+    $("#modal-date").val(date);
+    $("#modal-type").replaceWith(`
+        <input list='ordertypes' id='modal-order'>
+        <datalist id='ordertypes'>
+            <option value='Platter'>
+            <option value='Box-Lunch'>
+        </datalist>
+    `)
+    // $("#modal-order").val(type);
+    $("#modal-number").replaceWith("<input type='number' id='modal-number'>");
+    $("#modal-number").val(number);
+    $("#modal-total").replaceWith("<input type='text' id='modal-total'>");
+    $("#modal-total").val(total);
+    $("#modal-notes").replaceWith("<textarea cols='30' rows='5' id='modal-notes'></textarea>");
+    $("#modal-notes").text(note);
+    // replace buttons
+    $("#modal-edit").replaceWith("<button type='button' class='btn btn-primary' id='modal-submit'>Submit</button>");
+    $("#modal-delete").remove();
+})
