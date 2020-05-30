@@ -101,9 +101,14 @@ $("#modal-edit").on("click", event => {
     $("#modal-notes").replaceWith("<textarea cols='30' rows='5' id='modal-notes'></textarea>");
     $("#modal-notes").text(note);
     // replace buttons
-    $("#modal-edit").replaceWith("<button type='button' class='btn btn-primary' id='modal-submit'>Submit</button>");
+    $("#modal-edit").replaceWith("<button type='button' class='btn btn-primary' onclick='submitEdit(event)'>Submit</button>");
     $("#modal-delete").remove();
 })
+
+submitEdit = (event) => {
+    event.preventDefault();
+    console.log("The order will be edited.")
+}
 
 $(".modal-close").on("click", function() {
     console.log("The modal is hidden. Needs to be reset.");
