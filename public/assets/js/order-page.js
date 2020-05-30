@@ -87,7 +87,7 @@ $("#modal-edit").on("click", event => {
     $("#modal-date").replaceWith("<input type='date' id='modal-date'>");
     $("#modal-date").val(date);
     $("#modal-type").replaceWith(`
-        <input list='ordertypes' id='modal-order'>
+        <input list='ordertypes' id='modal-type'>
         <datalist id='ordertypes'>
             <option value='Platter'>
             <option value='Box-Lunch'>
@@ -107,8 +107,22 @@ $("#modal-edit").on("click", event => {
 
 submitEdit = (event) => {
     event.preventDefault();
-    console.log("The order will be edited.")
     // Get all of the new information from the modal
+    let updateOrder = {
+        id: $(".modal").attr("id"),
+        date: $("#modal-date").val(),
+        orderType: $("#modal-type").val(),
+        numofItems: $("#modal-number").val(),
+        total: $("#modal-total").val(),
+        notes: $("#modal-notes").val()
+    }
+    $.ajax({
+        url: "/api/orders",
+        method: "PUT",
+        data: updateOrder
+    }).then(data => {
+        location.reload();
+    })
     // Send along the api route
 }
 

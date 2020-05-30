@@ -21,7 +21,7 @@ module.exports = function(app) {
     });
 
     // update information
-    app.put("/api/orders/:id", (request, response) => {
+    app.put("/api/orders", (request, response) => {
         console.log(request.body);
         db.Orders.update(
             request.body, 
