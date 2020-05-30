@@ -108,6 +108,8 @@ $("#modal-edit").on("click", event => {
 submitEdit = (event) => {
     event.preventDefault();
     console.log("The order will be edited.")
+    // Get all of the new information from the modal
+    // Send along the api route
 }
 
 $(".modal-close").on("click", function() {
