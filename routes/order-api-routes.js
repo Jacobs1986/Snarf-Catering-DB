@@ -19,4 +19,19 @@ module.exports = function(app) {
             response.json(result);
         });
     });
+
+    // update information
+    app.put("/api/orders/:id", (request, response) => {
+        console.log(request.body);
+        db.Orders.update(
+            request.body, 
+            {
+                where: {
+                    id: request.body.id
+                }
+            }
+        ).then(results => {
+            response.json("Update was sucessful!");
+        })
+    })
 }
