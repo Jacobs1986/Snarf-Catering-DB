@@ -126,6 +126,17 @@ submitEdit = (event) => {
     // Send along the api route
 }
 
+$("#modal-delete").on("click", event => {
+    event.preventDefault();
+    let id = $(".modal").attr("id");
+    $.ajax({
+        url: `/api/orders/${id}`,
+        method: "DELETE"
+    }).then(() => {
+        location.reload();
+    })
+})
+
 $(".modal-close").on("click", function() {
     console.log("The modal is hidden. Needs to be reset.");
     location.reload();
