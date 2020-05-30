@@ -64,12 +64,14 @@ loadModal = (event) => {
     event.preventDefault();
     $.get(`/api/orders/${event.target.id}`).then(data => {
         console.log(data);
+        $(".modal-title").text(`Order Information for ${data.orderNumber}`);
         $("#modal-date").text(data.date);
         $("#modal-type").text(data.orderType);
         $("#modal-number").text(data.numofItems);
         $("#modal-total").text(data.total)
         $("#modal-notes").text(data.notes);
-        $("#modal-order-info").modal("show");
+        $(".modal").attr('id', event.target.id);
+        $(".modal").modal("show");
     })
 }
 
@@ -101,4 +103,9 @@ $("#modal-edit").on("click", event => {
     // replace buttons
     $("#modal-edit").replaceWith("<button type='button' class='btn btn-primary' id='modal-submit'>Submit</button>");
     $("#modal-delete").remove();
+})
+
+$(".modal-close").on("click", function() {
+    console.log("The modal is hidden. Needs to be reset.");
+    location.reload();
 })
