@@ -41,13 +41,35 @@ $(document).ready(function () {
     $("#filterbtn").on("click", event => {
         // Get the value from search-param and the customerId
         // Save those values to a variable called buildFilter, id: customerId, total: search-param
-        let buildFilter = "This is a test string."
+        let buildFilter = {
+            id: customerId,
+            total: $("#search-param").val()
+        }
         console.log(buildFilter)
         // Send buildFilter along the api route /api/filter
-        $.get("/api/filter", buildFilter)
+        $.post("/api/filter", buildFilter).then(data => {
+            console.log(data);
             // Once the results come back the table needs to be cleared.
-            // If there are no results the table should display "No Results"
+            $("tbody").empty();
+            if (data.length === 0) {
+                $("tbody").append(
+                    `<tr>
+                        <td>No results</td>
+                    </tr>`
+                )
+            } else {
+                data.forEach(element => {
+                    $("tbody").append(
+                        `<tr>
+                            <td>${element.date}</td>
+                            <td><a href="#" onclick="loadModal(event);" id='${element.id}'>${element.orderNumber}</a></td>
+                            <td>${element.orderType}</td>
+                            <td>${element.total}</td>
+                        </tr>`)
+                })
+            }
             // If there are results then the table should display those results in the table.
+        })
     })
 })
 
