@@ -39,20 +39,44 @@
         <li>Needs to have edit and delete buttons</li>
     </ul> -->
     <div class="container overflow-auto" style="height: 20em;">
-        <h3>Order History</h3>
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">Date</th>
-                    <th scope="col">Order Number</th>
-                    <th scope="col">Type of Order</th>
-                    <th scope="col">Total</th>
-                </tr>
-            </thead>
-            <tbody>
+        <div class="row">
+            <div class="col-sm-3">
+                <h3>Order History</h3>
+            </div>
+            <div class="col-md-2">
+                <h4>Filter by:</h4>
+            </div>
+            <div class="col-md-2">
+                <div class="forom-group">
+                    <select name="filtertype" id="filtertype" class="form-control">
+                        <option value="total">Total</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="forom-group">
+                    <input type="text" id="search-param">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary" id="filterbtn">Search</button>
+            </div>
+        </div>
+        <div class="row">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Order Number</th>
+                        <th scope="col">Type of Order</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <div class="container" style="height: 409px;">
