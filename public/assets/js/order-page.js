@@ -39,14 +39,15 @@ $(document).ready(function () {
     });
 
     $("#filterbtn").on("click", event => {
-        event.preventDefault();
-        console.log(customerId);
         // Get the value from search-param and the customerId
-        // Save those values to a variable called buildFilter, CustomerId: customerId, total: search-param
+        // Save those values to a variable called buildFilter, id: customerId, total: search-param
+        let buildFilter = "This is a test string."
+        console.log(buildFilter)
         // Send buildFilter along the api route /api/filter
-        // Once the results come back the table needs to be cleared.
-        // If there are no results the table should display "No Results"
-        // If there are results then the table should display those results in the table.
+        $.get("/api/filter", buildFilter)
+            // Once the results come back the table needs to be cleared.
+            // If there are no results the table should display "No Results"
+            // If there are results then the table should display those results in the table.
     })
 })
 
@@ -146,7 +147,7 @@ $("#modal-delete").on("click", event => {
     })
 })
 
-$(".modal-close").on("click", function() {
+$(".modal-close").on("click", function () {
     console.log("The modal is hidden. Needs to be reset.");
     location.reload();
 })
