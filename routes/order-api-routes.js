@@ -48,15 +48,15 @@ module.exports = function(app) {
     });
 
     // find an order using price
-    app.get("/api/filter", (request, response) => {
+    app.post("/api/filter", (request, response) => {
         console.log(request.body);
-        // db.Orders.findAll({
-        //     where: {
-        //         CustomerId: request.body.id,
-        //         total: request.body.total
-        //     }
-        // }).then(results => {
-        //     response.json(results)
-        // })
+        db.Orders.findAll({
+            where: {
+                CustomerId: request.body.id,
+                total: request.body.total
+            }
+        }).then(results => {
+            response.json(results)
+        })
     });
 }
