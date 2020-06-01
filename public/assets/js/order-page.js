@@ -39,11 +39,33 @@ $(document).ready(function () {
     });
 
     $("#filterbtn").on("click", event => {
-        // Get the value from search-param and the customerId
-        // Save those values to a variable called buildFilter, id: customerId, total: search-param
-        let buildFilter = {
-            id: customerId,
-            total: $("#search-param").val()
+        event.preventDefault();
+        // Get the value of filtertype and save it to the variable filtertype
+        var buildFilter;
+        let filterType = $("#filtertype").val();
+        // Pass filterType into switch statment
+        switch(filterType) {
+            // Set the variable buildFilter accordingly
+            case "orderType":
+                buildFilter = {
+                    filterType: filterType,
+                    id: customerId,
+                    orderType: $("#search-param").val()
+                }
+                break;
+            case "orderNumber": {
+                buildFilter = {
+                    filterType: filterType,
+                    orderNumber: $("#search-param").val()
+                }
+                break;
+            }
+            default:
+                buildFilter = {
+                    filterType: filterType,
+                    id: customerId,
+                    total: $("#search-param").val()
+                }
         }
         console.log(buildFilter)
         // Send buildFilter along the api route /api/filter
@@ -57,6 +79,7 @@ $(document).ready(function () {
                         <td>No results</td>
                     </tr>`
                 )
+            // If there are results then the table should display those results in the table.
             } else {
                 data.forEach(element => {
                     $("tbody").append(
@@ -68,7 +91,6 @@ $(document).ready(function () {
                         </tr>`)
                 })
             }
-            // If there are results then the table should display those results in the table.
         })
     })
 })
