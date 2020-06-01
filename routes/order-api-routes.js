@@ -57,5 +57,5 @@ module.exports = function(app) {
         }).then(results => {
             response.json(results)
         })
-    })
+    });
 }
