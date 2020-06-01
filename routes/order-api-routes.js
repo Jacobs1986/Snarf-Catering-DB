@@ -46,4 +46,16 @@ module.exports = function(app) {
             response.status(422).json(err);
         });
     });
+
+    // find an order using price
+    app.get("/api/filter", (request, response) => {
+        db.Orders.findAll({
+            where: {
+                CustomerId: request.body.id,
+                total: request.body.total
+            }
+        }).then(results => {
+            response.json(results)
+        })
+    })
 }
