@@ -38,7 +38,16 @@ $(document).ready(function () {
         });
     });
 
-    // Pull up modal that will allow the user to view order information.
+    $("#filterbtn").on("click", event => {
+        event.preventDefault();
+        console.log(customerId);
+        // Get the value from search-param and the customerId
+        // Save those values to a variable called buildFilter, CustomerId: customerId, total: search-param
+        // Send buildFilter along the api route /api/filter
+        // Once the results come back the table needs to be cleared.
+        // If there are no results the table should display "No Results"
+        // If there are results then the table should display those results in the table.
+    })
 })
 
 var getInfo = (input) => $(input).val().trim("")
