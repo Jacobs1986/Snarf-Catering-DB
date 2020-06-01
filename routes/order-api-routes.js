@@ -71,7 +71,7 @@ module.exports = function (app) {
                 })
                 break;
             case "orderNumber":
-                db.Orders.findOne({
+                db.Orders.findAll({
                     where: {
                         orderNumber: request.body.orderNumber
                     }
