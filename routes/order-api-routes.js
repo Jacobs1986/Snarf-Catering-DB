@@ -51,7 +51,7 @@ module.exports = function (app) {
     app.post("/api/filter", (request, response) => {
         switch (request.body.filterType) {
             case "total":
-                db.Orders.findOne({
+                db.Orders.findAll({
                     where: {
                         CustomerId: request.body.id,
                         total: request.body.total
@@ -71,7 +71,7 @@ module.exports = function (app) {
                 })
                 break;
             case "orderNumber":
-                db.Orders.findAll({
+                db.Orders.findOne({
                     where: {
                         orderNumber: request.body.orderNumber
                     }
