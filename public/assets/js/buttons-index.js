@@ -78,6 +78,20 @@ $("#searchCustomer").on("click", event => {
         $("#customer-list").empty();
         if (data.length === 0) {
             $("#customer-list").append("<div><h3>No results</h3></div>");
+        } else {
+            data.forEach(element => {
+                let customerCard = $("<div>");
+                let cardContent = $("<div class='card-content'>");
+                customerCard.append(`<a href='/orders?customer_id=${element.id}'><h5 class='card-title'>${element.organization}</h5></a>`);
+                cardContent.append(`<p class='content-p'><span class='bold'>Contact Name</span>: ${element.contactname}`);
+                cardContent.append(`<p class='content-p'><span class='bold'>Address</span>: ${element.address}</p>`);
+                cardContent.append(`<p class='content-p'><span class='bold'>Email</span>: ${element.email}</p>`);
+                cardContent.append(`<p class='content-p last-p'><span class='bold'>Phone</span>: ${element.phone}</p>`);
+                cardContent.append(`<button type='button' class='edit-btn' id='${element.id}'>Update</button>`)
+                cardContent.append(`<button type='button' class='delete-btn' id='${element.id}'>Delete</button>`)
+                customerCard.append(cardContent);
+                $("#customer-list").append(customerCard);
+            })
         }
     })
 })
