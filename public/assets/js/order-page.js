@@ -12,7 +12,7 @@ $(document).ready(function () {
         $("#phone").text(data.phone);
         $("#numofOrders").text(data.Orders.length);
         $("#lastOrderDate").text(lastOrder(data));
-        orderDay(data);
+        $("#orderDay").text(orderDay(data));
     })
 
     displayTable(apiURL);
@@ -46,7 +46,7 @@ $(document).ready(function () {
         var buildFilter;
         let filterType = $("#filtertype").val();
         // Pass filterType into switch statment
-        switch(filterType) {
+        switch (filterType) {
             // Set the variable buildFilter accordingly
             case "orderType":
                 buildFilter = {
@@ -81,7 +81,7 @@ $(document).ready(function () {
                         <td>No results</td>
                     </tr>`
                 )
-            // If there are results then the table should display those results in the table.
+                // If there are results then the table should display those results in the table.
             } else {
                 data.forEach(element => {
                     $("tbody").append(
@@ -122,6 +122,53 @@ const lastOrder = (data) => {
     let lastOrderDate = data.Orders[lastOrderIndex].date;
     lastOrderDate = moment(lastOrderDate).format("MM/DD/YYYY");
     return lastOrderDate;
+}
+
+// function to get the frequent order day
+const orderDay = data => {
+    let daysoftheWeek = [];
+    // first thing is to convert the dates to days of the week using forEach
+    data.Orders.forEach(date => {
+        //  Convert the days of the week
+        let convertedDate = moment(date.date).format("dddd");
+        // push convertDate to the array daysoftheWeek
+        daysoftheWeek.push(convertedDate);
+    })
+    // The function now needs to count the number of instances of a day
+    // Create a new array called dayOccurences
+    let dayOccurences = [];
+    // start the loop
+    for (i = 0; i < daysoftheWeek.length; i++) {
+        // first get the day from daysoftheWeek
+        let weekDay = daysoftheWeek[i];
+        // search the dayOccurence for that day, set the variable to be searchFor
+        let indexofDay = dayOccurences.findIndex(index => index.day === weekDay);
+        if (indexofDay === -1) {
+            // create filter
+            let filter = daysoftheWeek.filter(days => days === weekDay);
+            // create an object dayResults that will save the weekDay and occurences
+            let dayResults = {
+                day: weekDay,
+                occurences: filter.length
+            }
+            // push into dayOccurences
+            dayOccurences.push(dayResults);
+        }
+    }
+    // sort the array from least to greatest of occurences
+    let compare = (a, b) => {
+        let comparison = 0
+        if (a.occurences >= b.occurences) {
+            comparison = 1;
+        } else if (a.occurences <= b.occurences) {
+            comparison = -1
+        }
+        return comparison
+    }
+    let sortedDays = dayOccurences.sort(compare);
+    let frequentDay = sortedDays[sortedDays.length - 1].day;
+    console.log(frequentDay);
+    return frequentDay;
 }
 
 loadModal = (event) => {
