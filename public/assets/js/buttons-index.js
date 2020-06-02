@@ -68,3 +68,8 @@ $("#delete-customer-btn").on("click", (event) => {
         location.reload();
     })
 })
+
+$("#searchCustomer").on("click", event => {
+    event.preventDefault();
+    console.log("The button is linked up.")
+})
