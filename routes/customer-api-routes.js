@@ -70,7 +70,7 @@ module.exports = function (app) {
     app.post("/api/searchcustomer", (request, response) => {
         db.Customer.findAll({
             where: {
-                organization: request.body.searchName
+                organization: request.body.name
             }
         }).then(results => {
             response.json(results);

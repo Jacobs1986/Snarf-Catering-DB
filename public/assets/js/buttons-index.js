@@ -71,5 +71,13 @@ $("#delete-customer-btn").on("click", (event) => {
 
 $("#searchCustomer").on("click", event => {
     event.preventDefault();
-    console.log("The button is linked up.")
+    let search = {
+        name: $("#searchDB").val()
+    }
+    $.post("/api/searchcustomer", search).then(data => {
+        $("#customer-list").empty();
+        if (data.length === 0) {
+            $("#customer-list").append("<div><h3>No results</h3></div>");
+        }
+    })
 })
