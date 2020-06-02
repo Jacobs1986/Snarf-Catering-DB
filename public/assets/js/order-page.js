@@ -12,6 +12,7 @@ $(document).ready(function () {
         $("#phone").text(data.phone);
         $("#numofOrders").text(data.Orders.length);
         $("#lastOrderDate").text(lastOrder(data));
+        orderDay(data);
     })
 
     displayTable(apiURL);
@@ -119,7 +120,7 @@ const displayTable = (url) => {
 const lastOrder = (data) => {
     let lastOrderIndex = data.Orders.length - 1;
     let lastOrderDate = data.Orders[lastOrderIndex].date;
-    lastOrderDate = moment(lastOrderDate).format("dddd MMMM DD, YYYY");
+    lastOrderDate = moment(lastOrderDate).format("MM/DD/YYYY");
     return lastOrderDate;
 }
 
