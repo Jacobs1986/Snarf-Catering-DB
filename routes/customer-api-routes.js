@@ -61,5 +61,15 @@ module.exports = function (app) {
         }).then(results => {
             response.json(results);
         })
-    }) 
+    })
+    
+    app.post("/api/searchcustomer", (request, response) => {
+        db.Customer.findAll({
+            where: {
+                organization: request.body.searchName
+            }
+        }).then(results => {
+            response.json(results);
+        })
+    })
 }
