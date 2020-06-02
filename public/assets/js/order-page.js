@@ -20,7 +20,6 @@ $(document).ready(function () {
     // Add order information
     $("#add-order").on("click", event => {
         event.preventDefault();
-        console.log("The button is working")
         let order = {
             date: getInfo("#orderdate"),
             orderNumber: getInfo("#ordernumber"),
@@ -30,7 +29,6 @@ $(document).ready(function () {
             notes: getInfo("#notes"),
             CustomerId: customerId
         }
-        console.log(order);
         $.post("/api/submit-order", order).then(data => {
             displayTable(apiURL);
             let array = ["#orderdate", "ordernumber", "#numberofitems", "#total", "#notes"]
@@ -69,10 +67,8 @@ $(document).ready(function () {
                     total: $("#search-param").val()
                 }
         }
-        console.log(buildFilter)
         // Send buildFilter along the api route /api/filter
         $.post("/api/filter", buildFilter).then(data => {
-            console.log(data);
             // Once the results come back the table needs to be cleared.
             $("tbody").empty();
             if (data.length === 0) {
@@ -102,7 +98,6 @@ var getInfo = (input) => $(input).val().trim("")
 const displayTable = (url) => {
     $("tbody").empty();
     $.get(url, data => {
-        // console.log(data);
         let orderHistory = data.Orders;
         orderHistory.forEach(element => {
             $("tbody").append(
@@ -167,14 +162,12 @@ const orderDay = data => {
     }
     let sortedDays = dayOccurences.sort(compare);
     let frequentDay = sortedDays[sortedDays.length - 1].day;
-    console.log(frequentDay);
     return frequentDay;
 }
 
 loadModal = (event) => {
     event.preventDefault();
     $.get(`/api/orders/${event.target.id}`).then(data => {
-        console.log(data);
         $(".modal-title").text(`Order Information for ${data.orderNumber}`);
         $("#modal-date").text(data.date);
         $("#modal-type").text(data.orderType);
@@ -249,6 +242,5 @@ $("#modal-delete").on("click", event => {
 })
 
 $(".modal-close").on("click", function () {
-    console.log("The modal is hidden. Needs to be reset.");
     location.reload();
 })
