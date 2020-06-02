@@ -5,7 +5,11 @@ var db = require("../models");
 module.exports = function (app) {
     // get all the information on customers
     app.get("/api/customers", (request, response) => {
-        db.Customer.findAll({}).then(results => {
+        db.Customer.findAll({
+            order: [
+                ['organization', 'ASC']
+            ]
+        }).then(results => {
             response.json(results);
         })
     })
