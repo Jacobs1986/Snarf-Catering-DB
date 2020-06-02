@@ -10,7 +10,8 @@ $(document).ready(function () {
         $("#address").text(data.address);
         $("#email").text(data.email);
         $("#phone").text(data.phone);
-        // console.log(data);
+        $("#numofOrders").text(data.Orders.length);
+        $("#lastOrderDate").text(lastOrder(data));
     })
 
     displayTable(apiURL);
@@ -112,6 +113,14 @@ const displayTable = (url) => {
                 </tr>`)
         })
     })
+}
+
+// function to get last order date
+const lastOrder = (data) => {
+    let lastOrderIndex = data.Orders.length - 1;
+    let lastOrderDate = data.Orders[lastOrderIndex].date;
+    lastOrderDate = moment(lastOrderDate).format("dddd MMMM DD, YYYY");
+    return lastOrderDate;
 }
 
 loadModal = (event) => {
