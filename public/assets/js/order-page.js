@@ -22,7 +22,7 @@ $(document).ready(function () {
         event.preventDefault();
         let order = {
             date: getInfo("#orderdate"),
-            orderNumber: getInfo("#ordernumber"),
+            orderNumber: getInfo("#ordernumber").toUpperCase(),
             orderType: getInfo("#ordertype"),
             numofItems: getInfo("#numberofitems"),
             total: getInfo("#total"),
@@ -35,6 +35,7 @@ $(document).ready(function () {
             array.forEach(input => {
                 $(input).val("")
             })
+            $("#ordernumber").val("");
         });
     });
 
