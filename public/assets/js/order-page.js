@@ -10,7 +10,9 @@ $(document).ready(function () {
         $("#address").text(data.address);
         $("#email").text(data.email);
         $("#phone").text(data.phone);
-        // console.log(data);
+        $("#numofOrders").text(data.Orders.length);
+        $("#lastOrderDate").text(lastOrder(data));
+        $("#orderDay").text(orderDay(data));
     })
 
     displayTable(apiURL);
@@ -18,7 +20,6 @@ $(document).ready(function () {
     // Add order information
     $("#add-order").on("click", event => {
         event.preventDefault();
-        console.log("The button is working")
         let order = {
             date: getInfo("#orderdate"),
             orderNumber: getInfo("#ordernumber"),
@@ -28,7 +29,6 @@ $(document).ready(function () {
             notes: getInfo("#notes"),
             CustomerId: customerId
         }
-        console.log(order);
         $.post("/api/submit-order", order).then(data => {
             displayTable(apiURL);
             let array = ["#orderdate", "ordernumber", "#numberofitems", "#total", "#notes"]
@@ -44,7 +44,7 @@ $(document).ready(function () {
         var buildFilter;
         let filterType = $("#filtertype").val();
         // Pass filterType into switch statment
-        switch(filterType) {
+        switch (filterType) {
             // Set the variable buildFilter accordingly
             case "orderType":
                 buildFilter = {
@@ -67,10 +67,8 @@ $(document).ready(function () {
                     total: $("#search-param").val()
                 }
         }
-        console.log(buildFilter)
         // Send buildFilter along the api route /api/filter
         $.post("/api/filter", buildFilter).then(data => {
-            console.log(data);
             // Once the results come back the table needs to be cleared.
             $("tbody").empty();
             if (data.length === 0) {
@@ -79,7 +77,7 @@ $(document).ready(function () {
                         <td>No results</td>
                     </tr>`
                 )
-            // If there are results then the table should display those results in the table.
+                // If there are results then the table should display those results in the table.
             } else {
                 data.forEach(element => {
                     $("tbody").append(
@@ -100,7 +98,6 @@ var getInfo = (input) => $(input).val().trim("")
 const displayTable = (url) => {
     $("tbody").empty();
     $.get(url, data => {
-        // console.log(data);
         let orderHistory = data.Orders;
         orderHistory.forEach(element => {
             $("tbody").append(
@@ -114,10 +111,63 @@ const displayTable = (url) => {
     })
 }
 
+// function to get last order date
+const lastOrder = (data) => {
+    let lastOrderIndex = data.Orders.length - 1;
+    let lastOrderDate = data.Orders[lastOrderIndex].date;
+    lastOrderDate = moment(lastOrderDate).format("MM/DD/YYYY");
+    return lastOrderDate;
+}
+
+// function to get the frequent order day
+const orderDay = data => {
+    let daysoftheWeek = [];
+    // first thing is to convert the dates to days of the week using forEach
+    data.Orders.forEach(date => {
+        //  Convert the days of the week
+        let convertedDate = moment(date.date).format("dddd");
+        // push convertDate to the array daysoftheWeek
+        daysoftheWeek.push(convertedDate);
+    })
+    // The function now needs to count the number of instances of a day
+    // Create a new array called dayOccurences
+    let dayOccurences = [];
+    // start the loop
+    for (i = 0; i < daysoftheWeek.length; i++) {
+        // first get the day from daysoftheWeek
+        let weekDay = daysoftheWeek[i];
+        // search the dayOccurence for that day, set the variable to be searchFor
+        let indexofDay = dayOccurences.findIndex(index => index.day === weekDay);
+        if (indexofDay === -1) {
+            // create filter
+            let filter = daysoftheWeek.filter(days => days === weekDay);
+            // create an object dayResults that will save the weekDay and occurences
+            let dayResults = {
+                day: weekDay,
+                occurences: filter.length
+            }
+            // push into dayOccurences
+            dayOccurences.push(dayResults);
+        }
+    }
+    // sort the array from least to greatest of occurences
+    let compare = (a, b) => {
+        let comparison = 0
+        if (a.occurences >= b.occurences) {
+            comparison = 1;
+        } else if (a.occurences <= b.occurences) {
+            comparison = -1
+        }
+        return comparison
+    }
+    let sortedDays = dayOccurences.sort(compare);
+    let frequentDay = sortedDays[sortedDays.length - 1].day;
+    return frequentDay;
+}
+
 loadModal = (event) => {
     event.preventDefault();
     $.get(`/api/orders/${event.target.id}`).then(data => {
-        console.log(data);
         $(".modal-title").text(`Order Information for ${data.orderNumber}`);
         $("#modal-date").text(data.date);
         $("#modal-type").text(data.orderType);
@@ -192,6 +242,5 @@ $("#modal-delete").on("click", event => {
 })
 
 $(".modal-close").on("click", function () {
-    console.log("The modal is hidden. Needs to be reset.");
     location.reload();
 })

@@ -1,6 +1,5 @@
 // get the information from the database
 $.get("/api/customers", data => {
-    console.log(data);
     data.forEach(element => {
         let customerCard = $("<div>");
         let cardContent = $("<div class='card-content'>");
