@@ -1,10 +1,19 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+// components
+import Footer from "./components/Footer";
+
+// Pages
+
+// bootstrap
+import "bootstrap/dist/css/bootstrap.min.css"
 
 function App() {
   return (
-    <div className="App">
-      This is a test to make sure everything is working.
-    </div>
+    <Router>
+      <Footer />
+    </Router>
   );
 }
 
