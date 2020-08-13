@@ -1,22 +1,19 @@
-// Dependencies
 const express = require("express");
-const db = require("./models");
+const PORT = process.env.PORT || 3001;
+const app = express();
+const routes = require('./routes');
+const db = require("./database/models");
 
-// Set up the Express App
-let app = express();
-let PORT = process.env.PORT || 8080;
-
-// Set up the Express App to handle data parsing
+// Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-// Static directory
-app.use(express.static("public"));
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+}
 
 // Routes
-require("./routes/html-routes.js")(app);
-require("./routes/customer-api-routes.js")(app);
-require("./routes/order-api-routes.js")(app)
+app.use("/", routes)
 
 let syncOptions = { force: false };
 

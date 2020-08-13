@@ -1,27 +1,28 @@
 {
-  "name": "snarf-catering-db",
-  "version": "1.0.0",
-  "description": "An app that will be a database for the catering information for Snarf's.",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Jacobs1986/Snarf-Catering-DB.git"
-  },
-  "author": "Sean Jacobson",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Jacobs1986/Snarf-Catering-DB/issues"
-  },
-  "homepage": "https://github.com/Jacobs1986/Snarf-Catering-DB#readme",
-  "dependencies": {
-    "express": "^4.17.1",
-    "mysql2": "^2.1.0",
-    "sequelize": "^5.21.5"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.4"
-  }
+    "name": "snarf-db",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "start": "if-env NODE_ENV=production && yarn run start:prod || yarn run start:dev",
+        "start:prod": "node server.js",
+        "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"yarn run client\"",
+        "client": "cd client && yarn run start",
+        "install": "cd client && yarn install",
+        "build": "cd client && yarn run build",
+        "heroku-postbuild": "yarn run build"
+    },
+    "author": "Sean Jacobson",
+    "license": "ISC",
+    "devDependencies": {
+        "concurrently": "^5.2.0",
+        "nodemon": "^2.0.4"
+    },
+    "dependencies": {
+        "axios": "^0.19.2",
+        "express": "^4.17.1",
+        "if-env": "^1.0.4",
+        "mysql2": "^2.1.0",
+        "sequelize": "^6.3.3"
+    }
 }

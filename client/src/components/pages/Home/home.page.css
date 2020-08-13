@@ -1,0 +1,26 @@
+#customer-list {
+    height: 500px;
+}
+
+#button-col {
+    padding-top: 2rem;
+}
+
+#jumboindex {
+    background-color: #b3d7ff;
+    padding: 4rem 2rem 1rem 2rem
+}
+
+.card {
+    width: 21rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+}
+
+.modal-header {
+    background-color: deepskyblue
+}
+
+.card-editbtn {
+    margin-right: 1rem;
+}

@@ -1,0 +1,99 @@
+.jumbotron-fluid {
+    padding-left: 2rem;
+}
+
+#order-input-num {
+    text-transform: uppercase;
+}
+
+.form-inline {
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+}
+
+/* Trigger */
+.trigger {
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: darkcyan;
+    text-decoration: underline;
+    padding-left: 0px;
+}
+
+/* Labels */
+
+#num-plat-label {
+    margin-right: calc(2rem + 6px);
+}
+
+#cost-box-label {
+    margin-right: calc(1rem + 4px);
+}
+
+.control-margin {
+    margin: 0 1rem;
+    width: 5rem !important;
+}
+
+#cost-salad-label {
+    margin-right: calc(.75rem - 2px);
+}
+
+#cost-chip-label {
+    margin-right: calc(1rem + 1px);
+}
+
+#label-gratuity {
+    margin-right: calc(2rem - 1px);
+}
+
+#label-sales-tax {
+    margin-right: calc(1rem + 5px);
+}
+
+#label-adjustment {
+    margin-right: calc(.50rem - 2px);
+}
+
+/* Check boxes */
+
+.form-check {
+    margin-right: 1rem;
+}
+
+#pickle-check {
+    margin-right: 8px;
+}
+
+#salad-check {
+    margin-right: 11px;
+}
+
+#chip-check {
+    margin-right: calc(1rem + 3px);
+}
+
+/* Buttons */
+.form-button {
+    margin-right: 1rem;
+}
+
+.table-button {
+    padding: 0
+}
+
+/* padding */
+#history-row {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Forms*/
+#edit-form {
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+#edit-form-label {
+    margin-right: 1rem;
+}
