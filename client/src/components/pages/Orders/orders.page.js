@@ -223,6 +223,7 @@ class Orders extends Component {
         return (
             <>
                 <Jumbotron fluid>
+                    <a href="/">Back</a>
                     <Container fluid>
                         <h1>{this.state.organization}</h1>
                         <Row>
