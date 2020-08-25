@@ -131,7 +131,7 @@ function OrderEdit(props) {
                     <Form.Row>
                         <h5>Add Ons</h5>
                     </Form.Row>
-                    <Accordion style={{ width: '47rem' }} defaultActiveKey='0'>
+                    <Accordion style={{ width: '47rem' }} defaultActiveKey='1'>
                         {/* Salads */}
                         <Card>
                             <Card.Header>
@@ -237,6 +237,19 @@ function OrderEdit(props) {
                                             <Form.Label>Total: ${props.totalTossed}</Form.Label>
                                         </Col>
                                     </Form.Row>
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                        {/* Sides */}
+                        <Card>
+                            <Card.Header>
+                                <Accordion.Toggle as={Button} variant='link' eventKey='1'>
+                                    Sides
+                                </Accordion.Toggle>
+                            </Card.Header>
+                            <Accordion.Collapse eventKey='1'>
+                                <Card.Body>
+                                    <div>Sides go here.</div>
                                 </Card.Body>
                             </Accordion.Collapse>
                         </Card>
