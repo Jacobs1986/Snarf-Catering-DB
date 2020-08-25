@@ -531,10 +531,6 @@ class Orders extends Component {
         })
     }
 
-    // Close the modal order
-    // handleViewOrderClose = () => {
-    //     this.setState({ modalOrderDetailsShow: false })
-    // }
     handleModalClose = event => {
         let name = event.target.name;
         this.setState({ [name]: false })
