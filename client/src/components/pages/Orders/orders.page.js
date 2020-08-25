@@ -546,7 +546,8 @@ class Orders extends Component {
 
     handleModalClose = event => {
         let name = event.target.name;
-        this.setState({ [name]: false })
+        console.log(name)
+        // this.setState({ [name]: false })
     }
 
     render() {
@@ -723,8 +724,10 @@ class Orders extends Component {
                     close={this.handleModalClose}
                     change={this.handleInputChange}
                     calculate={this.calculate}
+                    totalCalculation={this.orderTotal}
                     name="modalOrderEditShow"
-                    orderNumber={this.state.modalEditOrderNumber}
+                    date={this.state.newOrderDate}
+                    orderNumber={this.state.newOrderNumber}
                     quantityPlatter={this.state.quantityPlatter}
                     quantityGlutenFree={this.state.quantityGlutenFree}
                     quantityBrownBag={this.state.quantityBrownBag}
