@@ -43,3 +43,8 @@
 .modal-h4 {
     text-decoration: underline;
 }
+
+/* Edit Modal */
+#modal-edit-order-label {
+    margin-right: 0.5rem;
+}
