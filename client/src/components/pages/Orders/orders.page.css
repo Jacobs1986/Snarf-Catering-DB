@@ -48,3 +48,7 @@
 #modal-edit-order-label {
     margin-right: 0.5rem;
 }
+
+#modal-edit-orderNum-input {
+    width: 50%;
+}
