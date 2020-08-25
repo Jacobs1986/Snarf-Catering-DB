@@ -142,6 +142,7 @@ class Orders extends Component {
         numberofItems: 0,
         notes: "",
         orderID: "",
+        arrayPosition: "",
         modalOrderDetailsShow: false,
         modalOrderNumber: "",
         modalOrderDate: "",
@@ -519,7 +520,8 @@ class Orders extends Component {
     displayOrder = event => {
         let orderInfo = this.state.orderList[event.target.id]
         this.setState({
-            orderID: event.target.id,
+            arrayPosition: event.target.id,
+            orderID: orderInfo.id,
             modalOrderNumber: orderInfo.orderNumber,
             modalOrderDate: orderInfo.date,
             modalNumberOfItems: orderInfo.numofItems,
@@ -535,7 +537,7 @@ class Orders extends Component {
 
     // Edit an order
     editOrder = () => {
-        let orderInfo = this.state.orderList[this.state.orderID]
+        let orderInfo = this.state.orderList[this.state.arrayPosition]
         // set quantaties of each item as well as the date and order number
         this.setState({
             newOrderDate: orderInfo.date,
