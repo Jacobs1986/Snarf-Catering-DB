@@ -532,8 +532,12 @@ class Orders extends Component {
     }
 
     // Close the modal order
-    handleViewOrderClose = () => {
-        this.setState({ modalOrderDetailsShow: false })
+    // handleViewOrderClose = () => {
+    //     this.setState({ modalOrderDetailsShow: false })
+    // }
+    handleModalClose = event => {
+        let name = event.target.name;
+        this.setState({ [name]: false })
     }
 
     render() {
@@ -696,7 +700,8 @@ class Orders extends Component {
                 <ModalView
                     show={this.state.modalOrderDetailsShow}
                     orderNumber={this.state.modalOrderNumber}
-                    close={this.handleViewOrderClose}
+                    close={this.handleModalClose}
+                    name="modalOrderDetailsShow"
                     date={this.state.modalOrderDate}
                     numberOfItems={this.state.modalNumberOfItems}
                     total={this.state.modalOrderTotal}
