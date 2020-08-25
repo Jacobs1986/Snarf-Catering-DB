@@ -32,6 +32,32 @@ function OrderEdit(props) {
                             />
                         </Col>
                     </Form.Row>
+                    <Form.Row>
+                <h5>Items</h5>
+            </Form.Row>
+            {/* Platters */}
+            <Form.Row className="row-spacing">
+                <Col md={2}>
+                    <Form.Label>Platter</Form.Label>
+                </Col>
+                <Col md="auto">
+                    <Form.Label>Quantity: </Form.Label>
+                </Col>
+                <Col md={2}>
+                    <Form.Control
+                        type="number"
+                        name="editQuantityPlatter"
+                        value={props.editQuantityPlatter}
+                        onChange={props.calculate}
+                    />
+                </Col>
+                <Col md={2}>
+                    <Form.Label className="price-label">Price: ${props.pricePlatter}</Form.Label>
+                </Col>
+                <Col md="auto">
+                    <Form.Label className="price-label">Total: ${props.editTotalPlatter}</Form.Label>
+                </Col>
+            </Form.Row>
                 </Form>
             </Modal.Body>
             <Modal.Footer>
