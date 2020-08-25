@@ -6,16 +6,7 @@ function OrderEdit(props) {
     return (
         <Modal show={props.show} onHide={props.close} size="lg" backdrop="static">
             <Modal.Header closeButton>
-                <Form inline>
-                    <Form.Label id="modal-edit-order-label">Order #:</Form.Label>
-                    <Form.Control
-                        id="modal-edit-orderNum-input"
-                        type="text"
-                        name="modalEditOrderNumber"
-                        value={props.orderNum.toUpperCase()}
-                        onChange={props.change}
-                    />
-                </Form>
+                <Modal.Title>Edit Order</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Form>
@@ -32,7 +23,7 @@ function OrderEdit(props) {
                         </Col>
                         {/* Order Number */}
                         <Col md={3}>
-                            <Form.Label>Order/Receipt Number</Form.Label>
+                            <Form.Label>Order/Receipt Number:</Form.Label>
                             <Form.Control
                                 type="text"
                                 name="modalEditOrderNumber"
