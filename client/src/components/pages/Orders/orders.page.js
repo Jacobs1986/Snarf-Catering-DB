@@ -635,19 +635,39 @@ class Orders extends Component {
             }, () => {
                 // calculate the totals for each group
                 let itemsTotal = parseFloat(this.state.totalPlatter) + parseFloat(this.state.totalGlutenFree) + parseFloat(this.state.totalBrownBag) + parseFloat(this.state.totalBoxLunch);
-                console.log(itemsTotal)
-            }, () => {
-                // show modals
+                let saladTotal = parseFloat(this.state.totalCobb) + parseFloat(this.state.totalGreek) + parseFloat(this.state.totalSnarf) + parseFloat(this.state.totalTossed);
+                let sidesTotal = parseFloat(this.state.totalMacaroni) + parseFloat(this.state.totalPotato) + parseFloat(this.state.totalColeslaw) + parseFloat(this.state.totalPickle) + parseFloat(this.state.totalChip);
+                let drinkTotal = parseFloat(this.state.totalBottled) + parseFloat(this.state.totalIzze) + parseFloat(this.state.totalArizona) + parseFloat(this.state.totalGatorade) + parseFloat(this.state.totalSnapple) + parseFloat(this.state.totalStewart) + parseFloat(this.state.totalCan);
+                let dessertTotal = parseFloat(this.state.totalCookie) + parseFloat(this.state.totalBrownie);
+                let extraTotal = parseFloat(this.state.totalArtichoke) + parseFloat(this.state.totalBacon) + parseFloat(this.state.totalPortobello) + parseFloat(this.state.totalAvocado) + parseFloat(this.state.totalMeat) + parseFloat(this.state.totalGFBread);
                 this.setState({
-                    modalOrderDetailsShow: false,
-                    modalOrderEditShow: true
+                    itemsTotal: itemsTotal.toFixed(2),
+                    saladTotal: saladTotal.toFixed(2),
+                    sidesTotal: sidesTotal.toFixed(2),
+                    drinkTotal: drinkTotal.toFixed(2),
+                    dessertTotal: dessertTotal.toFixed(2),
+                    extraTotal: extraTotal.toFixed(2)
+                }, () => {
+                    // caluclate subtotal and gratuity
+                    let subtotal = parseFloat(this.state.itemsTotal) + parseFloat(this.state.saladTotal) + parseFloat(this.state.sidesTotal) + parseFloat(this.state.drinkTotal) + parseFloat(this.state.dessertTotal) + parseFloat(this.state.extraTotal);
+                    let gratuity = parseFloat(subtotal) * 0.1;
+                    this.setState({
+                        subtotal: subtotal.toFixed(2),
+                        gratuity: gratuity.toFixed(2)
+                    }, () => {
+                        // show modals
+                        this.setState({
+                            modalOrderDetailsShow: false,
+                            modalOrderEditShow: true
+                        })
+                    })
                 })
-            })            
+            })
         })
     }
 
     handleModalCloseDetails = () => {
-       this.setState({ modalOrderDetailsShow: false})
+        this.setState({ modalOrderDetailsShow: false })
     }
 
     handleModalCloseEdit = () => {
