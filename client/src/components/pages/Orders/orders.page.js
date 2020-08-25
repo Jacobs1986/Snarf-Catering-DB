@@ -149,7 +149,8 @@ class Orders extends Component {
         modalOrderTotal: "",
         modalOrderNotes: "",
         modalOrderItemsArray: [],
-        modalOrderEditShow: true
+        modalOrderEditShow: true,
+        modalEditOrderNumber: ""
     }
 
     componentDidMount() {
