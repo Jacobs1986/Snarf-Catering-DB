@@ -58,6 +58,28 @@ function OrderEdit(props) {
                     <Form.Label className="price-label">Total: ${props.editTotalPlatter}</Form.Label>
                 </Col>
             </Form.Row>
+            <Form.Row className="row-spacing">
+                <Col md={2}>
+                    <Form.Label>Gluten Free Platter</Form.Label>
+                </Col>
+                <Col md="auto">
+                    <Form.Label>Quantity: </Form.Label>
+                </Col>
+                <Col md={2}>
+                    <Form.Control
+                        type="number"
+                        name="editQuantityGlutenFree"
+                        value={props.editQuantityGlutenFree}
+                        onChange={props.calculate}
+                    />
+                </Col>
+                <Col md={3}>
+                    <Form.Label className="price-label">Price: ${props.priceGlutenFree}</Form.Label>
+                </Col>
+                <Col md="auto">
+                    <Form.Label className="price-label">Total: ${props.totalGlutenFree}</Form.Label>
+                </Col>
+            </Form.Row>
                 </Form>
             </Modal.Body>
             <Modal.Footer>
