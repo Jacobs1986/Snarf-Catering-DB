@@ -131,7 +131,7 @@ function OrderEdit(props) {
                     <Form.Row>
                         <h5>Add Ons</h5>
                     </Form.Row>
-                    <Accordion style={{ width: '47rem' }} defaultActiveKey='1'>
+                    <Accordion style={{ width: '47rem' }} defaultActiveKey='2'>
                         {/* Salads */}
                         <Card>
                             <Card.Header>
@@ -367,6 +367,186 @@ function OrderEdit(props) {
                                         </Col>
                                         <Col md="auto">
                                             <Form.Label>Total: ${props.totalChip}</Form.Label>
+                                        </Col>
+                                    </Form.Row>
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                        {/* Drinks */}
+                        <Card>
+                            <Card.Header>
+                                <Accordion.Toggle as={Button} variant='link' eventKey='2'>
+                                    Drinks
+                                </Accordion.Toggle>
+                            </Card.Header>
+                            <Accordion.Collapse eventKey='2'>
+                                <Card.Body>
+                                    {/* Bottled */}
+                                    <Form.Row className="row-spacing">
+                                        <Col md={2}>
+                                            <Form.Label>Bottled</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Quantity: </Form.Label>
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Control
+                                                type="number"
+                                                className="accordion-input-width"
+                                                name="quantityBottled"
+                                                value={props.quantityBottled}
+                                                onChange={props.calculate}
+                                            />
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Label>Price: ${props.priceBottled}</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Total: ${props.totalBottled}</Form.Label>
+                                        </Col>
+                                    </Form.Row>
+                                    {/* Izzes */}
+                                    <Form.Row className="row-spacing">
+                                        <Col md={2}>
+                                            <Form.Label>Izzes</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Quantity: </Form.Label>
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Control
+                                                type="number"
+                                                className="accordion-input-width"
+                                                name="quantityIzze"
+                                                value={props.quantityIzze}
+                                                onChange={props.calculate}
+                                            />
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Label>Price: ${props.priceIzze}</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Total: ${props.totalIzze}</Form.Label>
+                                        </Col>
+                                    </Form.Row>
+                                    {/* Arizona Tea */}
+                                    <Form.Row className="row-spacing">
+                                        <Col md={2}>
+                                            <Form.Label>Arizona Tea</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Quantity: </Form.Label>
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Control
+                                                type="number"
+                                                className="accordion-input-width"
+                                                name="quantityArizona"
+                                                value={props.quantityArizona}
+                                                onChange={props.calculate}
+                                            />
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Label>Price: ${props.priceArizona}</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Total: ${props.totalArizona}</Form.Label>
+                                        </Col>
+                                    </Form.Row>
+                                    {/* Gatorade */}
+                                    <Form.Row className="row-spacing">
+                                        <Col md={2}>
+                                            <Form.Label>Gatorade</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Quantity: </Form.Label>
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Control
+                                                type="number"
+                                                className="accordion-input-width"
+                                                name="quantityGatorade"
+                                                value={props.quantityGatorade}
+                                                onChange={props.calculate}
+                                            />
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Label>Price: ${props.priceGatorade}</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Total: ${props.totalGatorade}</Form.Label>
+                                        </Col>
+                                    </Form.Row>
+                                    {/* Snapple */}
+                                    <Form.Row className="row-spacing">
+                                        <Col md={2}>
+                                            <Form.Label>Snapple</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Quantity: </Form.Label>
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Control
+                                                type="number"
+                                                className="accordion-input-width"
+                                                name="quantitySnapple"
+                                                value={props.quantitySnapple}
+                                                onChange={props.calculate}
+                                            />
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Label>Price: ${props.priceSnapple}</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Total: ${props.totalSnapple}</Form.Label>
+                                        </Col>
+                                    </Form.Row>
+                                    {/* Stewarts */}
+                                    <Form.Row className="row-spacing">
+                                        <Col md={2}>
+                                            <Form.Label>Stewarts</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Quantity: </Form.Label>
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Control
+                                                type="number"
+                                                className="accordion-input-width"
+                                                name="quantityStewart"
+                                                value={props.quantityStewart}
+                                                onChange={props.calculate}
+                                            />
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Label>Price: ${props.priceStewart}</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Total: ${props.totalStewart}</Form.Label>
+                                        </Col>
+                                    </Form.Row>
+                                    {/* Can */}
+                                    <Form.Row className="row-spacing">
+                                        <Col md={2}>
+                                            <Form.Label>Can</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Quantity: </Form.Label>
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Control
+                                                type="number"
+                                                className="accordion-input-width"
+                                                name="quantityCan"
+                                                value={props.quantityCan}
+                                                onChange={props.calculate}
+                                            />
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Label>Price: ${props.priceCan}</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Total: ${props.totalCan}</Form.Label>
                                         </Col>
                                     </Form.Row>
                                 </Card.Body>
