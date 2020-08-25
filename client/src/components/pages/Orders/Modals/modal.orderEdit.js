@@ -5,7 +5,7 @@ import { Modal, Col, Accordion, Card, Button, Form } from "react-bootstrap"
 function OrderEdit(props) {
     return (
         <Modal show={props.show} onHide={props.close} size="lg" backdrop="static">
-            <Modal.Header closeButton>
+            <Modal.Header name={props.name} closeButton>
                 <Modal.Title>Edit Order</Modal.Title>
             </Modal.Header>
             <Modal.Body>
