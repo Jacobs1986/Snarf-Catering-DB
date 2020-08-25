@@ -149,7 +149,7 @@ class Orders extends Component {
         modalOrderTotal: "",
         modalOrderNotes: "",
         modalOrderItemsArray: [],
-        modalOrderEditShow: false
+        modalOrderEditShow: true
     }
 
     componentDidMount() {
@@ -710,6 +710,8 @@ class Orders extends Component {
                 />
                 <ModalEdit 
                     show={this.state.modalOrderEditShow}
+                    close={this.handleModalClose}
+                    name="modalOrderEditShow"
                 />
             </>
         );
