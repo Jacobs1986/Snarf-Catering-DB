@@ -51,7 +51,7 @@ function OrderEdit(props) {
                         onChange={props.calculate}
                     />
                 </Col>
-                <Col md={2}>
+                <Col md={3}>
                     <Form.Label className="price-label">Price: ${props.pricePlatter}</Form.Label>
                 </Col>
                 <Col md="auto">
