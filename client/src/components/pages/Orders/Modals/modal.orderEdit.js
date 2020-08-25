@@ -249,7 +249,30 @@ function OrderEdit(props) {
                             </Card.Header>
                             <Accordion.Collapse eventKey='1'>
                                 <Card.Body>
-                                    <div>Sides go here.</div>
+                                    {/* Macaroni Salad */}
+                                    <Form.Row className="row-spacing">
+                                        <Col md={3}>
+                                            <Form.Label>Macaroni Salad</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Quantity: </Form.Label>
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Control
+                                                type="number"
+                                                className="accordion-input-width"
+                                                name="quantityMacaroni"
+                                                value={props.quantityMacaroni}
+                                                onChange={props.calculate}
+                                            />
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Label>Price: ${props.priceMacaroni}</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Total: ${props.totalMacaroni}</Form.Label>
+                                        </Col>
+                                    </Form.Row>
                                 </Card.Body>
                             </Accordion.Collapse>
                         </Card>
