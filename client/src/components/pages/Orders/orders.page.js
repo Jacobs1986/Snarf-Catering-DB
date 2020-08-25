@@ -576,10 +576,68 @@ class Orders extends Component {
         }, () => {
             // calculate each item
             let platter = parseFloat(this.state.quantityPlatter) * parseFloat(this.state.pricePlatter);
+            let glutenFree = parseFloat(this.state.quantityGlutenFree) * parseFloat(this.state.priceGlutenFree);
+            let brownBag = parseFloat(this.state.quantityBrownBag) * parseFloat(this.state.priceBrownBag);
+            let boxLunch = parseFloat(this.state.quantityBoxLunch) * parseFloat(this.state.priceBoxLunch);
+            let cobb = parseFloat(this.state.quantityCobb) * parseFloat(this.state.priceCobb);
+            let greek = parseFloat(this.state.quantityGreek) * parseFloat(this.state.priceGreek);
+            let snarf = parseFloat(this.state.quantitySnarf) * parseFloat(this.state.priceSnarf);
+            let tossed = parseFloat(this.state.quantityTossed) * parseFloat(this.state.priceTossed);
+            let macaroni = parseFloat(this.state.quantityMacaroni) * parseFloat(this.state.priceMacaroni);
+            let potato = parseFloat(this.state.quantityPotato) * parseFloat(this.state.pricePotato);
+            let coleslaw = parseFloat(this.state.quantityColeslaw) * parseFloat(this.state.priceColeslaw);
+            let pickles = parseFloat(this.state.quantityPickles) * parseFloat(this.state.pricePickles);
+            let chips = parseFloat(this.state.quantityChips) * parseFloat(this.state.priceChips);
+            let bottled = parseFloat(this.state.quantityBottled) * parseFloat(this.state.priceBottled);
+            let izzes = parseFloat(this.state.quantityIzze) * parseFloat(this.state.priceIzze);
+            let arizona = parseFloat(this.state.quantityArizona) * parseFloat(this.state.priceArizona);
+            let gatorade = parseFloat(this.state.quantityGatorade) * parseFloat(this.state.priceGatorade);
+            let snapple = parseFloat(this.state.quantitySnapple) * parseFloat(this.state.priceSnapple);
+            let stewarts = parseFloat(this.state.quantityStewart) * parseFloat(this.state.priceStewart);
+            let can = parseFloat(this.state.quantityCan) * parseFloat(this.state.priceCan);
+            let cookie = parseFloat(this.state.quantityCookie) * parseFloat(this.state.priceCookie);
+            let brownie = parseFloat(this.state.quantityBrownie) * parseFloat(this.state.priceBrownie);
+            let artichoke = parseFloat(this.state.quantityArtichoke) * parseFloat(this.state.priceArtichoke);
+            let bacon = parseFloat(this.state.quantityBacon) * parseFloat(this.state.priceBacon);
+            let portobello = parseFloat(this.state.quantityPortobello) * parseFloat(this.state.pricePortobello);
+            let avocado = parseFloat(this.state.quantityAvocado) * parseFloat(this.state.priceAvocado);
+            let meat = parseFloat(this.state.quantityMeat) * parseFloat(this.state.priceMeat);
+            let gfBread = parseFloat(this.state.quantityGFBread) * parseFloat(this.state.priceGFBread);
             this.setState({
-                totalPlatter: platter.toFixed(2)
+                totalPlatter: platter.toFixed(2),
+                totalGlutenFree: glutenFree.toFixed(2),
+                totalBrownBag: brownBag.toFixed(2),
+                totalBoxLunch: boxLunch.toFixed(2),
+                totalCobb: cobb.toFixed(2),
+                totalGreek: greek.toFixed(2),
+                totalSnarf: snarf.toFixed(2),
+                totalTossed: tossed.toFixed(2),
+                totalMacaroni: macaroni.toFixed(2),
+                totalPotato: potato.toFixed(2),
+                totalColeslaw: coleslaw.toFixed(2),
+                totalPickle: pickles.toFixed(2),
+                totalChip: chips.toFixed(2),
+                totalBottled: bottled.toFixed(2),
+                totalIzze: izzes.toFixed(2),
+                totalArizona: arizona.toFixed(2),
+                totalGatorade: gatorade.toFixed(2),
+                totalSnapple: snapple.toFixed(2),
+                totalStewart: stewarts.toFixed(2),
+                totalCan: can.toFixed(2),
+                totalCookie: cookie.toFixed(2),
+                totalBrownie: brownie.toFixed(2),
+                totalArtichoke: artichoke.toFixed(2),
+                totalBacon: bacon.toFixed(2),
+                totalPortobello: portobello.toFixed(2),
+                totalAvocado: avocado.toFixed(2),
+                totalMeat: meat.toFixed(2),
+                totalGFBread: gfBread.toFixed(2),
             }, () => {
-                // show the modals
+                // calculate the totals for each group
+                let itemsTotal = parseFloat(this.state.totalPlatter) + parseFloat(this.state.totalGlutenFree) + parseFloat(this.state.totalBrownBag) + parseFloat(this.state.totalBoxLunch);
+                console.log(itemsTotal)
+            }, () => {
+                // show modals
                 this.setState({
                     modalOrderDetailsShow: false,
                     modalOrderEditShow: true
