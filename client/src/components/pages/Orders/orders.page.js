@@ -653,9 +653,16 @@ class Orders extends Component {
                     // caluclate subtotal and gratuity
                     let subtotal = parseFloat(this.state.itemsTotal) + parseFloat(this.state.saladTotal) + parseFloat(this.state.sidesTotal) + parseFloat(this.state.drinkTotal) + parseFloat(this.state.dessertTotal) + parseFloat(this.state.extraTotal);
                     let gratuity = parseFloat(subtotal) * 0.1;
+                    let itemsQT = itemsQuantityTotal(this.state.quantityPlatter, this.state.quantityGlutenFree, this.state.quantityBrownBag, this.state.quantityBoxLunch);
+                    let saladQT = saladQuantityTotal(this.state.quantityCobb, this.state.quantityGreek, this.state.quantitySnarf, this.state.quantityTossed);
+                    let sidesQT = sidesQuantityTotal(this.state.quantityMacaroni, this.state.quantityPotato, this.state.quantityColeslaw, this.state.quantityPickles, this.state.quantityChips);
+                    let drinksQT = drinksQuantityTotal(this.state.quantityBottled, this.state.quantityIzze, this.state.quantityArizona, this.state.quantityGatorade, this.state.quantitySnapple, this.state.quantityStewart, this.state.quantityCan);
+                    let dessertQT = dessertQuantityTotal(this.state.quantityCookie, this.state.quantityBrownie);
+                    let totalNumberofItems = parseFloat(itemsQT) + parseFloat(saladQT) + parseFloat(sidesQT) + parseFloat(drinksQT) + parseFloat(dessertQT);
                     this.setState({
                         subtotal: subtotal.toFixed(2),
-                        gratuity: gratuity.toFixed(2)
+                        gratuity: gratuity.toFixed(2),
+                        numberofItems: totalNumberofItems
                     }, () => {
                         // show modals
                         this.setState({
@@ -666,6 +673,51 @@ class Orders extends Component {
                 })
             })
         })
+    }
+
+    // Submit an edit
+    submitEdit = () => {
+        console.log("The edit will be subnmitted");
+        let newInformation = {
+            id: this.state.orderID,
+            date: this.state.newOrderDate,
+            orderNumber: this.state.newOrderNumber.toUpperCase(),
+            platter: this.state.quantityPlatter,
+            glutenFree: this.state.quantityGlutenFree,
+            brownBag: this.state.quantityBrownBag,
+            boxLunch: this.state.quantityBoxLunch,
+            cobb: this.state.quantityCobb,
+            greek: this.state.quantityGreek,
+            snarf: this.state.quantitySnarf,
+            tossed: this.state.quantityTossed,
+            macaroni: this.state.quantityMacaroni,
+            potato: this.state.quantityPotato,
+            coleslaw: this.state.quantityColeslaw,
+            pickles: this.state.quantityPickles,
+            chips: this.state.quantityChips,
+            bottled: this.state.quantityBottled,
+            izze: this.state.quantityIzze,
+            arizona: this.state.quantityArizona,
+            gatorade: this.state.quantityGatorade,
+            stewarts: this.state.quantityStewart,
+            snapple: this.state.quantitySnapple,
+            can: this.state.quantityCan,
+            cookies: this.state.quantityCookie,
+            brownies: this.state.quantityBrownie,
+            numofItems: this.state.numberofItems,
+            artichoke: this.state.quantityArtichoke,
+            bacon: this.state.quantityBacon,
+            portobello: this.state.quantityPortobello,
+            avocado: this.state.quantityAvocado,
+            meat: this.state.quantityMeat,
+            gfBread: this.state.quantityGFBread,
+            delivery: this.state.delivery,
+            salesTax: this.state.salesTax,
+            adjustment: this.state.adjustment,
+            total: this.state.total,
+            notes: this.state.notes,
+        }
+        console.log(newInformation);
     }
 
     handleModalCloseDetails = () => {
@@ -947,6 +999,7 @@ class Orders extends Component {
                     adjustment={this.state.adjustment}
                     total={this.state.total}
                     notes={this.state.notes}
+                    submitEdit={this.submitEdit}
                 />
             </>
         );

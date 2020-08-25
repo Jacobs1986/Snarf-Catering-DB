@@ -859,7 +859,7 @@ function OrderEdit(props) {
                 </Form>
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="primary">Submit</Button>
+                <Button variant="primary" onClick={props.submitEdit}>Submit</Button>
                 <Button variant="secondary" onClick={props.close} name={props.name}>Close</Button>
             </Modal.Footer>
         </Modal>
