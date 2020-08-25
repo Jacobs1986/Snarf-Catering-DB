@@ -37,7 +37,7 @@ function OrderEdit(props) {
             </Form.Row>
             {/* Platters */}
             <Form.Row className="row-spacing">
-                <Col md={2}>
+                <Col md={3}>
                     <Form.Label>Platter</Form.Label>
                 </Col>
                 <Col md="auto">
@@ -59,7 +59,7 @@ function OrderEdit(props) {
                 </Col>
             </Form.Row>
             <Form.Row className="row-spacing">
-                <Col md={2}>
+                <Col md={3}>
                     <Form.Label>Gluten Free Platter</Form.Label>
                 </Col>
                 <Col md="auto">
@@ -78,6 +78,29 @@ function OrderEdit(props) {
                 </Col>
                 <Col md="auto">
                     <Form.Label className="price-label">Total: ${props.editTotalGlutenFree}</Form.Label>
+                </Col>
+            </Form.Row>
+            {/* Brown Bag Lunch */}
+            <Form.Row className="row-spacing">
+                <Col md={3}>
+                    <Form.Label>Brown Bag Lunch</Form.Label>
+                </Col>
+                <Col md="auto">
+                    <Form.Label>Quantity: </Form.Label>
+                </Col>
+                <Col md={2}>
+                    <Form.Control
+                        type="number"
+                        name="editQuantityBrownBag"
+                        value={props.editQuantityBrownBag}
+                        onChange={props.calculate}
+                    />
+                </Col>
+                <Col md={3}>
+                    <Form.Label className="price-label">Price: ${props.priceBrownBag}</Form.Label>
+                </Col>
+                <Col md="auto">
+                    <Form.Label className="price-label">Total: ${props.editTotalBrownBag}</Form.Label>
                 </Col>
             </Form.Row>
                 </Form>
