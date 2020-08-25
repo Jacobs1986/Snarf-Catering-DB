@@ -33,100 +33,104 @@ function OrderEdit(props) {
                         </Col>
                     </Form.Row>
                     <Form.Row>
-                <h5>Items</h5>
-            </Form.Row>
-            {/* Platters */}
-            <Form.Row className="row-spacing">
-                <Col md={3}>
-                    <Form.Label>Platter</Form.Label>
-                </Col>
-                <Col md="auto">
-                    <Form.Label>Quantity: </Form.Label>
-                </Col>
-                <Col md={2}>
-                    <Form.Control
-                        type="number"
-                        name="editQuantityPlatter"
-                        value={props.editQuantityPlatter}
-                        onChange={props.calculate}
-                    />
-                </Col>
-                <Col md={3}>
-                    <Form.Label className="price-label">Price: ${props.pricePlatter}</Form.Label>
-                </Col>
-                <Col md="auto">
-                    <Form.Label className="price-label">Total: ${props.editTotalPlatter}</Form.Label>
-                </Col>
-            </Form.Row>
-            {/* Gluten Free Platter */}
-            <Form.Row className="row-spacing">
-                <Col md={3}>
-                    <Form.Label>Gluten Free Platter</Form.Label>
-                </Col>
-                <Col md="auto">
-                    <Form.Label>Quantity: </Form.Label>
-                </Col>
-                <Col md={2}>
-                    <Form.Control
-                        type="number"
-                        name="editQuantityGlutenFree"
-                        value={props.editQuantityGlutenFree}
-                        onChange={props.calculate}
-                    />
-                </Col>
-                <Col md={3}>
-                    <Form.Label className="price-label">Price: ${props.priceGlutenFree}</Form.Label>
-                </Col>
-                <Col md="auto">
-                    <Form.Label className="price-label">Total: ${props.editTotalGlutenFree}</Form.Label>
-                </Col>
-            </Form.Row>
-            {/* Brown Bag Lunch */}
-            <Form.Row className="row-spacing">
-                <Col md={3}>
-                    <Form.Label>Brown Bag Lunch</Form.Label>
-                </Col>
-                <Col md="auto">
-                    <Form.Label>Quantity: </Form.Label>
-                </Col>
-                <Col md={2}>
-                    <Form.Control
-                        type="number"
-                        name="editQuantityBrownBag"
-                        value={props.editQuantityBrownBag}
-                        onChange={props.calculate}
-                    />
-                </Col>
-                <Col md={3}>
-                    <Form.Label className="price-label">Price: ${props.priceBrownBag}</Form.Label>
-                </Col>
-                <Col md="auto">
-                    <Form.Label className="price-label">Total: ${props.editTotalBrownBag}</Form.Label>
-                </Col>
-            </Form.Row>
-            {/* Box Lunch */}
-            <Form.Row className="row-spacing">
-                <Col md={3}>
-                    <Form.Label>Box Lunch</Form.Label>
-                </Col>
-                <Col md="auto">
-                    <Form.Label>Quantity: </Form.Label>
-                </Col>
-                <Col md={2}>
-                    <Form.Control
-                        type="number"
-                        name="editQuantityBoxLunch"
-                        value={props.editQuantityBoxLunch}
-                        onChange={props.calculate}
-                    />
-                </Col>
-                <Col md={3}>
-                    <Form.Label className="price-label">Price: ${props.priceBoxLunch}</Form.Label>
-                </Col>
-                <Col md="auto">
-                    <Form.Label className="price-label">Total: ${props.editTotalBoxLunch}</Form.Label>
-                </Col>
-            </Form.Row>
+                        <h5>Items</h5>
+                    </Form.Row>
+                    {/* Platters */}
+                    <Form.Row className="row-spacing">
+                        <Col md={3}>
+                            <Form.Label>Platter</Form.Label>
+                        </Col>
+                        <Col md="auto">
+                            <Form.Label>Quantity: </Form.Label>
+                        </Col>
+                        <Col md={2}>
+                            <Form.Control
+                                type="number"
+                                name="editQuantityPlatter"
+                                value={props.editQuantityPlatter}
+                                onChange={props.calculate}
+                            />
+                        </Col>
+                        <Col md={3}>
+                            <Form.Label className="price-label">Price: ${props.pricePlatter}</Form.Label>
+                        </Col>
+                        <Col md="auto">
+                            <Form.Label className="price-label">Total: ${props.editTotalPlatter}</Form.Label>
+                        </Col>
+                    </Form.Row>
+                    {/* Gluten Free Platter */}
+                    <Form.Row className="row-spacing">
+                        <Col md={3}>
+                            <Form.Label>Gluten Free Platter</Form.Label>
+                        </Col>
+                        <Col md="auto">
+                            <Form.Label>Quantity: </Form.Label>
+                        </Col>
+                        <Col md={2}>
+                            <Form.Control
+                                type="number"
+                                name="editQuantityGlutenFree"
+                                value={props.editQuantityGlutenFree}
+                                onChange={props.calculate}
+                            />
+                        </Col>
+                        <Col md={3}>
+                            <Form.Label className="price-label">Price: ${props.priceGlutenFree}</Form.Label>
+                        </Col>
+                        <Col md="auto">
+                            <Form.Label className="price-label">Total: ${props.editTotalGlutenFree}</Form.Label>
+                        </Col>
+                    </Form.Row>
+                    {/* Brown Bag Lunch */}
+                    <Form.Row className="row-spacing">
+                        <Col md={3}>
+                            <Form.Label>Brown Bag Lunch</Form.Label>
+                        </Col>
+                        <Col md="auto">
+                            <Form.Label>Quantity: </Form.Label>
+                        </Col>
+                        <Col md={2}>
+                            <Form.Control
+                                type="number"
+                                name="editQuantityBrownBag"
+                                value={props.editQuantityBrownBag}
+                                onChange={props.calculate}
+                            />
+                        </Col>
+                        <Col md={3}>
+                            <Form.Label className="price-label">Price: ${props.priceBrownBag}</Form.Label>
+                        </Col>
+                        <Col md="auto">
+                            <Form.Label className="price-label">Total: ${props.editTotalBrownBag}</Form.Label>
+                        </Col>
+                    </Form.Row>
+                    {/* Box Lunch */}
+                    <Form.Row className="row-spacing">
+                        <Col md={3}>
+                            <Form.Label>Box Lunch</Form.Label>
+                        </Col>
+                        <Col md="auto">
+                            <Form.Label>Quantity: </Form.Label>
+                        </Col>
+                        <Col md={2}>
+                            <Form.Control
+                                type="number"
+                                name="editQuantityBoxLunch"
+                                value={props.editQuantityBoxLunch}
+                                onChange={props.calculate}
+                            />
+                        </Col>
+                        <Col md={3}>
+                            <Form.Label className="price-label">Price: ${props.priceBoxLunch}</Form.Label>
+                        </Col>
+                        <Col md="auto">
+                            <Form.Label className="price-label">Total: ${props.editTotalBoxLunch}</Form.Label>
+                        </Col>
+                    </Form.Row>
+                    {/* Add Ons */}
+                    <Form.Row>
+                        <h5>Add Ons</h5>
+                    </Form.Row>
                 </Form>
             </Modal.Body>
             <Modal.Footer>
