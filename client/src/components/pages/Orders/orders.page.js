@@ -27,6 +27,7 @@ import moment from "moment"
 
 // Modals
 import ModalView from "./Modals/modal.orderDetails"
+import ModalEdit from "./Modals/modal.orderEdit"
 
 class Orders extends Component {
     state = {
@@ -147,7 +148,8 @@ class Orders extends Component {
         modalNumberOfItems: "",
         modalOrderTotal: "",
         modalOrderNotes: "",
-        modalOrderItemsArray: []
+        modalOrderItemsArray: [],
+        modalOrderEditShow: false
     }
 
     componentDidMount() {
@@ -700,6 +702,9 @@ class Orders extends Component {
                     total={this.state.modalOrderTotal}
                     notes={this.state.modalOrderNotes}
                     orderArray={this.state.modalOrderItemsArray}
+                />
+                <ModalEdit 
+                    show={this.state.modalOrderEditShow}
                 />
             </>
         );
