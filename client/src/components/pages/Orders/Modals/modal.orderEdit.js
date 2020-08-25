@@ -131,7 +131,7 @@ function OrderEdit(props) {
                     <Form.Row>
                         <h5>Add Ons</h5>
                     </Form.Row>
-                    <Accordion style={{ width: '47rem' }} defaultActiveKey='4'>
+                    <Accordion style={{ width: '47rem' }}>
                         {/* Salads */}
                         <Card>
                             <Card.Header>
@@ -621,6 +621,7 @@ function OrderEdit(props) {
                             </Card.Header>
                             <Accordion.Collapse eventKey='4'>
                                 <Card.Body>
+                                    {/* Artichoke */}
                                     <Form.Row className="row-spacing">
                                         <Col md={3}>
                                             <Form.Label>Artichoke</Form.Label>
@@ -644,6 +645,7 @@ function OrderEdit(props) {
                                             <Form.Label>Total: ${props.totalArtichoke}</Form.Label>
                                         </Col>
                                     </Form.Row>
+                                    {/* Bacon */}
                                     <Form.Row className="row-spacing">
                                         <Col md={3}>
                                             <Form.Label>Bacon</Form.Label>
@@ -667,6 +669,7 @@ function OrderEdit(props) {
                                             <Form.Label>Total: ${props.totalBacon}</Form.Label>
                                         </Col>
                                     </Form.Row>
+                                    {/* Portobello */}
                                     <Form.Row className="row-spacing">
                                         <Col md={3}>
                                             <Form.Label>Portobello</Form.Label>
@@ -690,6 +693,7 @@ function OrderEdit(props) {
                                             <Form.Label>Total: ${props.totalPortobello}</Form.Label>
                                         </Col>
                                     </Form.Row>
+                                    {/* Avocado */}
                                     <Form.Row className="row-spacing">
                                         <Col md={3}>
                                             <Form.Label>Avocado</Form.Label>
@@ -713,6 +717,7 @@ function OrderEdit(props) {
                                             <Form.Label>Total: ${props.totalAvocado}</Form.Label>
                                         </Col>
                                     </Form.Row>
+                                    {/* Extra Meat */}
                                     <Form.Row className="row-spacing">
                                         <Col md={3}>
                                             <Form.Label>Extra Meat</Form.Label>
@@ -736,6 +741,7 @@ function OrderEdit(props) {
                                             <Form.Label>Total: ${props.totalMeat}</Form.Label>
                                         </Col>
                                     </Form.Row>
+                                    {/* Gluten Free Bread */}
                                     <Form.Row className="row-spacing">
                                         <Col md={3}>
                                             <Form.Label>Gluten Free Bread</Form.Label>
