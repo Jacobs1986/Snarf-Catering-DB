@@ -11,6 +11,10 @@ function OrderEdit(props) {
             <Modal.Body>
                 <div>The contents will go here.</div>
             </Modal.Body>
+            <Modal.Footer>
+                <Button variant="primary">Submit</Button>
+                <Button variant="secondary" onClick={props.close} name={props.name}>Close</Button>
+            </Modal.Footer>
         </Modal>
     );
 }
