@@ -77,7 +77,7 @@ function OrderEdit(props) {
                     <Form.Label className="price-label">Price: ${props.priceGlutenFree}</Form.Label>
                 </Col>
                 <Col md="auto">
-                    <Form.Label className="price-label">Total: ${props.totalGlutenFree}</Form.Label>
+                    <Form.Label className="price-label">Total: ${props.editTotalGlutenFree}</Form.Label>
                 </Col>
             </Form.Row>
                 </Form>
