@@ -728,6 +728,8 @@ class Orders extends Component {
                     editTotalPlatter="170.00"
                     priceGlutenFree={this.state.priceGlutenFree}
                     editTotalGlutenFree="125.00"
+                    priceBrownBag={this.state.priceBrownBag}
+                    editTotalBrownBag="12.00"
                 />
             </>
         );
