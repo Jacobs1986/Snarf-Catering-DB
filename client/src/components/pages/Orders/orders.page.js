@@ -734,6 +734,8 @@ class Orders extends Component {
                     editTotalBoxLunch="14.00"
                     priceCobb={this.state.priceCobb}
                     editTotalCobb="35.00"
+                    priceGreek={this.state.priceGreek}
+                    editTotalGreek="35.00"
                 />
             </>
         );
