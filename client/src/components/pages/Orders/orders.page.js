@@ -717,7 +717,10 @@ class Orders extends Component {
             total: this.state.total,
             notes: this.state.notes,
         }
-        console.log(newInformation);
+        API.edit(newInformation).then(() => {
+            this.handleModalCloseEdit();
+            this.loadInfo();
+        })
     }
 
     handleModalCloseDetails = () => {
