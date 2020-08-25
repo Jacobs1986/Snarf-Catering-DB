@@ -9,6 +9,7 @@ function OrderEdit(props) {
                 <Form inline>
                     <Form.Label id="modal-edit-order-label">Order #:</Form.Label>
                     <Form.Control 
+                        id="modal-edit-orderNum-input"
                         type="text"
                         name="modalEditOrderNumber"
                         value={props.orderNum}
