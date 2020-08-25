@@ -105,13 +105,13 @@ function OrderEdit(props) {
             </Form.Row>
             {/* Box Lunch */}
             <Form.Row className="row-spacing">
-                <Col md={2}>
+                <Col md={3}>
                     <Form.Label>Box Lunch</Form.Label>
                 </Col>
                 <Col md="auto">
                     <Form.Label>Quantity: </Form.Label>
                 </Col>
-                <Col md={1}>
+                <Col md={2}>
                     <Form.Control
                         type="number"
                         name="editQuantityBoxLunch"
@@ -119,7 +119,7 @@ function OrderEdit(props) {
                         onChange={props.calculate}
                     />
                 </Col>
-                <Col md={2}>
+                <Col md={3}>
                     <Form.Label className="price-label">Price: ${props.priceBoxLunch}</Form.Label>
                 </Col>
                 <Col md="auto">
