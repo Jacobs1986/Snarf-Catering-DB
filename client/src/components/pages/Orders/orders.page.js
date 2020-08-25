@@ -535,13 +535,56 @@ class Orders extends Component {
 
     // Edit an order
     editOrder = () => {
+        let orderInfo = this.state.orderList[this.state.orderID]
+        // set quantaties of each item as well as the date and order number
         this.setState({
-            modalOrderDetailsShow: false,
-            modalEditOrderNumber: this.state.modalOrderNumber
+            newOrderDate: orderInfo.date,
+            newOrderNumber: orderInfo.orderNumber,
+            quantityPlatter: orderInfo.platter,
+            quantityGlutenFree: orderInfo.glutenFree,
+            quantityBrownBag: orderInfo.brownBag,
+            quantityBoxLunch: orderInfo.boxLunch,
+            quantityCobb: orderInfo.cobb,
+            quantityGreek: orderInfo.greek,
+            quantitySnarf: orderInfo.snarf,
+            quantityTossed: orderInfo.tossed,
+            quantityMacaroni: orderInfo.macaroni,
+            quantityPotato: orderInfo.potato,
+            quantityColeslaw: orderInfo.coleslaw,
+            quantityPickles: orderInfo.pickles,
+            quantityChips: orderInfo.chips,
+            quantityBottled: orderInfo.bottled,
+            quantityIzze: orderInfo.izze,
+            quantityArizona: orderInfo.arizona,
+            quantityGatorade: orderInfo.gatorade,
+            quantitySnapple: orderInfo.snapple,
+            quantityStewart: orderInfo.stewarts,
+            quantityCan: orderInfo.can,
+            quantityCookie: orderInfo.cookies,
+            quantityBrownie: orderInfo.brownies,
+            quantityArtichoke: orderInfo.artichoke,
+            quantityBacon: orderInfo.bacon,
+            quantityPortobello: orderInfo.portobello,
+            quantityAvocado: orderInfo.avocado,
+            quantityMeat: orderInfo.meat,
+            quantityGFBread: orderInfo.gfBread,
+            delivery: orderInfo.delivery,
+            salesTax: orderInfo.salesTax,
+            adjustment: orderInfo.adjustment,
+            total: orderInfo.total,
+            notes: orderInfo.notes
         }, () => {
+            // calculate each item
+            let platter = parseFloat(this.state.quantityPlatter) * parseFloat(this.state.pricePlatter);
             this.setState({
-                modalOrderEditShow: true
-            })
+                totalPlatter: platter.toFixed(2)
+            }, () => {
+                // show the modals
+                this.setState({
+                    modalOrderDetailsShow: false,
+                    modalOrderEditShow: true
+                })
+            })            
         })
     }
 
