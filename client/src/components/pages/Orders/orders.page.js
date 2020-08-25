@@ -532,6 +532,18 @@ class Orders extends Component {
         })
     }
 
+    // Edit an order
+    editOrder = () => {
+        this.setState({
+            modalOrderDetailsShow: false,
+            modalEditOrderNumber: this.state.modalOrderNumber
+        }, () => {
+            this.setState({
+                modalOrderEditShow: true
+            })
+        })
+    }
+
     handleModalClose = event => {
         let name = event.target.name;
         this.setState({ [name]: false })
@@ -696,6 +708,7 @@ class Orders extends Component {
                 {/* Modals */}
                 <ModalView
                     show={this.state.modalOrderDetailsShow}
+                    editOrder={this.editOrder}
                     orderNumber={this.state.modalOrderNumber}
                     close={this.handleModalClose}
                     name="modalOrderDetailsShow"
