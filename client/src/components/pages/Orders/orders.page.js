@@ -725,6 +725,7 @@ class Orders extends Component {
                     name="modalOrderEditShow"
                     orderNumber={this.state.modalEditOrderNumber}
                     pricePlatter={this.state.pricePlatter}
+                    editTotalPlatter="170.00"
                 />
             </>
         );
