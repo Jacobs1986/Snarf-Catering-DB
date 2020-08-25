@@ -1,12 +1,20 @@
 import React from "react";
 
-import { Modal, Container, Row, Col, Button } from "react-bootstrap"
+import { Modal, Container, Row, Col, Button, Form } from "react-bootstrap"
 
 function OrderEdit(props) {
     return (
         <Modal show={props.show} onHide={props.close} size="lg" backdrop="static">
             <Modal.Header closeButton>
-                <Modal.Title>Order #</Modal.Title>
+                <Form inline>
+                    <Form.Label>Order #:</Form.Label>
+                    <Form.Control 
+                        type="text"
+                        name="modalEditOrderNumber"
+                        value={props.orderNu.toUpperCase()}
+                        onChange={props.change}
+                    />
+                </Form>
             </Modal.Header>
             <Modal.Body>
                 <div>The contents will go here.</div>
