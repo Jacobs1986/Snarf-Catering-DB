@@ -723,7 +723,7 @@ class Orders extends Component {
                     close={this.handleModalClose}
                     change={this.handleInputChange}
                     name="modalOrderEditShow"
-                    orderNum={this.state.modalEditOrderNumber}
+                    orderNumber={this.state.modalEditOrderNumber}
                 />
             </>
         );
