@@ -769,6 +769,92 @@ function OrderEdit(props) {
                             </Accordion.Collapse>
                         </Card>
                     </Accordion>
+                    <hr></hr>
+                    {/* Subtotal */}
+                    <Form.Row className="row-spacing">
+                        <Col md={2}>
+                            <h5>Subtotal: </h5>
+                        </Col>
+                        <Col md="auto">
+                            <h5>${props.subtotal}</h5>
+                        </Col>
+                    </Form.Row>
+                    {/* Gratuity */}
+                    <Form.Row className="row-spacing">
+                        <Col md={2}>
+                            <h5>Gratuity: </h5>
+                        </Col>
+                        <Col md="auto">
+                            <h5>${props.gratuity}</h5>
+                        </Col>
+                    </Form.Row>
+                    {/* Delivery Fee */}
+                    <Form.Row className="row-spacing">
+                        <Col md={2}>
+                            <h5>Delivery Fee: </h5>
+                        </Col>
+                        <Col md={2}>
+                            <Form.Control
+                                type="text"
+                                name="delivery"
+                                value={props.delivery}
+                                onChange={props.totalCalculation}
+                            />
+                        </Col>
+                    </Form.Row>
+                    {/* Sales Tax */}
+                    <Form.Row className="row-spacing">
+                        <Col md={2}>
+                            <h5>Sales Tax: </h5>
+                        </Col>
+                        <Col md={2}>
+                            <Form.Control
+                                type="text"
+                                name="salesTax"
+                                value={props.salesTax}
+                                onChange={props.totalCalculation}
+                            />
+                        </Col>
+                    </Form.Row>
+                    {/* Adjustment */}<Form.Row className="row-spacing">
+                        <Col md={2}>
+                            <h5>Adjustment: </h5>
+                        </Col>
+                        <Col md={2}>
+                            <Form.Control
+                                type="text"
+                                name="adjustment"
+                                value={props.adjustment}
+                                onChange={props.totalCalculation}
+                            />
+                        </Col>
+                        <Col md="auto">
+                            <Form.Text>To subtact place a "-" in fron of the number e.g. -3.14</Form.Text>
+                        </Col>
+                    </Form.Row>
+                    {/* Total */}
+                    <Form.Row className="row-spacing">
+                        <Col md={2}>
+                            <h3>Total: </h3>
+                        </Col>
+                        <Col md="auto">
+                            <h3>${props.total}</h3>
+                        </Col>
+                    </Form.Row>
+                    {/* Notes */}
+                    <Form.Row>
+                        <h5>Notes</h5>
+                    </Form.Row>
+                    <Form.Row className="row-spacing">
+                        <Col md={8}>
+                            <Form.Control
+                                as="textarea"
+                                rows="3"
+                                name="notes"
+                                value={props.notes}
+                                onChange={props.change}
+                            /></Col>
+                    </Form.Row>
                 </Form>
             </Modal.Body>
             <Modal.Footer>
