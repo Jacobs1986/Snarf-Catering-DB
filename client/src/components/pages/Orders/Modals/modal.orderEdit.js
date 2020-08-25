@@ -12,7 +12,7 @@ function OrderEdit(props) {
                         id="modal-edit-orderNum-input"
                         type="text"
                         name="modalEditOrderNumber"
-                        value={props.orderNum}
+                        value={props.orderNum.toUpperCase()}
                         onChange={props.change}
                     />
                 </Form>
