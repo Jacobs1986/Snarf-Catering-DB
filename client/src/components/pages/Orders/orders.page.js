@@ -470,7 +470,6 @@ class Orders extends Component {
 
     // Submit new Order
     addOrder = () => {
-        console.log("The order will be submitted.")
         let orderInfo = {
             date: this.state.newOrderDate,
             orderNumber: this.state.newOrderNumber.toUpperCase(),
@@ -503,6 +502,9 @@ class Orders extends Component {
             avocado: this.state.quantityAvocado,
             meat: this.state.quantityMeat,
             gfBread: this.state.quantityGFBread,
+            delivery: this.state.delivery,
+            salesTax: this.state.salesTax,
+            adjustment: this.state.adjustment,
             total: this.state.total,
             notes: this.state.notes,
             CustomerId: this.state.customerId
