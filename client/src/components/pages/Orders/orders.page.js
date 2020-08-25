@@ -725,17 +725,19 @@ class Orders extends Component {
                     name="modalOrderEditShow"
                     orderNumber={this.state.modalEditOrderNumber}
                     pricePlatter={this.state.pricePlatter}
-                    editTotalPlatter="170.00"
+                    totalPlatter="170.00"
                     priceGlutenFree={this.state.priceGlutenFree}
-                    editTotalGlutenFree="125.00"
+                    totalGlutenFree="125.00"
                     priceBrownBag={this.state.priceBrownBag}
-                    editTotalBrownBag="12.00"
+                    totalBrownBag="12.00"
                     priceBoxLunch={this.state.priceBoxLunch}
-                    editTotalBoxLunch="14.00"
+                    totalBoxLunch="14.00"
                     priceCobb={this.state.priceCobb}
-                    editTotalCobb="35.00"
+                    totalCobb="35.00"
                     priceGreek={this.state.priceGreek}
-                    editTotalGreek="35.00"
+                    totalGreek="35.00"
+                    priceSnarf={this.state.priceSnarf}
+                    totalSnarf="35.00"
                 />
             </>
         );

@@ -46,8 +46,8 @@ function OrderEdit(props) {
                         <Col md={2}>
                             <Form.Control
                                 type="number"
-                                name="editQuantityPlatter"
-                                value={props.editQuantityPlatter}
+                                name="quantityPlatter"
+                                value={props.quantityPlatter}
                                 onChange={props.calculate}
                             />
                         </Col>
@@ -55,7 +55,7 @@ function OrderEdit(props) {
                             <Form.Label className="price-label">Price: ${props.pricePlatter}</Form.Label>
                         </Col>
                         <Col md="auto">
-                            <Form.Label className="price-label">Total: ${props.editTotalPlatter}</Form.Label>
+                            <Form.Label className="price-label">Total: ${props.totalPlatter}</Form.Label>
                         </Col>
                     </Form.Row>
                     {/* Gluten Free Platter */}
@@ -69,8 +69,8 @@ function OrderEdit(props) {
                         <Col md={2}>
                             <Form.Control
                                 type="number"
-                                name="editQuantityGlutenFree"
-                                value={props.editQuantityGlutenFree}
+                                name="quantityGlutenFree"
+                                value={props.quantityGlutenFree}
                                 onChange={props.calculate}
                             />
                         </Col>
@@ -78,7 +78,7 @@ function OrderEdit(props) {
                             <Form.Label className="price-label">Price: ${props.priceGlutenFree}</Form.Label>
                         </Col>
                         <Col md="auto">
-                            <Form.Label className="price-label">Total: ${props.editTotalGlutenFree}</Form.Label>
+                            <Form.Label className="price-label">Total: ${props.totalGlutenFree}</Form.Label>
                         </Col>
                     </Form.Row>
                     {/* Brown Bag Lunch */}
@@ -92,8 +92,8 @@ function OrderEdit(props) {
                         <Col md={2}>
                             <Form.Control
                                 type="number"
-                                name="editQuantityBrownBag"
-                                value={props.editQuantityBrownBag}
+                                name="quantityBrownBag"
+                                value={props.quantityBrownBag}
                                 onChange={props.calculate}
                             />
                         </Col>
@@ -101,7 +101,7 @@ function OrderEdit(props) {
                             <Form.Label className="price-label">Price: ${props.priceBrownBag}</Form.Label>
                         </Col>
                         <Col md="auto">
-                            <Form.Label className="price-label">Total: ${props.editTotalBrownBag}</Form.Label>
+                            <Form.Label className="price-label">Total: ${props.totalBrownBag}</Form.Label>
                         </Col>
                     </Form.Row>
                     {/* Box Lunch */}
@@ -115,8 +115,8 @@ function OrderEdit(props) {
                         <Col md={2}>
                             <Form.Control
                                 type="number"
-                                name="editQuantityBoxLunch"
-                                value={props.editQuantityBoxLunch}
+                                name="quantityBrownBag"
+                                value={props.quantityBrownBag}
                                 onChange={props.calculate}
                             />
                         </Col>
@@ -124,7 +124,7 @@ function OrderEdit(props) {
                             <Form.Label className="price-label">Price: ${props.priceBoxLunch}</Form.Label>
                         </Col>
                         <Col md="auto">
-                            <Form.Label className="price-label">Total: ${props.editTotalBoxLunch}</Form.Label>
+                            <Form.Label className="price-label">Total: ${props.totalBoxLunch}</Form.Label>
                         </Col>
                     </Form.Row>
                     {/* Add Ons */}
@@ -153,8 +153,8 @@ function OrderEdit(props) {
                                             <Form.Control
                                                 type="number"
                                                 className="accordion-input-width"
-                                                name="editQuantityCook"
-                                                value={props.editQuantityCook}
+                                                name="quantityCobb"
+                                                value={props.quantityCobb}
                                                 onChange={props.calculate}
                                             />
                                         </Col>
@@ -162,7 +162,7 @@ function OrderEdit(props) {
                                             <Form.Label>Price: ${props.priceCobb}</Form.Label>
                                         </Col>
                                         <Col md="auto">
-                                            <Form.Label>Total: ${props.editTotalCobb}</Form.Label>
+                                            <Form.Label>Total: ${props.totalCobb}</Form.Label>
                                         </Col>
                                     </Form.Row>
                                     {/* Greek Salad */}
@@ -177,8 +177,8 @@ function OrderEdit(props) {
                                             <Form.Control
                                                 type="number"
                                                 className="accordion-input-width"
-                                                name="editQuantityGreek"
-                                                value={props.editQuantityGreek}
+                                                name="quantityGreek"
+                                                value={props.quantityGreek}
                                                 onChange={props.calculate}
                                             />
                                         </Col>
@@ -186,7 +186,31 @@ function OrderEdit(props) {
                                             <Form.Label>Price: ${props.priceGreek}</Form.Label>
                                         </Col>
                                         <Col md="auto">
-                                            <Form.Label>Total: ${props.editTotalGreek}</Form.Label>
+                                            <Form.Label>Total: ${props.totalGreek}</Form.Label>
+                                        </Col>
+                                    </Form.Row>
+                                    {/* Snarf Salad */}
+                                    <Form.Row className="row-spacing">
+                                        <Col md={2}>
+                                            <Form.Label>Snarf</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Quantity: </Form.Label>
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Control
+                                                type="number"
+                                                className="accordion-input-width"
+                                                name="quantitySnarf"
+                                                value={props.quantitySnarf}
+                                                onChange={props.calculate}
+                                            />
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Label>Price: ${props.priceSnarf}</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Total: ${props.totalSnarf}</Form.Label>
                                         </Col>
                                     </Form.Row>
                                 </Card.Body>
