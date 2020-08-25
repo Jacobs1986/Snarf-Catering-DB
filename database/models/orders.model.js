@@ -124,6 +124,18 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             allowNull: false
         },
+        delivery: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        salesTax: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        adjustment: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         total: {
             type: DataTypes.STRING,
             allowNull: false
