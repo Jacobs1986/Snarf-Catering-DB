@@ -34,7 +34,7 @@ function OrderDetails(props) {
                 </Container>
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="primary">Edit</Button>
+                <Button variant="primary" onClick={props.editOrder}>Edit</Button>
                 <Button variant="primary">Delete</Button>
                 <Button variant="secondary" onClick={props.close} name={props.name}>Close</Button>
             </Modal.Footer>
