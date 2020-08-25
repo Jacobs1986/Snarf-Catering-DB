@@ -297,6 +297,30 @@ function OrderEdit(props) {
                                             <Form.Label>Total: ${props.totalPotato}</Form.Label>
                                         </Col>
                                     </Form.Row >
+                                    {/* Coleslaw */}
+                                    <Form.Row className="row-spacing">
+                                        <Col md={3}>
+                                            <Form.Label>Coleslaw</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Quantity: </Form.Label>
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Control
+                                                type="number"
+                                                className="accordion-input-width"
+                                                name="quantityColeslaw"
+                                                value={props.quantityColeslaw}
+                                                onChange={props.calculate}
+                                            />
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Label>Price: ${props.priceColeslaw}</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Total: ${props.totalColeslaw}</Form.Label>
+                                        </Col>
+                                    </Form.Row>
                                 </Card.Body>
                             </Accordion.Collapse>
                         </Card>
