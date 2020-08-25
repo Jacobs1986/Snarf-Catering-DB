@@ -709,7 +709,7 @@ class Orders extends Component {
                     show={this.state.modalOrderEditShow}
                     close={this.handleModalClose}
                     name="modalOrderEditShow"
-                    orderNum="121860"
+                    orderNum="Q96-P9E"
                 />
             </>
         );
