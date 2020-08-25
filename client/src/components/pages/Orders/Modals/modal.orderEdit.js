@@ -132,6 +132,7 @@ function OrderEdit(props) {
                         <h5>Add Ons</h5>
                     </Form.Row>
                     <Accordion style={{ width: '47rem' }} defaultActiveKey='0'>
+                        {/* Salads */}
                         <Card>
                             <Card.Header>
                                 <Accordion.Toggle as={Button} variant='link' eventKey='0'>
@@ -140,6 +141,7 @@ function OrderEdit(props) {
                             </Card.Header>
                             <Accordion.Collapse eventKey='0'>
                                 <Card.Body>
+                                    {/* Cobb Salad */}
                                     <Form.Row className="row-spacing">
                                         <Col md={2}>
                                             <Form.Label>Cobb</Form.Label>
