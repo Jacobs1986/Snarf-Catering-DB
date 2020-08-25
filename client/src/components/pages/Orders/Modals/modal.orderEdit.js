@@ -58,6 +58,7 @@ function OrderEdit(props) {
                     <Form.Label className="price-label">Total: ${props.editTotalPlatter}</Form.Label>
                 </Col>
             </Form.Row>
+            {/* Gluten Free Platter */}
             <Form.Row className="row-spacing">
                 <Col md={3}>
                     <Form.Label>Gluten Free Platter</Form.Label>
