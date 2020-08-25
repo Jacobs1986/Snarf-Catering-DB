@@ -26,7 +26,7 @@ function OrderEdit(props) {
                             <Form.Label>Order/Receipt Number:</Form.Label>
                             <Form.Control
                                 type="text"
-                                name="modalEditOrderNumber"
+                                name="newOrderNumber"
                                 value={props.orderNumber.toUpperCase()}
                                 onChange={props.change}
                             />
@@ -115,8 +115,8 @@ function OrderEdit(props) {
                         <Col md={2}>
                             <Form.Control
                                 type="number"
-                                name="quantityBrownBag"
-                                value={props.quantityBrownBag}
+                                name="quantityBoxLunch"
+                                value={props.quantityBoxLunch}
                                 onChange={props.calculate}
                             />
                         </Col>
@@ -816,7 +816,8 @@ function OrderEdit(props) {
                             />
                         </Col>
                     </Form.Row>
-                    {/* Adjustment */}<Form.Row className="row-spacing">
+                    {/* Adjustment */}
+                    <Form.Row className="row-spacing">
                         <Col md={2}>
                             <h5>Adjustment: </h5>
                         </Col>
