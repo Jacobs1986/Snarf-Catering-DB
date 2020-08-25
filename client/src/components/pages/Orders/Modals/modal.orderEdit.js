@@ -103,6 +103,29 @@ function OrderEdit(props) {
                     <Form.Label className="price-label">Total: ${props.editTotalBrownBag}</Form.Label>
                 </Col>
             </Form.Row>
+            {/* Box Lunch */}
+            <Form.Row className="row-spacing">
+                <Col md={2}>
+                    <Form.Label>Box Lunch</Form.Label>
+                </Col>
+                <Col md="auto">
+                    <Form.Label>Quantity: </Form.Label>
+                </Col>
+                <Col md={1}>
+                    <Form.Control
+                        type="number"
+                        name="editQuantityBoxLunch"
+                        value={props.editQuantityBoxLunch}
+                        onChange={props.calculate}
+                    />
+                </Col>
+                <Col md={2}>
+                    <Form.Label className="price-label">Price: ${props.priceBoxLunch}</Form.Label>
+                </Col>
+                <Col md="auto">
+                    <Form.Label className="price-label">Total: ${props.editTotalBoxLunch}</Form.Label>
+                </Col>
+            </Form.Row>
                 </Form>
             </Modal.Body>
             <Modal.Footer>
