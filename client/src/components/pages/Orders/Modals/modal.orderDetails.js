@@ -4,7 +4,7 @@ import { Modal, Container, Row, Col, Button } from "react-bootstrap"
 
 function OrderDetails(props) {
     return (
-        <Modal show={props.show} onHide={props.close} size="sm" backdrop="static">
+        <Modal show={props.show} onHide={props.close} size="sm" backdrop="static" name={props.name}>
             <Modal.Header closeButton>
                 <Modal.Title>Order #{props.orderNumber}</Modal.Title>
             </Modal.Header>
