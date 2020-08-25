@@ -544,10 +544,16 @@ class Orders extends Component {
         })
     }
 
-    handleModalClose = event => {
-        let name = event.target.name;
-        console.log(name)
-        // this.setState({ [name]: false })
+    handleModalCloseDetails = () => {
+       this.setState({ modalOrderDetailsShow: false})
+    }
+
+    handleModalCloseEdit = () => {
+        this.setState({
+            modalOrderEditShow: false
+        }, () => {
+            this.closeAndClear();
+        })
     }
 
     render() {
@@ -711,8 +717,7 @@ class Orders extends Component {
                     show={this.state.modalOrderDetailsShow}
                     editOrder={this.editOrder}
                     orderNumber={this.state.modalOrderNumber}
-                    close={this.handleModalClose}
-                    name="modalOrderDetailsShow"
+                    close={this.handleModalCloseDetails}
                     date={this.state.modalOrderDate}
                     numberOfItems={this.state.modalNumberOfItems}
                     total={this.state.modalOrderTotal}
@@ -721,11 +726,10 @@ class Orders extends Component {
                 />
                 <ModalEdit
                     show={this.state.modalOrderEditShow}
-                    close={this.handleModalClose}
+                    close={this.handleModalCloseEdit}
                     change={this.handleInputChange}
                     calculate={this.calculate}
                     totalCalculation={this.orderTotal}
-                    name="modalOrderEditShow"
                     date={this.state.newOrderDate}
                     orderNumber={this.state.newOrderNumber}
                     quantityPlatter={this.state.quantityPlatter}
