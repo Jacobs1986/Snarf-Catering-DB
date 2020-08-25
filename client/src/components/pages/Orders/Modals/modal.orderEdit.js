@@ -131,6 +131,42 @@ function OrderEdit(props) {
                     <Form.Row>
                         <h5>Add Ons</h5>
                     </Form.Row>
+                    <Accordion style={{ width: '47rem' }} defaultActiveKey='0'>
+                        <Card>
+                            <Card.Header>
+                                <Accordion.Toggle as={Button} variant='link' eventKey='0'>
+                                    Salads
+                                </Accordion.Toggle>
+                            </Card.Header>
+                            <Accordion.Collapse eventKey='0'>
+                                <Card.Body>
+                                    <Form.Row className="row-spacing">
+                                        <Col md={2}>
+                                            <Form.Label>Cobb</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Quantity: </Form.Label>
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Control
+                                                type="number"
+                                                className="accordion-input-width"
+                                                name="editQuantityCook"
+                                                value={props.editQuantityCook}
+                                                onChange={props.calculate}
+                                            />
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Label>Price: ${props.priceCobb}</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Total: ${props.editTotalCobb}</Form.Label>
+                                        </Col>
+                                    </Form.Row>
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                    </Accordion>
                 </Form>
             </Modal.Body>
             <Modal.Footer>
