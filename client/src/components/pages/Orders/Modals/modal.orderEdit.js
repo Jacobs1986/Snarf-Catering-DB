@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Modal, Container, Row, Col, Button, Form } from "react-bootstrap"
+import { Modal, Col, Accordion, Card, Button, Form } from "react-bootstrap"
 
 function OrderEdit(props) {
     return (
