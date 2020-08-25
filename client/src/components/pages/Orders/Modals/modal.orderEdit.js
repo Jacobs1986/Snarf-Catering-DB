@@ -131,7 +131,7 @@ function OrderEdit(props) {
                     <Form.Row>
                         <h5>Add Ons</h5>
                     </Form.Row>
-                    <Accordion style={{ width: '47rem' }} defaultActiveKey='3'>
+                    <Accordion style={{ width: '47rem' }} defaultActiveKey='4'>
                         {/* Salads */}
                         <Card>
                             <Card.Header>
@@ -607,6 +607,156 @@ function OrderEdit(props) {
                                         </Col>
                                         <Col md="auto">
                                             <Form.Label>Total: ${props.totalBrownie}</Form.Label>
+                                        </Col>
+                                    </Form.Row>
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                        {/* Extras */}
+                        <Card>
+                            <Card.Header>
+                                <Accordion.Toggle as={Button} variant='link' eventKey='4'>
+                                    Extras
+                                </Accordion.Toggle>
+                            </Card.Header>
+                            <Accordion.Collapse eventKey='4'>
+                                <Card.Body>
+                                    <Form.Row className="row-spacing">
+                                        <Col md={3}>
+                                            <Form.Label>Artichoke</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Quantity: </Form.Label>
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Control
+                                                type="number"
+                                                className="accordion-input-width"
+                                                name="quantityArtichoke"
+                                                value={props.quantityArtichoke}
+                                                onChange={props.calculate}
+                                            />
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Label>Price: ${props.priceArtichoke}</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Total: ${props.totalArtichoke}</Form.Label>
+                                        </Col>
+                                    </Form.Row>
+                                    <Form.Row className="row-spacing">
+                                        <Col md={3}>
+                                            <Form.Label>Bacon</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Quantity: </Form.Label>
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Control
+                                                type="number"
+                                                className="accordion-input-width"
+                                                name="quantityBacon"
+                                                value={props.quantityBacon}
+                                                onChange={props.calculate}
+                                            />
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Label>Price: ${props.priceBacon}</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Total: ${props.totalBacon}</Form.Label>
+                                        </Col>
+                                    </Form.Row>
+                                    <Form.Row className="row-spacing">
+                                        <Col md={3}>
+                                            <Form.Label>Portobello</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Quantity: </Form.Label>
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Control
+                                                type="number"
+                                                className="accordion-input-width"
+                                                name="quantityPortobello"
+                                                value={props.quantityPortobello}
+                                                onChange={props.calculate}
+                                            />
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Label>Price: ${props.pricePortobello}</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Total: ${props.totalPortobello}</Form.Label>
+                                        </Col>
+                                    </Form.Row>
+                                    <Form.Row className="row-spacing">
+                                        <Col md={3}>
+                                            <Form.Label>Avocado</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Quantity: </Form.Label>
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Control
+                                                type="number"
+                                                className="accordion-input-width"
+                                                name="quantityAvocado"
+                                                value={props.quantityAvocado}
+                                                onChange={props.calculate}
+                                            />
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Label>Price: ${props.priceAvocado}</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Total: ${props.totalAvocado}</Form.Label>
+                                        </Col>
+                                    </Form.Row>
+                                    <Form.Row className="row-spacing">
+                                        <Col md={3}>
+                                            <Form.Label>Extra Meat</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Quantity: </Form.Label>
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Control
+                                                type="number"
+                                                className="accordion-input-width"
+                                                name="quantityMeat"
+                                                value={props.quantityMeat}
+                                                onChange={props.calculate}
+                                            />
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Label>Price: ${props.priceMeat}</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Total: ${props.totalMeat}</Form.Label>
+                                        </Col>
+                                    </Form.Row>
+                                    <Form.Row className="row-spacing">
+                                        <Col md={3}>
+                                            <Form.Label>Gluten Free Bread</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Quantity: </Form.Label>
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Control
+                                                type="number"
+                                                className="accordion-input-width"
+                                                name="quantityGFBread"
+                                                value={props.quantityGFBread}
+                                                onChange={props.calculate}
+                                            />
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Label>Price: ${props.priceGFBread}</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Total: ${props.totalGFBread}</Form.Label>
                                         </Col>
                                     </Form.Row>
                                 </Card.Body>
