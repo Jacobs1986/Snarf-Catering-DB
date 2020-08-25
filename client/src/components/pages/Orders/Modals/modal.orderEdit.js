@@ -11,7 +11,7 @@ function OrderEdit(props) {
                     <Form.Control 
                         type="text"
                         name="modalEditOrderNumber"
-                        value={props.orderNu.toUpperCase()}
+                        value={props.orderNum}
                         onChange={props.change}
                     />
                 </Form>
