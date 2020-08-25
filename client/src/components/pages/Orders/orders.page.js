@@ -738,6 +738,8 @@ class Orders extends Component {
                     totalGreek="35.00"
                     priceSnarf={this.state.priceSnarf}
                     totalSnarf="35.00"
+                    priceTossed={this.state.priceTossed}
+                    totalTossed="25.00"
                 />
             </>
         );

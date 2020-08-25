@@ -213,6 +213,30 @@ function OrderEdit(props) {
                                             <Form.Label>Total: ${props.totalSnarf}</Form.Label>
                                         </Col>
                                     </Form.Row>
+                                    {/* Tossed */}
+                                    <Form.Row className="row-spacing">
+                                        <Col md={2}>
+                                            <Form.Label>Tossed</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Quantity: </Form.Label>
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Control
+                                                type="number"
+                                                className="accordion-input-width"
+                                                name="quantityTossed"
+                                                value={props.quantityTossed}
+                                                onChange={props.calculate}
+                                            />
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Label>Price: ${props.priceTossed}</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Total: ${props.totalTossed}</Form.Label>
+                                        </Col>
+                                    </Form.Row>
                                 </Card.Body>
                             </Accordion.Collapse>
                         </Card>
