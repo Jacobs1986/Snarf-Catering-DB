@@ -7,7 +7,7 @@ function OrderEdit(props) {
         <Modal show={props.show} onHide={props.close} size="lg" backdrop="static">
             <Modal.Header closeButton>
                 <Form inline>
-                    <Form.Label>Order #:</Form.Label>
+                    <Form.Label id="modal-edit-order-label">Order #:</Form.Label>
                     <Form.Control 
                         type="text"
                         name="modalEditOrderNumber"
