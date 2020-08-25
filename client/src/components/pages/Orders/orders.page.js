@@ -724,6 +724,7 @@ class Orders extends Component {
                     change={this.handleInputChange}
                     name="modalOrderEditShow"
                     orderNumber={this.state.modalEditOrderNumber}
+                    pricePlatter={this.state.pricePlatter}
                 />
             </>
         );
