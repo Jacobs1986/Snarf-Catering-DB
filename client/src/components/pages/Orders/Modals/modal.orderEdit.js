@@ -321,6 +321,54 @@ function OrderEdit(props) {
                                             <Form.Label>Total: ${props.totalColeslaw}</Form.Label>
                                         </Col>
                                     </Form.Row>
+                                    {/* Pickles */}
+                                    <Form.Row className="row-spacing">
+                                        <Col md={3}>
+                                            <Form.Label>Pickles</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Quantity: </Form.Label>
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Control
+                                                type="number"
+                                                className="accordion-input-width"
+                                                name="quantityPickles"
+                                                value={props.quantityPickles}
+                                                onChange={props.calculate}
+                                            />
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Label>Price: ${props.pricePickles}</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Total: ${props.totalPickle}</Form.Label>
+                                        </Col>
+                                    </Form.Row>
+                                    {/* Chips */}
+                                    <Form.Row className="row-spacing">
+                                        <Col md={3}>
+                                            <Form.Label>Chips</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Quantity: </Form.Label>
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Control
+                                                type="number"
+                                                className="accordion-input-width"
+                                                name="quantityChips"
+                                                value={props.quantityChips}
+                                                onChange={props.calculate}
+                                            />
+                                        </Col>
+                                        <Col md={2}>
+                                            <Form.Label>Price: ${props.priceChips}</Form.Label>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Form.Label>Total: ${props.totalChip}</Form.Label>
+                                        </Col>
+                                    </Form.Row>
                                 </Card.Body>
                             </Accordion.Collapse>
                         </Card>
