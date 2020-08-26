@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 
 function CustomerCard(props) {
     return (
-        <Card>
+        <Card className="customer-card">
             <Card.Body>
                 <a href={props.link}><Card.Title className="text-center">{props.org}</Card.Title></a>
                 <Card.Subtitle className="text-center">{props.phone}</Card.Subtitle>

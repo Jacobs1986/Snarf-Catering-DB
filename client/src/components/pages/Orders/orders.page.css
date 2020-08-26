@@ -2,75 +2,28 @@
     padding-left: 2rem;
 }
 
-#order-input-num {
-    text-transform: uppercase;
-}
-
-.form-inline {
-    margin-bottom: 1rem;
-    margin-left: 2rem;
-}
-
 /* Trigger */
 .trigger {
     font-size: 1.75rem;
     font-weight: 500;
     color: darkcyan;
     text-decoration: underline;
-    padding-left: 0px;
+    padding: 0px;
 }
 
 /* Labels */
-
-#num-plat-label {
-    margin-right: calc(2rem + 6px);
+.price-label {
+    padding-left: 1.5rem;
 }
 
-#cost-box-label {
-    margin-right: calc(1rem + 4px);
+/* Rows */
+.row-spacing {
+    margin-bottom: 1rem;
 }
 
-.control-margin {
-    margin: 0 1rem;
-    width: 5rem !important;
-}
-
-#cost-salad-label {
-    margin-right: calc(.75rem - 2px);
-}
-
-#cost-chip-label {
-    margin-right: calc(1rem + 1px);
-}
-
-#label-gratuity {
-    margin-right: calc(2rem - 1px);
-}
-
-#label-sales-tax {
-    margin-right: calc(1rem + 5px);
-}
-
-#label-adjustment {
-    margin-right: calc(.50rem - 2px);
-}
-
-/* Check boxes */
-
-.form-check {
-    margin-right: 1rem;
-}
-
-#pickle-check {
-    margin-right: 8px;
-}
-
-#salad-check {
-    margin-right: 11px;
-}
-
-#chip-check {
-    margin-right: calc(1rem + 3px);
+/* inputs */
+.accordion-input-width {
+    width: 75%;
 }
 
 /* Buttons */
@@ -79,21 +32,23 @@
 }
 
 .table-button {
-    padding: 0
+    padding: 0;
 }
 
-/* padding */
-#history-row {
-    padding-left: 15px;
-    padding-right: 15px;
+/* Font styling */
+.modal-h5 {
+    font-style: italic;
 }
 
-/* Forms*/
-#edit-form {
-    margin-bottom: 0;
-    margin-left: 0;
+.modal-h4 {
+    text-decoration: underline;
 }
 
-#edit-form-label {
-    margin-right: 1rem;
+/* Edit Modal */
+#modal-edit-order-label {
+    margin-right: 0.5rem;
+}
+
+#modal-edit-orderNum-input {
+    width: 50%;
 }

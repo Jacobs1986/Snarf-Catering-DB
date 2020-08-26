@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "technopagan",
-    "database": "qz276lgm571d9vgd",
+    "database": "snarfdb",
     "host": "localhost",
     "dialect": "mysql"
   },
