@@ -13,9 +13,6 @@ export const orderFilter = object => {
     if (object.boxLunch > 0) {
         itemsArray.push(`Box Lunch: ${object.boxLunch}`);
     }
-    if (object.boxLunch > 0) {
-        itemsArray.push(`Box Lunch: ${object.boxLunch}`);
-    }
     // Salads
     if (object.cobb > 0) {
         itemsArray.push(`Cobb Salad: ${object.cobb}`);
