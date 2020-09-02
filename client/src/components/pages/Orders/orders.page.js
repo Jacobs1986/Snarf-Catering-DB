@@ -1028,7 +1028,7 @@ class Orders extends Component {
                     adjustment={this.state.adjustment}
                     total={this.state.total}
                     notes={this.state.notes}
-                    submitEdit={this.addOrder}
+                    submitEdit={this.submitEdit}
                 />
             </>
         );
