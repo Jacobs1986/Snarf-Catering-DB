@@ -9,7 +9,7 @@ function OrderEdit(props) {
                 <Modal.Title>Edit Order</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <Form>
+                <Form onSubmit={props.submitEdit}>
                     <Form.Row className="row-spacing">
                         {/* Order Date */}
                         <Col md={3}>
@@ -25,6 +25,7 @@ function OrderEdit(props) {
                         <Col md={3}>
                             <Form.Label>Order/Receipt Number:</Form.Label>
                             <Form.Control
+                                required
                                 type="text"
                                 name="newOrderNumber"
                                 value={props.orderNumber.toUpperCase()}
@@ -856,11 +857,16 @@ function OrderEdit(props) {
                                 onChange={props.change}
                             /></Col>
                     </Form.Row>
+                    <Form.Row>
+                        <Col md={3}>
+                            <Button type="submit" className="form-button">Submit</Button>
+                            <Button variant="secondary" className="form-button" onClick={props.close} name={props.name}>Close</Button>
+                        </Col>
+                    </Form.Row>
                 </Form>
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="primary" onClick={props.submitEdit}>Submit</Button>
-                <Button variant="secondary" onClick={props.close} name={props.name}>Close</Button>
+
             </Modal.Footer>
         </Modal>
     );

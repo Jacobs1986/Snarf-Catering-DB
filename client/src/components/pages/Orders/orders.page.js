@@ -163,7 +163,7 @@ class Orders extends Component {
         let customerId = url.split("=")[1];
         // console.log(customerId);
         API.info(customerId).then(result => {
-            console.log(result.data.Orders);
+            // console.log(result.data.Orders);
             this.setState({
                 customerId: customerId,
                 orderList: result.data.Orders,
@@ -519,6 +519,7 @@ class Orders extends Component {
     // Display order
     displayOrder = event => {
         let orderInfo = this.state.orderList[event.target.id]
+        // console.log(orderInfo);
         this.setState({
             arrayPosition: event.target.id,
             orderID: orderInfo.id,
@@ -735,6 +736,19 @@ class Orders extends Component {
         })
     }
 
+    deleteOrder = event => {
+        event.preventDefault()
+        API.delete(event.target.id).then(() => {
+            this.handleModalCloseDetails();
+            this.loadInfo();
+        })
+    }
+
+    // test = event => {
+    //     event.preventDefault()
+    //     console.log("The order will be submitted.")
+    // }
+
     render() {
         return (
             <>
@@ -894,6 +908,7 @@ class Orders extends Component {
                 {/* Modals */}
                 <ModalView
                     show={this.state.modalOrderDetailsShow}
+                    orderID={this.state.orderID}
                     editOrder={this.editOrder}
                     orderNumber={this.state.modalOrderNumber}
                     close={this.handleModalCloseDetails}
@@ -902,6 +917,7 @@ class Orders extends Component {
                     total={this.state.modalOrderTotal}
                     notes={this.state.modalOrderNotes}
                     orderArray={this.state.modalOrderItemsArray}
+                    deleteOrder={this.deleteOrder}
                 />
                 <ModalEdit
                     show={this.state.modalOrderEditShow}
