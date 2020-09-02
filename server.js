@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === "production") {
 // Routes
 app.use("/", routes)
 
-let syncOptions = { force: true };
+let syncOptions = { force: false };
 
 // sync the models
 db.sequelize.sync(syncOptions).then(function() {
