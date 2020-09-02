@@ -471,6 +471,10 @@ class Orders extends Component {
 
     // Submit new Order
     addOrder = () => {
+        if (this.state.newOrderNumber === "") {
+            alert("Please enter an order number.")
+            return
+        }
         let orderInfo = {
             date: this.state.newOrderDate,
             orderNumber: this.state.newOrderNumber.toUpperCase(),
@@ -677,7 +681,10 @@ class Orders extends Component {
 
     // Submit an edit
     submitEdit = () => {
-        console.log("The edit will be subnmitted");
+        if (this.state.newOrderNumber === "") {
+            alert("Please enter an order number.")
+            return
+        }
         let newInformation = {
             id: this.state.orderID,
             date: this.state.newOrderDate,
@@ -743,10 +750,14 @@ class Orders extends Component {
         })
     }
 
-    // test = event => {
-    //     event.preventDefault()
-    //     console.log("The order will be submitted.")
-    // }
+    test = event => {
+        event.preventDefault()
+        if (this.state.newOrderNumber === "") {
+            console.log("The order needs an number.")
+            return
+        }
+        console.log("The order will be submitted.")
+    }
 
     render() {
         return (
@@ -1017,7 +1028,7 @@ class Orders extends Component {
                     adjustment={this.state.adjustment}
                     total={this.state.total}
                     notes={this.state.notes}
-                    submitEdit={this.submitEdit}
+                    submitEdit={this.addOrder}
                 />
             </>
         );

@@ -21,7 +21,6 @@ function OrderForm(props) {
                 <Col md={3}>
                     <Form.Label>Order/Receipt Number</Form.Label>
                     <Form.Control
-                        required
                         type="text"
                         name="newOrderNumber"
                         value={props.orderNumber.toUpperCase()}
@@ -829,7 +828,7 @@ function OrderForm(props) {
             {/* Buttons */}
             <Form.Row>
                 <Col md={3}>
-                    <Button type="submit" className="form-button" onClick={props.submit}>Submit</Button>
+                    <Button variant="primary" className="form-button" onClick={props.submit}>Submit</Button>
                     <Button variant="secondary" className="form-button" onClick={props.closeForm}>Close</Button>
                 </Col>
             </Form.Row>
