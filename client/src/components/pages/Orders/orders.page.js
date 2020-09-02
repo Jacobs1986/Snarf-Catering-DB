@@ -735,6 +735,11 @@ class Orders extends Component {
         })
     }
 
+    // test = event => {
+    //     event.preventDefault()
+    //     console.log("The order will be submitted.")
+    // }
+
     render() {
         return (
             <>
