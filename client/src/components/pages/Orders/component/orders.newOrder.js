@@ -5,7 +5,7 @@ import { Form, Col, Accordion, Button, Card } from 'react-bootstrap'
 
 function OrderForm(props) {
     return (
-        <Form onSubmit={props.submit}>
+        <Form>
             <Form.Row className="row-spacing">
                 {/* New Order Date */}
                 <Col md={2}>
@@ -829,7 +829,7 @@ function OrderForm(props) {
             {/* Buttons */}
             <Form.Row>
                 <Col md={3}>
-                    <Button type="submit" className="form-button">Submit</Button>
+                    <Button type="submit" className="form-button" onClick={props.submit}>Submit</Button>
                     <Button variant="secondary" className="form-button" onClick={props.closeForm}>Close</Button>
                 </Col>
             </Form.Row>
