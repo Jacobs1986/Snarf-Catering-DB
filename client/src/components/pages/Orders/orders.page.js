@@ -519,7 +519,7 @@ class Orders extends Component {
     // Display order
     displayOrder = event => {
         let orderInfo = this.state.orderList[event.target.id]
-        console.log(orderInfo);
+        // console.log(orderInfo);
         this.setState({
             arrayPosition: event.target.id,
             orderID: orderInfo.id,
