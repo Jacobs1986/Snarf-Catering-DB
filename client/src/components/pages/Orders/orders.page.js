@@ -519,6 +519,7 @@ class Orders extends Component {
     // Display order
     displayOrder = event => {
         let orderInfo = this.state.orderList[event.target.id]
+        console.log(orderInfo);
         this.setState({
             arrayPosition: event.target.id,
             orderID: orderInfo.id,
@@ -738,7 +739,7 @@ class Orders extends Component {
     deleteOrder = event => {
         event.preventDefault()
         API.delete(event.target.id).then(() => {
-            this.handleViewOrderClose();
+            this.handleModalCloseDetails();
             this.loadInfo();
         })
     }
@@ -907,6 +908,7 @@ class Orders extends Component {
                 {/* Modals */}
                 <ModalView
                     show={this.state.modalOrderDetailsShow}
+                    orderID={this.state.orderID}
                     editOrder={this.editOrder}
                     orderNumber={this.state.modalOrderNumber}
                     close={this.handleModalCloseDetails}
@@ -915,6 +917,7 @@ class Orders extends Component {
                     total={this.state.modalOrderTotal}
                     notes={this.state.modalOrderNotes}
                     orderArray={this.state.modalOrderItemsArray}
+                    deleteOrder={this.deleteOrder}
                 />
                 <ModalEdit
                     show={this.state.modalOrderEditShow}
