@@ -735,6 +735,14 @@ class Orders extends Component {
         })
     }
 
+    deleteOrder = event => {
+        event.preventDefault()
+        API.delete(event.target.id).then(() => {
+            this.handleViewOrderClose();
+            this.loadInfo();
+        })
+    }
+
     // test = event => {
     //     event.preventDefault()
     //     console.log("The order will be submitted.")
