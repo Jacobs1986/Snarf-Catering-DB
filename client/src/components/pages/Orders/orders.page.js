@@ -163,7 +163,7 @@ class Orders extends Component {
         let customerId = url.split("=")[1];
         // console.log(customerId);
         API.info(customerId).then(result => {
-            console.log(result.data.Orders);
+            // console.log(result.data.Orders);
             this.setState({
                 customerId: customerId,
                 orderList: result.data.Orders,
