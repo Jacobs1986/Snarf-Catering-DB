@@ -152,7 +152,11 @@ class Home extends Component {
         this.setState({ 
             [name]: value 
         }, () => {
-            console.log("The radio buttons are working.")
+            if (this.state.sortType === "") {
+                return
+            } else {
+                console.log(`The list will be sorted in ${this.state.sortType} order.`)
+            }
         });
     }
 
@@ -198,7 +202,7 @@ class Home extends Component {
                             Sort list by:
                         </Form.Label>
                         <Col sm="auto">
-                            <Form.Control as="select" onChange={this.handleInputChange} name="sortBy" value={this.state.sortBy}>
+                            <Form.Control as="select" onChange={this.sortList} name="sortBy" value={this.state.sortBy}>
                                 <option value="organization">Organization Name</option>
                                 <option value="contactname">Contact Name</option>
                                 <option value="address">Address</option>
