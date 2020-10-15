@@ -13,6 +13,12 @@ router.route("/all")
         });
 });
 
+// Sort customer list
+router.route("/sort")
+    .get((request, response) => {
+        response.json("The route is ready to work!")
+    })
+
 // Save a new customer to that database
 router.route("/add")
     .post((request, response) => {
