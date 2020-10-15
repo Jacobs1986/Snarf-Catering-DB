@@ -27,7 +27,8 @@ class Home extends Component {
         address: "",
         email: "",
         phone: "",
-        customerId: ""
+        customerId: "",
+        sortBy: "organization"
     }
 
     componentDidMount() {
@@ -185,11 +186,11 @@ class Home extends Component {
                             Sort list by:
                         </Form.Label>
                         <Col sm="auto">
-                            <Form.Control as="select">
-                                <option>Organization Name</option>
-                                <option>Contact Name</option>
-                                <option>Address</option>
-                                <option>Email</option>
+                            <Form.Control as="select" onChange={this.handleInputChange} name="sortBy" value={this.state.sortBy}>
+                                <option value="organization">Organization Name</option>
+                                <option value="contactname">Contact Name</option>
+                                <option value="address">Address</option>
+                                <option value="email">Email</option>
                             </Form.Control>
                         </Col>
                         <Col sm="auto" id="radio-col">
