@@ -16,7 +16,7 @@ router.route("/all")
 // Sort customer list
 router.route("/sort")
     .post((request, response) => {
-        response.json("The route is ready to work!")
+        console.log(request.body);
     })
 
 // Save a new customer to that database
