@@ -15,7 +15,7 @@ router.route("/all")
 
 // Sort customer list
 router.route("/sort")
-    .get((request, response) => {
+    .post((request, response) => {
         response.json("The route is ready to work!")
     })
 
