@@ -37,7 +37,6 @@ class Home extends Component {
     // load all customers
     loadCustomers = () => {
         API.all().then(res => {
-            console.log(res.data);
             this.setState({ customerList: res.data });
         })
     }
