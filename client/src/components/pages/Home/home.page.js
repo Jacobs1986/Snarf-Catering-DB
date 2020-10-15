@@ -179,19 +179,7 @@ class Home extends Component {
                     <Button variant="primary" onClick={this.handleShow}>Add Customer</Button>
                 </Jumbotron>
 
-                {/* Search bar */}
-                <Form>
-                    <Form.Row>
-                        <Form.Group as={Col}>
-                            <Form.Label>Search Database</Form.Label>
-                            <Form.Control type="text" />
-                        </Form.Group>
-                        <Form.Group as={Col} id="button-col">
-                            <Button variant="primary" type="submit">Search</Button>
-                        </Form.Group>
-                    </Form.Row>
-                </Form>
-
+                
                 <hr className="my-4"></hr>
 
                 {/* div containing the lists */}
