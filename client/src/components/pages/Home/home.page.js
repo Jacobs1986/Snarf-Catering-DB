@@ -71,7 +71,7 @@ class Home extends Component {
     addCustomer = event => {
         event.preventDefault()
         var organization;
-        if (this.state.organization === "" ) {
+        if (this.state.organization === "") {
             organization = this.state.contact;
         } else {
             organization = this.state.organization;
@@ -179,7 +179,22 @@ class Home extends Component {
                     <Button variant="primary" onClick={this.handleShow}>Add Customer</Button>
                 </Jumbotron>
 
-                
+                {/* Sort list */}
+                <Form>
+                    <Form.Group as={Row}>
+                        <Form.Label column sm={2}>
+                            Sort list by:
+                        </Form.Label>
+                        <Col sm={3}>
+                            <Form.Control as="select">
+                                <option>Organization Name</option>
+                                <option>Contact Name</option>
+                                <option>Address</option>
+                                <option>Email</option>
+                            </Form.Control>
+                        </Col>
+                    </Form.Group>
+                </Form>
                 <hr className="my-4"></hr>
 
                 {/* div containing the lists */}
