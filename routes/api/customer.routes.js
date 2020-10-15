@@ -26,6 +26,17 @@ router.route("/sort")
         })
 });
 
+// Search for a customer
+router.route("/search")
+    .post((request, response) => {
+        Customer.findAll({
+            where: {
+                organization: request.body.searchFor
+            }
+        }).then(results => 
+            response.json(results))
+});
+
 // Save a new customer to that database
 router.route("/add")
     .post((request, response) => {
