@@ -160,7 +160,7 @@ class Home extends Component {
                     sortType: this.state.sortType
                 }
                 API.sort(sortInfo).then(res => {
-                    console.log(res.data);
+                    this.setState({ customerList: res.data })
                 })
             }
         });
