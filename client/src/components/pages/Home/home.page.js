@@ -193,7 +193,7 @@ class Home extends Component {
                                 <option>Email</option>
                             </Form.Control>
                         </Col>
-                        <Col sm="auto">
+                        <Col sm="auto" id="radio-col">
                             <Form.Check 
                                 inline
                                 type="radio"
