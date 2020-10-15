@@ -228,8 +228,8 @@ class Home extends Component {
                                 inline
                                 type="radio"
                                 name="sortType"
-                                label="DEC"
-                                value="DEC"
+                                label="DESC"
+                                value="DESC"
                                 onClick={this.sortList}
                             />
                         </Col>
