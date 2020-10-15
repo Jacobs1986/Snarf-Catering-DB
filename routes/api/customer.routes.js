@@ -30,13 +30,27 @@ router.route("/sort")
 // Search for a customer
 router.route("/search")
     .post((request, response) => {
-        let assett = request.body.assett
-        Customer.findAll({
-            where: {
-                organization: { [Op.like]: '%' + request.body.searchFor + '%'}
-            }
-        }).then(results =>
-            response.json(results))
+        switch (request.body.column) {
+            case "organization":
+                Customer.findAll({
+                    where: {
+                        organization: { [Op.like]: '%' + request.body.searchFor + '%' }
+                    }
+                }).then(results => {
+                    response.json(results);
+                })
+                break;
+            case "contactname":
+                Customer.findAll({
+                    where: {
+                        contactname: { [Op.like]: '%' + request.body.searchFor + '%' }
+                    }
+                }).then(results => {
+                    response.json(results);
+                })
+                break;
+            default:
+        }
     });
 
 // Save a new customer to that database
