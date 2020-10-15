@@ -28,7 +28,8 @@ class Home extends Component {
         email: "",
         phone: "",
         customerId: "",
-        sortBy: "organization"
+        sortBy: "organization",
+        sortType: ""
     }
 
     componentDidMount() {
@@ -144,6 +145,17 @@ class Home extends Component {
         })
     }
 
+    // sort customer list
+    sortList = event => {
+        const name = event.target.name;
+        const value = event.target.value;
+        this.setState({ 
+            [name]: value 
+        }, () => {
+            console.log("The radio buttons are working.")
+        });
+    }
+
     render() {
         return (
             <Container>
@@ -197,12 +209,18 @@ class Home extends Component {
                             <Form.Check 
                                 inline
                                 type="radio"
+                                name="sortType"
                                 label="ASC"
+                                value="ASC"
+                                onClick={this.sortList}
                             />
                             <Form.Check 
                                 inline
                                 type="radio"
+                                name="sortType"
                                 label="DEC"
+                                value="DEC"
+                                onClick={this.sortList}
                             />
                         </Col>
                     </Form.Group>
