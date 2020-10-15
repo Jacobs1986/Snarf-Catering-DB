@@ -155,7 +155,13 @@ class Home extends Component {
             if (this.state.sortType === "") {
                 return
             } else {
-                console.log(`The list will be sorted in ${this.state.sortType} order.`)
+                let sortInfo = {
+                    sortBy: this.state.sortBy,
+                    sortType: this.state.sortType
+                }
+                API.sort(sortInfo).then(res => {
+                    console.log(res.data);
+                })
             }
         });
     }
