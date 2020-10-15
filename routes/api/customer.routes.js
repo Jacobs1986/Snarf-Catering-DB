@@ -17,7 +17,14 @@ router.route("/all")
 router.route("/sort")
     .post((request, response) => {
         console.log(request.body);
-    })
+        Customer.findAll({
+            order: [
+                [request.body.sortBy, request.body.sortType]
+            ]
+        }).then(results => {
+            response.json(results);
+        })
+});
 
 // Save a new customer to that database
 router.route("/add")
