@@ -4,12 +4,7 @@ import React, { Component } from "react";
 import API from "../../../utils/API.customer";
 
 // Bootstrap
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Jumbo from "react-bootstrap/Jumbotron";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
+import { Container, Row, Col, Jumbotron, Button, Form } from "react-bootstrap"
 
 // Modal
 import AddModal from "./Modals/Modal-Add";
@@ -178,11 +173,11 @@ class Home extends Component {
                 />
 
                 {/* Jumbotron */}
-                <Jumbo id="jumboindex">
+                <Jumbotron id="jumboindex">
                     <h1>Snarf Catering DB</h1>
                     <p>This is the database that contains the information for catering.</p>
                     <Button variant="primary" onClick={this.handleShow}>Add Customer</Button>
-                </Jumbo>
+                </Jumbotron>
 
                 {/* Search bar */}
                 <Form>
