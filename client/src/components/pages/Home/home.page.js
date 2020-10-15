@@ -182,16 +182,28 @@ class Home extends Component {
                 {/* Sort list */}
                 <Form>
                     <Form.Group as={Row}>
-                        <Form.Label column sm={2}>
+                        <Form.Label column sm="auto">
                             Sort list by:
                         </Form.Label>
-                        <Col sm={3}>
+                        <Col sm="auto">
                             <Form.Control as="select">
                                 <option>Organization Name</option>
                                 <option>Contact Name</option>
                                 <option>Address</option>
                                 <option>Email</option>
                             </Form.Control>
+                        </Col>
+                        <Col sm="auto">
+                            <Form.Check 
+                                inline
+                                type="radio"
+                                label="ASC"
+                            />
+                            <Form.Check 
+                                inline
+                                type="radio"
+                                label="DEC"
+                            />
                         </Col>
                     </Form.Group>
                 </Form>
