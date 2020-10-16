@@ -185,6 +185,13 @@ class Home extends Component {
         });
     }
 
+    // Clear search
+    clearSearch = event => {
+        event.preventDefault();
+        this.loadCustomers();
+        this.setState({ searchFor: ""  });
+    }
+
     render() {
         return (
             <Container>
@@ -279,7 +286,7 @@ class Home extends Component {
                             />
                         </Col>
                         <Col sm="auto">
-                            <Button variant="secondary">Clear</Button>
+                            <Button variant="secondary" onClick={this.clearSearch}>Clear</Button>
                         </Col>
                     </Form.Group>
                 </Form>
