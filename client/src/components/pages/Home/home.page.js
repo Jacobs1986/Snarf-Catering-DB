@@ -179,7 +179,9 @@ class Home extends Component {
                 column: this.state.searchType,
                 searchFor: this.state.searchFor
             }
-            console.log(searchInfo)
+            API.search(searchInfo).then(res => {
+                console.log(res.data);
+            })
         });
     }
 
