@@ -29,7 +29,9 @@ class Home extends Component {
         phone: "",
         customerId: "",
         sortBy: "organization",
-        sortType: ""
+        sortType: "",
+        searchType: "organization",
+        searchFor: ""
     }
 
     componentDidMount() {
@@ -243,7 +245,7 @@ class Home extends Component {
                             Search for: 
                         </Form.Label>
                         <Col sm="auto">
-                            <Form.Control as="select">
+                            <Form.Control as="select" name="searchType" value={this.state.searchType} onChange={this.handleInputChange}>
                                 <option value="organization">Organization</option>
                                 <option value="contactname">Contact</option>
                                 <option value="address">Address</option>
@@ -254,6 +256,9 @@ class Home extends Component {
                         <Col md={4}>
                             <Form.Control 
                                 type="text"
+                                name="searchFor"
+                                value={this.state.searchFor}
+                                onChange={this.handleInputChange}
                             />
                         </Col>
                         <Col sm="auto">
