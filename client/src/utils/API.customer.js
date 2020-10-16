@@ -11,6 +11,11 @@ export default {
         return axios.post("/api/customer/sort", sortInfo);
     },
 
+    // Search
+    search: function(searchInfo) {
+        return axios.post("/api/customer/search", searchInfo);
+    },
+
     // Add customer
     add: function(newCustomer) {
         return axios.post("/api/customer/add", newCustomer);
