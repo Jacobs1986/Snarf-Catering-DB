@@ -168,6 +168,17 @@ class Home extends Component {
         });
     }
 
+    // Search for function
+    searchCustomer = event => {
+        const name = event.target.name;
+        const value = event.target.value;
+        this.setState({ 
+            [name]: value 
+        }, () => {
+            console.log(`The system will search for a ${this.state.searchType} using ${this.state.searchFor}`);
+        });
+    }
+
     render() {
         return (
             <Container>
@@ -258,7 +269,7 @@ class Home extends Component {
                                 type="text"
                                 name="searchFor"
                                 value={this.state.searchFor}
-                                onChange={this.handleInputChange}
+                                onChange={this.searchCustomer}
                             />
                         </Col>
                         <Col sm="auto">
