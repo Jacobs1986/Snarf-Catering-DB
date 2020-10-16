@@ -4,12 +4,7 @@ import React, { Component } from "react";
 import API from "../../../utils/API.customer";
 
 // Bootstrap
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Jumbo from "react-bootstrap/Jumbotron";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
+import { Container, Row, Col, Jumbotron, Button, Form } from "react-bootstrap"
 
 // Modal
 import AddModal from "./Modals/Modal-Add";
@@ -32,7 +27,11 @@ class Home extends Component {
         address: "",
         email: "",
         phone: "",
-        customerId: ""
+        customerId: "",
+        sortBy: "organization",
+        sortType: "",
+        searchType: "organization",
+        searchFor: ""
     }
 
     componentDidMount() {
@@ -42,7 +41,6 @@ class Home extends Component {
     // load all customers
     loadCustomers = () => {
         API.all().then(res => {
-            console.log(res.data);
             this.setState({ customerList: res.data });
         })
     }
@@ -76,7 +74,7 @@ class Home extends Component {
     addCustomer = event => {
         event.preventDefault()
         var organization;
-        if (this.state.organization === "" ) {
+        if (this.state.organization === "") {
             organization = this.state.contact;
         } else {
             organization = this.state.organization;
@@ -149,6 +147,51 @@ class Home extends Component {
         })
     }
 
+    // sort customer list
+    sortList = event => {
+        const name = event.target.name;
+        const value = event.target.value;
+        this.setState({ 
+            [name]: value 
+        }, () => {
+            if (this.state.sortType === "") {
+                return
+            } else {
+                let sortInfo = {
+                    sortBy: this.state.sortBy,
+                    sortType: this.state.sortType
+                }
+                API.sort(sortInfo).then(res => {
+                    this.setState({ customerList: res.data })
+                })
+            }
+        });
+    }
+
+    // Search for function
+    searchCustomer = event => {
+        const name = event.target.name;
+        const value = event.target.value;
+        this.setState({ 
+            [name]: value 
+        }, () => {
+            let searchInfo = {
+                column: this.state.searchType,
+                searchFor: this.state.searchFor
+            }
+            API.search(searchInfo).then(res => {
+                this.setState({ customerList: res.data });
+            })
+        });
+    }
+
+    // Clear search
+    clearSearch = event => {
+        event.preventDefault();
+        this.loadCustomers();
+        this.setState({ searchFor: ""  });
+    }
+
     render() {
         return (
             <Container>
@@ -178,23 +221,74 @@ class Home extends Component {
                 />
 
                 {/* Jumbotron */}
-                <Jumbo id="jumboindex">
+                <Jumbotron id="jumboindex">
                     <h1>Snarf Catering DB</h1>
                     <p>This is the database that contains the information for catering.</p>
                     <Button variant="primary" onClick={this.handleShow}>Add Customer</Button>
-                </Jumbo>
+                </Jumbotron>
 
-                {/* Search bar */}
+                {/* Sort list */}
                 <Form>
-                    <Form.Row>
-                        <Form.Group as={Col}>
-                            <Form.Label>Search Database</Form.Label>
-                            <Form.Control type="text" />
-                        </Form.Group>
-                        <Form.Group as={Col} id="button-col">
-                            <Button variant="primary" type="submit">Search</Button>
-                        </Form.Group>
-                    </Form.Row>
+                    <Form.Group as={Row}>
+                        <Form.Label column sm="auto">
+                            Sort list by:
+                        </Form.Label>
+                        <Col sm="auto">
+                            <Form.Control as="select" onChange={this.sortList} name="sortBy" value={this.state.sortBy}>
+                                <option value="organization">Organization Name</option>
+                                <option value="contactname">Contact Name</option>
+                                <option value="address">Address</option>
+                                <option value="email">Email</option>
+                            </Form.Control>
+                        </Col>
+                        <Col sm="auto" id="radio-col">
+                            <Form.Check 
+                                inline
+                                type="radio"
+                                name="sortType"
+                                label="ASC"
+                                value="ASC"
+                                onClick={this.sortList}
+                            />
+                            <Form.Check 
+                                inline
+                                type="radio"
+                                name="sortType"
+                                label="DESC"
+                                value="DESC"
+                                onClick={this.sortList}
+                            />
+                        </Col>
+                    </Form.Group>
+                </Form>
+                
+                {/* Search Bar */}
+                <Form>
+                    <Form.Group as={Row}>
+                        <Form.Label column sm="auto">
+                            Search for: 
+                        </Form.Label>
+                        <Col sm="auto">
+                            <Form.Control as="select" name="searchType" value={this.state.searchType} onChange={this.handleInputChange}>
+                                <option value="organization">Organization</option>
+                                <option value="contactname">Contact</option>
+                                <option value="address">Address</option>
+                                <option value="email">Email</option>
+                                <option value="phone">Phone</option>
+                            </Form.Control>
+                        </Col>
+                        <Col md={4}>
+                            <Form.Control 
+                                type="text"
+                                name="searchFor"
+                                value={this.state.searchFor}
+                                onChange={this.searchCustomer}
+                            />
+                        </Col>
+                        <Col sm="auto">
+                            <Button variant="secondary" onClick={this.clearSearch}>Clear</Button>
+                        </Col>
+                    </Form.Group>
                 </Form>
 
                 <hr className="my-4"></hr>

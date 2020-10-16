@@ -6,6 +6,16 @@ export default {
         return axios.get("/api/customer/all");
     },
 
+    // Sort customer list
+    sort: function(sortInfo) {
+        return axios.post("/api/customer/sort", sortInfo);
+    },
+
+    // Search
+    search: function(searchInfo) {
+        return axios.post("/api/customer/search", searchInfo);
+    },
+
     // Add customer
     add: function(newCustomer) {
         return axios.post("/api/customer/add", newCustomer);
