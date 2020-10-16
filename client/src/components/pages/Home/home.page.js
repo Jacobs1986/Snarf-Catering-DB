@@ -175,7 +175,11 @@ class Home extends Component {
         this.setState({ 
             [name]: value 
         }, () => {
-            console.log(`The system will search for a ${this.state.searchType} using ${this.state.searchFor}`);
+            let searchInfo = {
+                column: this.state.searchType,
+                searchFor: this.state.searchFor
+            }
+            console.log(searchInfo)
         });
     }
 
