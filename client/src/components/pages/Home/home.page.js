@@ -180,7 +180,7 @@ class Home extends Component {
                 searchFor: this.state.searchFor
             }
             API.search(searchInfo).then(res => {
-                console.log(res.data);
+                this.setState({ customerList: res.data });
             })
         });
     }
