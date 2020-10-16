@@ -235,6 +235,33 @@ class Home extends Component {
                         </Col>
                     </Form.Group>
                 </Form>
+                
+                {/* Search Bar */}
+                <Form>
+                    <Form.Group as={Row}>
+                        <Form.Label column sm="auto">
+                            Search for: 
+                        </Form.Label>
+                        <Col sm="auto">
+                            <Form.Control as="select">
+                                <option value="organization">Organization</option>
+                                <option value="contactname">Contact</option>
+                                <option value="address">Address</option>
+                                <option value="email">Email</option>
+                                <option value="phone">Phone</option>
+                            </Form.Control>
+                        </Col>
+                        <Col md={4}>
+                            <Form.Control 
+                                type="text"
+                            />
+                        </Col>
+                        <Col sm="auto">
+                            <Button variant="secondary">Clear</Button>
+                        </Col>
+                    </Form.Group>
+                </Form>
+
                 <hr className="my-4"></hr>
 
                 {/* div containing the lists */}
