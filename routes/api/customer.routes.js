@@ -52,7 +52,7 @@ router.route("/search")
             case "address":
                 Customer.findAll({
                     where: {
-                        contactname: { [Op.like]: '%' + request.body.searchFor + '%' }
+                        address: { [Op.like]: '%' + request.body.searchFor + '%' }
                     }
                 }).then(results => {
                     response.json(results);
@@ -61,7 +61,7 @@ router.route("/search")
             case "email":
                 Customer.findAll({
                     where: {
-                        contactname: { [Op.like]: '%' + request.body.searchFor + '%' }
+                        email: { [Op.like]: '%' + request.body.searchFor + '%' }
                     }
                 }).then(results => {
                     response.json(results);
@@ -70,7 +70,7 @@ router.route("/search")
             case "phone":
                 Customer.findAll({
                     where: {
-                        contactname: { [Op.like]: '%' + request.body.searchFor + '%' }
+                        phone: { [Op.like]: '%' + request.body.searchFor + '%' }
                     }
                 }).then(results => {
                     response.json(results);
