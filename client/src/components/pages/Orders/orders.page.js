@@ -1,8 +1,16 @@
 import React from "react";
 
+// Components
+import Jumbo from "./components/jumbotron.orders.components";
+
+// Styling
+import "./orders.page.css";
+
 function Orders() {
     return (
-        <div>This component is ready to be made!</div>
+        <div>
+            <Jumbo />
+        </div>
     );
 };
 
