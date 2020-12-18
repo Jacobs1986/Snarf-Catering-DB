@@ -49,6 +49,12 @@ class Jumbo extends Component {
                         lastOrder: this.state.orderList[0].date
                     })
                 }
+                // Set the number of orders
+                if (this.state.orderList.length === 0) {
+                    this.setState({ frequentDay: "NA"})
+                } else {
+                    this.orderDay();
+                }
             }) 
         })
     }
