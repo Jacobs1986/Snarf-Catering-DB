@@ -5,6 +5,7 @@ import { Container, Row, Col, Jumbotron } from "react-bootstrap";
 
 // API
 import "../../../../utils/API.orders";
+import API from "../../../../utils/API.orders";
 
 class Jumbo extends Component {
     state = {
@@ -14,7 +15,29 @@ class Jumbo extends Component {
         phone: "",
         orderList: [],
         lastOrder: "",
-        frequentDay: ""
+        frequentDay: "",
+        customerId: "",
+        organization: ""
+    }
+
+    componentDidMount() {
+        // get the url from the window
+        let url = window.location.search;
+        // set the customerId
+        let customerId = url.split("=")[1];
+        // Get the customer information
+        API.info(customerId).then(result => {
+            // set the states
+            this.setState({
+                customerId: customerId,
+                orderList: result.data.Orders,
+                organization: result.data.organization,
+                contact: result.data.contactname,
+                address: result.data.address,
+                email: result.data.email,
+                phone: result.data.phone
+            }) 
+        })
     }
 
     render() {
