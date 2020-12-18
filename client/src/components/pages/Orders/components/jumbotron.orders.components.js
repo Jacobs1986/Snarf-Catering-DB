@@ -38,6 +38,17 @@ class Jumbo extends Component {
                 address: result.data.address,
                 email: result.data.email,
                 phone: result.data.phone
+            }, () => {
+                // display last order date
+                if (!this.state.orderList[0]) {
+                    this.setState({
+                        lastOrder: "0"
+                    })
+                } else {
+                    this.setState({
+                        lastOrder: this.state.orderList[0].date
+                    })
+                }
             }) 
         })
     }
