@@ -1,14 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Orders extends Component {
-    state = {
-    }
-
-    render() {
-        return (
-            <div>This page is ready for design!!</div>
-        )
-    }
-}
+function Orders() {
+    return (
+        <div>This component is ready to be made!</div>
+    );
+};
 
 export default Orders;
