@@ -4,8 +4,10 @@ import React, { Component } from "react";
 import { Container, Row, Col, Jumbotron } from "react-bootstrap";
 
 // API
-import "../../../../utils/API.orders";
 import API from "../../../../utils/API.orders";
+
+// moment.js
+import moment from "moment";
 
 class Jumbo extends Component {
     state = {
@@ -38,6 +40,50 @@ class Jumbo extends Component {
                 phone: result.data.phone
             }) 
         })
+    }
+
+    // function to calculate which days of the week the customer usually orders on
+    orderDay = () => {
+        let daysoftheWeek = []
+        let orders = this.state.orderList
+        orders.forEach(info => {
+            let convertedDate = moment(info.date).format("dddd");
+            daysoftheWeek.push(convertedDate);
+        })
+        // The function now needs to count the number of instances of a day
+        // Create a new array called dayOccurences
+        let dayOccurences = [];
+        // start the loop
+        for (let i = 0; i < daysoftheWeek.length; i++) {
+            // first get the day from daysoftheWeek
+            let weekDay = daysoftheWeek[i];
+            // search the dayOccurence for that day, set the variable to be searchFor
+            let indexofDay = dayOccurences.findIndex(index => index.day === weekDay);
+            if (indexofDay === -1) {
+                // create filter
+                let filter = daysoftheWeek.filter(days => days === weekDay);
+                // create an object dayResults that will save the weekDay and occurences
+                let dayResults = {
+                    day: weekDay,
+                    occurences: filter.length
+                }
+                // push into dayOccurences
+                dayOccurences.push(dayResults);
+            }
+        }
+        // sort the array from least to greatest of occurences
+        let compare = (a, b) => {
+            let comparison = 0
+            if (a.occurences >= b.occurences) {
+                comparison = 1;
+            } else if (a.occurences <= b.occurences) {
+                comparison = -1
+            }
+            return comparison
+        }
+        let sortedDays = dayOccurences.sort(compare);
+        let frequentDay = sortedDays[sortedDays.length - 1].day;
+        this.setState({ frequentDay: frequentDay })
     }
 
     render() {
