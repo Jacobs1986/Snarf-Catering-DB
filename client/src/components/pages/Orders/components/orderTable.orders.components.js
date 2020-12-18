@@ -1,16 +1,39 @@
 import React, { Component } from "react";
 
 // Bootstrap
-import { Container, Table } from "react-bootstrap";
+import { Container, Table, Button } from "react-bootstrap";
 
 class orderTable extends Component {
     state = {
+        orderList: []
     }
 
     render() {
         return (
             <Container id="history-row">
                 <h3>Order History</h3>
+                <Table striped>
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Order Number</th>
+                                    <th>Number of Items</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {this.state.orderList.map((info, index) => {
+                                    return (
+                                        <tr key={index}>
+                                            <td>{info.date}</td>
+                                            <td><Button variant="link" className="table-button" id={index}>{info.orderNumber}</Button></td>
+                                            <td>{info.numofItems}</td>
+                                            <td>{info.total}</td>
+                                        </tr>
+                                    )
+                                })}
+                            </tbody>
+                        </Table>
             </Container>
         )
     }
