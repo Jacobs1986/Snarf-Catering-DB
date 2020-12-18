@@ -3,9 +3,26 @@ import React, { Component } from "react";
 // Bootstrap
 import { Container, Table, Button } from "react-bootstrap";
 
+// API
+import API from "../../../../utils/API.orders";
+
 class orderTable extends Component {
     state = {
+        customerId: "",
         orderList: []
+    }
+
+    componentDidMount() {
+        // get customerId
+        let url = window.location.search;
+        let customerId = url.split("=")[1];
+        // Get the info
+        API.info(customerId).then(result => {
+            this.setState({
+                customerId: customerId,
+                orderList: result.data.Orders
+            })
+        })
     }
 
     render() {
