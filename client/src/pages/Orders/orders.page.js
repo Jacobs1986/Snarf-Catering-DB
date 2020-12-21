@@ -1,21 +1,17 @@
-import React from "react";
+import React, { Component } from "react";
 
-// API
-import API from "../../utils/API.orders";
+// Bootstrap
+import { Container, Row, Col } from "react-bootstrap";
 
-// Components
-// import Jumbo from "./components/jumbotron.orders.components";
-// import Table from "./components/orderTable.orders.components";
+class Orders extends Component {
+    state = {
+    }
 
-// Styling
-import "./orders.page.css";
-
-function Orders() {
-    return (
-        <div>
-            This page is ready for information!
-        </div>
-    );
-};
+    render() {
+        return (
+            <div>This component is ready to be made</div>
+        )
+    }
+}
 
 export default Orders;
