@@ -20,7 +20,7 @@ import { itemsQuantityTotal, saladQuantityTotal, sidesQuantityTotal, drinksQuant
 import { orderFilter } from "./functions/order.filter"
 
 // API routes
-import API from "../../../utils/API.orders";
+import API from "../../utils/API.orders";
 
 // moment.js
 import moment from "moment"
