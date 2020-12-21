@@ -1,3 +1,5 @@
 export const customerInfo = () => {
-    return "The function is working."
+    let url = window.location.search;
+    let customerId = url.split('=')[1];
+    return customerId;
 }
