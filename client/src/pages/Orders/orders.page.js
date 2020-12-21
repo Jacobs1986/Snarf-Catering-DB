@@ -7,7 +7,8 @@ import API from "../../utils/API.orders";
 import {customerInfo} from "./functions/customerInfo.functions";
 
 function Orders() {
-    console.log(customerInfo(API));
+    customerInfo(API);
+    
     return (
         <div>This page is ready!</div>
     );
