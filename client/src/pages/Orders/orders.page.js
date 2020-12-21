@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-// Bootstrap
-import { Container, Row, Col } from "react-bootstrap";
 
 class Orders extends Component {
     state = {
