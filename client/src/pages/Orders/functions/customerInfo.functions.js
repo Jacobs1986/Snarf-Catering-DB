@@ -1,5 +1,7 @@
-export const customerInfo = () => {
+export const customerInfo = (api) => {
     let url = window.location.search;
     let customerId = url.split('=')[1];
-    return customerId;
+    api.info(customerId).then(results => {
+        console.log(results);
+    })
 }
