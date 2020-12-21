@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css";
 
 // Pages
-import Home from "./components/pages/Home/home.page";
-import Orders from "./components/pages/Orders/orders.page";
+import Home from "./pages/Home/home.page";
+// import Orders from "./pages/Orders/orders.page";
 
 // Styling
 import "./App.css"
@@ -16,7 +16,7 @@ class App extends Component {
         return (
             <Router>
                 <Route exact path="/" component={Home} />
-                <Route exact path="/orders" component={Orders} />
+                {/* <Route exact path="/orders" component={Orders} /> */}
             </Router>
         );
     };
