@@ -1,0 +1,54 @@
+.jumbotron-fluid {
+    padding-left: 2rem;
+}
+
+/* Trigger */
+.trigger {
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: darkcyan;
+    text-decoration: underline;
+    padding: 0px;
+}
+
+/* Labels */
+.price-label {
+    padding-left: 1.5rem;
+}
+
+/* Rows */
+.row-spacing {
+    margin-bottom: 1rem;
+}
+
+/* inputs */
+.accordion-input-width {
+    width: 75%;
+}
+
+/* Buttons */
+.form-button {
+    margin-right: 1rem;
+}
+
+.table-button {
+    padding: 0;
+}
+
+/* Font styling */
+.modal-h5 {
+    font-style: italic;
+}
+
+.modal-h4 {
+    text-decoration: underline;
+}
+
+/* Edit Modal */
+#modal-edit-order-label {
+    margin-right: 0.5rem;
+}
+
+#modal-edit-orderNum-input {
+    width: 50%;
+}
