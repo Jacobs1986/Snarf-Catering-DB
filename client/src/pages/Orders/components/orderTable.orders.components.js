@@ -25,6 +25,12 @@ class orderTable extends Component {
         })
     }
 
+    // display the order
+    displayOrder = event => {
+        let info = this.state.orderList[event.target.id];
+        console.log(info);
+    }
+
     render() {
         return (
             <Container id="history-row">
@@ -43,7 +49,7 @@ class orderTable extends Component {
                                     return (
                                         <tr key={index}>
                                             <td>{info.date}</td>
-                                            <td><Button variant="link" className="table-button" id={index}>{info.orderNumber}</Button></td>
+                                            <td><Button variant="link" className="table-button" id={index} onClick={this.displayOrder}>{info.orderNumber}</Button></td>
                                             <td>{info.numofItems}</td>
                                             <td>{info.total}</td>
                                         </tr>
