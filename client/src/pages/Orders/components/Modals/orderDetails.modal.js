@@ -38,11 +38,11 @@ class OrderModal extends Component {
                             </Col>
                             <Col md="auto">
                                 <h5>Number of Items:</h5>
-                                <h5>{this.state.info.numofItems}</h5>
+                                <h6>{this.state.info.numofItems}</h6>
                             </Col>
                             <Col md="auto">
                                 <h5>Total:</h5>
-                                <h5>${this.state.info.total}</h5>
+                                <h6>${this.state.info.total}</h6>
                             </Col>
                         </Row>
                     </Container>
