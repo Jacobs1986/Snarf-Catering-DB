@@ -68,6 +68,14 @@ class OrderModal extends Component {
                                 ))}
                             </Col>
                         </Row>
+                        <Row>
+                            <Col>
+                                    <h5 className="modal-h4">Notes</h5>
+                                    <div>
+                                        {this.state.info.notes}
+                                    </div>
+                            </Col>
+                        </Row>
                     </Container>
                 </Modal.Body>
                 <Modal.Footer>
