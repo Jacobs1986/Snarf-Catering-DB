@@ -6,20 +6,29 @@ import { Modal, Container, Row, Col, Button } from "react-bootstrap"
 // styling
 import "../../orders.page.css";
 
+// functions
+import { orderFilter } from "../functions/order.filter";
+
 class OrderModal extends Component {
     constructor(props) {
         super(props);
         this.state = {
             showModal: false, 
-            info: ""
+            info: "",
+            filteredInfo: ""
         }
     }
 
     componentDidUpdate(prevState) {
         if (prevState.info !== this.props.info) {
             this.setState({
-                showModal: true,
                 info: this.props.info
+            }, () => {
+                this.setState({
+                    filteredInfo: orderFilter(this.state.info)
+                }, () => {
+                    this.setState({ showModal: true })
+                })
             })
         }
     }
