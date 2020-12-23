@@ -3,6 +3,9 @@ import React, { Component } from "react";
 // Bootstrap
 import { Modal, Container, Row, Col } from "react-bootstrap"
 
+// styling
+import "../../orders.page.css";
+
 class OrderModal extends Component {
     constructor(props) {
         super(props);
@@ -34,7 +37,7 @@ class OrderModal extends Component {
                         <Row>
                             <Col md="auto">
                                 <h5>Date:</h5>
-                                <h6>{this.state.info.date}</h6>
+                                <h6 className="modal-h6">{this.state.info.date}</h6>
                             </Col>
                             <Col md="auto">
                                 <h5>Number of Items:</h5>
