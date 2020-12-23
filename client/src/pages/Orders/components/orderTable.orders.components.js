@@ -9,7 +9,8 @@ import API from "../../../utils/API.orders";
 class orderTable extends Component {
     state = {
         customerId: "",
-        orderList: []
+        orderList: [],
+        showModalOrder: false
     }
 
     componentDidMount() {
