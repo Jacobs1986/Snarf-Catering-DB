@@ -7,6 +7,7 @@ class OrderModal extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            showModal: false, 
             info: ""
         }
     }
@@ -14,6 +15,7 @@ class OrderModal extends Component {
     componentDidUpdate(prevProps) {
         if (prevProps.show !== this.props.show) {
             this.setState({
+                showModal: this.props.show,
                 info: this.props.info
             }, () => {
                 console.log(this.state.info)
@@ -23,7 +25,7 @@ class OrderModal extends Component {
 
     render() {
         return (
-            <Modal show={this.props.show}>
+            <Modal show={this.state.showModal}>
                 <Modal.Header closeButton>
                     <Modal.Title>Order #{this.state.info.orderNumber}</Modal.Title>
                 </Modal.Header>
