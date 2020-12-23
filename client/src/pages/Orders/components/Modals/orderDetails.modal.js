@@ -24,8 +24,8 @@ class OrderModal extends Component {
     render() {
         return (
             <Modal show={this.props.show}>
-                <Modal.Header>
-                    <Modal.Title>This is a test.</Modal.Title>
+                <Modal.Header closeButton>
+                    <Modal.Title>Order #{this.state.info.orderNumber}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     This modal is ready for information.
