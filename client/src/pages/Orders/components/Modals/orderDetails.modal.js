@@ -7,7 +7,16 @@ class OrderModal extends Component {
    constructor(props) {
        super(props);
        this.state = {
+           info: ""
        }
+   }
+
+   componentDidMount() {
+       this.setState({
+           info: this.props.info
+       }, () => {
+           console.log(this.state.info)
+       })
    }
 
     render() {
