@@ -1,8 +1,16 @@
 import React, { Component } from "react";
 
+// Bootstrap
+import { Modal } from "react-bootstrap"
+
 class OrderModal extends Component {
-    state = {
-    }
+   constructor(props) {
+       super(props);
+
+       this.state = {
+           show: props.show
+       }
+   }
 
     render() {
         return (
