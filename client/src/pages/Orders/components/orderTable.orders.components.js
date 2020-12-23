@@ -18,6 +18,22 @@ class orderTable extends Component {
     }
 
     componentDidMount() {
+       this.loadInfo();
+    }
+
+    componentDidUpdate(prevState) {
+        // get customerId
+        let url = window.location.search;
+        let customerId = url.split("=")[1];
+        // Get the info
+        API.info(customerId).then(result => {
+            if (prevState.orderList !== result.data.Orders) {
+                this.loadInfo()
+            }
+        });
+    }
+
+    loadInfo = () => {
         // get customerId
         let url = window.location.search;
         let customerId = url.split("=")[1];
@@ -67,7 +83,7 @@ class orderTable extends Component {
                         </tbody>
                     </Table>
                 </Container>
-                <OrderModal 
+                <OrderModal
                     show={this.state.showModalOrder}
                     info={this.state.modalInfo}
                 />
