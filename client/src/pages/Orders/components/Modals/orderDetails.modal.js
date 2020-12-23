@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 // Bootstrap
-import { Modal, Container, Row, Col } from "react-bootstrap"
+import { Modal, Container, Row, Col, Button } from "react-bootstrap"
 
 // styling
 import "../../orders.page.css";
@@ -50,6 +50,9 @@ class OrderModal extends Component {
                         </Row>
                     </Container>
                 </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary">Close</Button>
+                </Modal.Footer>
             </Modal>
         )
     }
