@@ -11,12 +11,14 @@ class OrderModal extends Component {
        }
    }
 
-   componentDidMount() {
-       this.setState({
-           info: this.props.info
-       }, () => {
-           console.log(this.state.info)
-       })
+   componentDidUpdate(prevProps) {
+       if (prevProps.show !== this.props.show) {
+           this.setState({
+               info: this.props.info
+           }, () => {
+               console.log(this.state.info)
+           })
+       }
    }
 
     render() {
