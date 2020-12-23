@@ -65,7 +65,7 @@ class orderTable extends Component {
                         </tbody>
                     </Table>
                 </Container>
-                <Modal 
+                <OrderModal 
                     show={this.state.showModalOrder}
                 />
             </div>

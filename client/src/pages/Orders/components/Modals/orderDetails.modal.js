@@ -6,15 +6,20 @@ import { Modal } from "react-bootstrap"
 class OrderModal extends Component {
    constructor(props) {
        super(props);
-
        this.state = {
-           show: props.show
        }
    }
 
     render() {
         return (
-            <div>This component is ready to be made</div>
+            <Modal show={this.props.show}>
+                <Modal.Header>
+                    <Modal.Title>This is a test.</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    This modal is ready for information.
+                </Modal.Body>
+            </Modal>
         )
     }
 }
