@@ -3,6 +3,9 @@ import React, { Component } from "react";
 // Bootstrap
 import { Modal, Container, Row, Col, Button } from "react-bootstrap"
 
+// API
+import API from "../../../../utils/API.orders";
+
 // styling
 import "../../orders.page.css";
 
@@ -37,6 +40,14 @@ class OrderModal extends Component {
     handleModelClose = () => {
         this.setState({ showModal: false })
     };
+
+    // Delete an order
+    deleteOrder = event => {
+        event.preventDefault();
+        API.delete(event.target.id).then(() => {
+            this.handleModelClose()
+        })
+    }
 
     render() {
         return (
@@ -79,6 +90,7 @@ class OrderModal extends Component {
                     </Container>
                 </Modal.Body>
                 <Modal.Footer>
+                    <Button variant="primary" id={this.state.info.id} onClick={this.deleteOrder}>Delete</Button>
                     <Button variant="secondary" onClick={this.handleModelClose}>Close</Button>
                 </Modal.Footer>
             </Modal>
