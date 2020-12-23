@@ -15,16 +15,19 @@ class OrderModal extends Component {
         }
     }
 
-    componentDidUpdate(prevProps) {
-        if (prevProps.show !== this.props.show) {
+    componentDidUpdate(prevState) {
+        if (prevState.info !== this.props.info) {
             this.setState({
-                showModal: this.props.show,
+                showModal: true,
                 info: this.props.info
-            }, () => {
-                console.log(this.state.info)
             })
         }
     }
+
+    // close the modal
+    handleModelClose = () => {
+        this.setState({ showModal: false })
+    };
 
     render() {
         return (
@@ -51,7 +54,7 @@ class OrderModal extends Component {
                     </Container>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary">Close</Button>
+                    <Button variant="secondary" onClick={this.handleModelClose}>Close</Button>
                 </Modal.Footer>
             </Modal>
         )
