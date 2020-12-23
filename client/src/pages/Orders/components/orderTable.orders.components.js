@@ -29,7 +29,9 @@ class orderTable extends Component {
     // display the order
     displayOrder = event => {
         let info = this.state.orderList[event.target.id];
-        console.log(info);
+        this.setState({
+            showModalOrder: true
+        })
     }
 
     render() {
