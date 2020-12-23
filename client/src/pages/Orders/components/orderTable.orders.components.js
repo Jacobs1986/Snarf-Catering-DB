@@ -13,7 +13,8 @@ class orderTable extends Component {
     state = {
         customerId: "",
         orderList: [],
-        showModalOrder: false
+        showModalOrder: false,
+        modalInfo: []
     }
 
     componentDidMount() {
@@ -34,7 +35,7 @@ class orderTable extends Component {
         let info = this.state.orderList[event.target.id];
         this.setState({
             showModalOrder: true,
-            orderList: info
+            modalInfo: info
         })
     }
 
@@ -68,7 +69,7 @@ class orderTable extends Component {
                 </Container>
                 <OrderModal 
                     show={this.state.showModalOrder}
-                    info={this.state.orderList}
+                    info={this.state.modalInfo}
                 />
             </div>
         )
