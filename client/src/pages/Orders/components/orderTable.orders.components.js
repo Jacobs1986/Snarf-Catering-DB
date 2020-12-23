@@ -33,7 +33,8 @@ class orderTable extends Component {
     displayOrder = event => {
         let info = this.state.orderList[event.target.id];
         this.setState({
-            showModalOrder: true
+            showModalOrder: true,
+            orderList: info
         })
     }
 
@@ -67,6 +68,7 @@ class orderTable extends Component {
                 </Container>
                 <OrderModal 
                     show={this.state.showModalOrder}
+                    info={this.state.orderList}
                 />
             </div>
         )
