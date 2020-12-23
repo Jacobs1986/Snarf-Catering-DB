@@ -6,6 +6,9 @@ import { Container, Table, Button } from "react-bootstrap";
 // API
 import API from "../../../utils/API.orders";
 
+// Modals
+import OrderModal from "./Modals/orderDetails.modal";
+
 class orderTable extends Component {
     state = {
         customerId: "",
@@ -36,31 +39,36 @@ class orderTable extends Component {
 
     render() {
         return (
-            <Container id="history-row">
-                <h3>Order History</h3>
-                <Table striped>
-                            <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Order Number</th>
-                                    <th>Number of Items</th>
-                                    <th>Total</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {this.state.orderList.map((info, index) => {
-                                    return (
-                                        <tr key={index}>
-                                            <td>{info.date}</td>
-                                            <td><Button variant="link" className="table-button" id={index} onClick={this.displayOrder}>{info.orderNumber}</Button></td>
-                                            <td>{info.numofItems}</td>
-                                            <td>{info.total}</td>
-                                        </tr>
-                                    )
-                                })}
-                            </tbody>
-                        </Table>
-            </Container>
+            <div>
+                <Container id="history-row">
+                    <h3>Order History</h3>
+                    <Table striped>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Order Number</th>
+                                <th>Number of Items</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.state.orderList.map((info, index) => {
+                                return (
+                                    <tr key={index}>
+                                        <td>{info.date}</td>
+                                        <td><Button variant="link" className="table-button" id={index} onClick={this.displayOrder}>{info.orderNumber}</Button></td>
+                                        <td>{info.numofItems}</td>
+                                        <td>{info.total}</td>
+                                    </tr>
+                                )
+                            })}
+                        </tbody>
+                    </Table>
+                </Container>
+                <Modal 
+                    show={this.state.showModalOrder}
+                />
+            </div>
         )
     }
 }
