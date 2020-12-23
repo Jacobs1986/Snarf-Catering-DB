@@ -31,7 +31,7 @@ class OrderModal extends Component {
 
     render() {
         return (
-            <Modal show={this.state.showModal}>
+            <Modal show={this.state.showModal} onHide={this.handleModelClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Order #{this.state.info.orderNumber}</Modal.Title>
                 </Modal.Header>
