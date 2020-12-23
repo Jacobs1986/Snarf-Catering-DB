@@ -15,7 +15,7 @@ class OrderModal extends Component {
         this.state = {
             showModal: false, 
             info: "",
-            filteredInfo: ""
+            filteredInfo: []
         }
     }
 
@@ -58,6 +58,14 @@ class OrderModal extends Component {
                             <Col md="auto">
                                 <h5>Total:</h5>
                                 <h6>${this.state.info.total}</h6>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <h5 className="modal-h4">Order Details</h5>
+                                {this.state.filteredInfo.map((element, index) => (
+                                    <div key={index}>{element}</div>
+                                ))}
                             </Col>
                         </Row>
                     </Container>
