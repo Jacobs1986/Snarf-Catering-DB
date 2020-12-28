@@ -54,6 +54,9 @@ class Orders extends Component {
         priceGlutenFree: "125.00",
         priceBrownBag: "12.00",
         priceBoxLunch: "14.00",
+        priceRegNovice: "6.15",
+        priceRegSnarf: "8.85",
+        priceRegPro: "11.85",
         totalPlatter: "0.00",
         totalGlutenFree: "0.00",
         totalBrownBag: "0.00",
@@ -807,6 +810,9 @@ class Orders extends Component {
                                 priceGlutenFree={this.state.priceGlutenFree}
                                 priceBrownBag={this.state.priceBrownBag}
                                 priceBoxLunch={this.state.priceBoxLunch}
+                                priceRegNovice={this.state.priceRegNovice}
+                                priceRegSnarf={this.state.priceRegSnarf}
+                                priceRegPro={this.state.priceRegPro}
                                 totalPlatter={this.state.totalPlatter}
                                 totalGlutenFree={this.state.totalGlutenFree}
                                 totalBrownBag={this.state.totalBrownBag}
