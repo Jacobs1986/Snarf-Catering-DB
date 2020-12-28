@@ -197,6 +197,54 @@ function OrderForm(props) {
                     <Form.Label className="price-label">Total: ${props.totalRegPro}</Form.Label>
                 </Col>
             </Form.Row>
+            {/* Specialty Sandwiches */}
+            <Form.Row className="row-spacing">
+                <Col md="auto">Specialty Sandwiches</Col>
+            </Form.Row>
+            {/* Specialty Snarfs */}
+            <Form.Row className="row-spacing">
+                <Col md={1}></Col>
+                <Col md={1}>Snarf</Col>
+                <Col md="auto">
+                    <Form.Label>Quantity: </Form.Label>
+                </Col>
+                <Col md={1}>
+                    <Form.Control
+                        type="number"
+                        name="quantitySpecSnarf"
+                        value={props.quantitySpecSnarf}
+                        onChange={props.calculate}
+                    />
+                </Col>
+                <Col md={2}>
+                    <Form.Label className="price-label">Price: ${props.priceSpecSnarf}</Form.Label>
+                </Col>
+                <Col md="auto">
+                    <Form.Label className="price-label">Total: ${props.totalSpecSnarf}</Form.Label>
+                </Col>
+            </Form.Row>
+            {/* Specialty Pro */}
+            <Form.Row className="row-spacing">
+                <Col md={1}></Col>
+                <Col md={1}>Pro</Col>
+                <Col md="auto">
+                    <Form.Label>Quantity: </Form.Label>
+                </Col>
+                <Col md={1}>
+                    <Form.Control
+                        type="number"
+                        name="quantitySpecPro"
+                        value={props.quantitySpecPro}
+                        onChange={props.calculate}
+                    />
+                </Col>
+                <Col md={2}>
+                    <Form.Label className="price-label">Price: ${props.priceSpecPro}</Form.Label>
+                </Col>
+                <Col md="auto">
+                    <Form.Label className="price-label">Total: ${props.totalSpecPro}</Form.Label>
+                </Col>
+            </Form.Row>
             {/* Add Ons */}
             <Form.Row>
                 <h5>Add Ons</h5>
