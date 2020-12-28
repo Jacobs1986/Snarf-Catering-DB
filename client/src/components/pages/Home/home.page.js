@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 // API
-import API from "../../utils/API.customer";
+import API from "../../../utils/API.customer";
 
 // Bootstrap
 import { Container, Row, Col, Jumbotron, Button, Form } from "react-bootstrap"
