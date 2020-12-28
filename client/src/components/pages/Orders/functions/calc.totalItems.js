@@ -2,6 +2,10 @@ export const itemsQuantityTotal = (quantity1, quantity2, quantity3, quantity4) =
     return parseFloat(quantity1) + parseFloat(quantity2) + parseFloat(quantity3) + parseFloat(quantity4);
 }
 
+export const largSandwichQuantityTotal = (quantity1, quantity2, quantity3, quantity4, quantity5) => {
+    return parseFloat(quantity1) + parseFloat(quantity2) + parseFloat(quantity3) + parseFloat(quantity4) + parseFloat(quantity5);
+}
+
 export const saladQuantityTotal = (quantity1, quantity2, quantity3, quantity4) => {
     return parseFloat(quantity1) + parseFloat(quantity2) + parseFloat(quantity3) + parseFloat(quantity4);
 }
