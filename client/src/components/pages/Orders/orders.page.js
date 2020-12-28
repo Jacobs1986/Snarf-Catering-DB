@@ -11,6 +11,7 @@ import OrderForm from './component/orders.newOrder';
 
 // Functions
 import { itemsCalc, itemsTotal } from "./functions/calc.items";
+import { largeSandwichCalc } from "./functions/calc.largesandwich";
 import { saladCalc, saladTotal } from "./functions/calc.salads";
 import { sideCalc, sideTotal } from "./functions/calc.sides";
 import { drinkCalc, drinkTotal } from "./functions/calc.drinks";
@@ -266,6 +267,9 @@ class Orders extends Component {
             case "quantityBrownBag":
             case "quantityBoxLunch":
                 calculation = itemsCalc(name, value, this.state.pricePlatter, this.state.priceGlutenFree, this.state.priceBrownBag, this.state.priceBoxLunch);
+                break
+            case "quantityRegNovice":
+                calculation = largeSandwichCalc(name, value, this.state.priceRegNovice);
                 break
             case "quantityCobb":
             case "quantityGreek":
