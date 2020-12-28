@@ -13,6 +13,16 @@ export const orderFilter = object => {
     if (object.boxLunch > 0) {
         itemsArray.push(`Box Lunch: ${object.boxLunch}`);
     }
+    // Large Sandwhich orders
+    if (object.regNovice > 0) {
+        itemsArray.push(`Regular Novice: ${object.regNovice}`);
+    }
+    if (object.regSnarf > 0) {
+        itemsArray.push(`Regular Snarf: ${object.regSnarf}`);
+    }
+    if (object.regPro > 0) {
+        itemsArray.push(`Regular Pro: ${object.regPro}`);
+    }
     // Salads
     if (object.cobb > 0) {
         itemsArray.push(`Cobb Salad: ${object.cobb}`);
