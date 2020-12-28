@@ -802,7 +802,7 @@ class Orders extends Component {
                                 quantityBoxLunch={this.state.quantityBoxLunch}
                                 quantityRegNovice={this.state.quantityRegNovice}
                                 quantityRegSnarf={this.state.quantityRegSnarf}
-                                quantityRegNovice={this.state.quantityRegPro}
+                                quantityRegPro={this.state.quantityRegPro}
                                 pricePlatter={this.state.pricePlatter}
                                 priceGlutenFree={this.state.priceGlutenFree}
                                 priceBrownBag={this.state.priceBrownBag}

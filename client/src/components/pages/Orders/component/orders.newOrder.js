@@ -141,6 +141,7 @@ function OrderForm(props) {
                     <Form.Control
                         type="number"
                         name="quantityRegNovice"
+                        value={props.quantityRegNovice}
                     />
                 </Col>
                 <Col md={2}>
@@ -160,6 +161,7 @@ function OrderForm(props) {
                     <Form.Control
                         type="number"
                         name="quantityRegSnarf"
+                        value={props.quantityRegSnarf}
                     />
                 </Col>
                 <Col md={2}>
@@ -179,6 +181,7 @@ function OrderForm(props) {
                     <Form.Control
                         type="number"
                         name="quantityRegPro"
+                        value={props.quantityRegPro}
                     />
                 </Col>
                 <Col md={2}>
