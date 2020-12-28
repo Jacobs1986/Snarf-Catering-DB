@@ -601,6 +601,8 @@ class Orders extends Component {
             quantityRegNovice: orderInfo.regNovice,
             quantityRegSnarf: orderInfo.regSnarf,
             quantityRegPro: orderInfo.regPro,
+            quantitySpecSnarf: orderInfo.specSnarf,
+            quantitySpecPro: orderInfo.specPro,
             quantityCobb: orderInfo.cobb,
             quantityGreek: orderInfo.greek,
             quantitySnarf: orderInfo.snarf,
@@ -639,6 +641,8 @@ class Orders extends Component {
             let regNovice = parseFloat(this.state.quantityRegNovice) * parseFloat(this.state.priceRegNovice);
             let regSnarf = parseFloat(this.state.quantityRegSnarf) * parseFloat(this.state.priceRegSnarf);
             let regPro = parseFloat(this.state.quantityRegPro) * parseFloat(this.state.priceRegPro);
+            let specSnarf = parseFloat(this.state.quantitySpecSnarf) * parseFloat(this.state.priceSpecPro);
+            let specPro = parseFloat(this.state.quantitySpecPro) * parseFloat(this.state.priceSpecPro);
             let cobb = parseFloat(this.state.quantityCobb) * parseFloat(this.state.priceCobb);
             let greek = parseFloat(this.state.quantityGreek) * parseFloat(this.state.priceGreek);
             let snarf = parseFloat(this.state.quantitySnarf) * parseFloat(this.state.priceSnarf);
@@ -671,6 +675,8 @@ class Orders extends Component {
                 totalRegNovice: regNovice.toFixed(2),
                 totalRegSnarf: regSnarf.toFixed(2),
                 totalRegPro: regPro.toFixed(2),
+                totalSpecSnarf: specSnarf.toFixed(2),
+                totalSpecPro: specPro.toFixed(2),
                 totalCobb: cobb.toFixed(2),
                 totalGreek: greek.toFixed(2),
                 totalSnarf: snarf.toFixed(2),
@@ -698,7 +704,7 @@ class Orders extends Component {
             }, () => {
                 // calculate the totals for each group
                 let itemsTotal = parseFloat(this.state.totalPlatter) + parseFloat(this.state.totalGlutenFree) + parseFloat(this.state.totalBrownBag) + parseFloat(this.state.totalBoxLunch);
-                let largeSandwichTotal = parseFloat(this.state.totalRegNovice) + parseFloat(this.state.totalRegSnarf) + parseFloat(this.state.totalRegPro);
+                let largeSandwichTotal = parseFloat(this.state.totalRegNovice) + parseFloat(this.state.totalRegSnarf) + parseFloat(this.state.totalRegPro) + parseFloat(this.state.totalSpecSnarf) + parseFloat(this.state.totalSpecPro);
                 let saladTotal = parseFloat(this.state.totalCobb) + parseFloat(this.state.totalGreek) + parseFloat(this.state.totalSnarf) + parseFloat(this.state.totalTossed);
                 let sidesTotal = parseFloat(this.state.totalMacaroni) + parseFloat(this.state.totalPotato) + parseFloat(this.state.totalColeslaw) + parseFloat(this.state.totalPickle) + parseFloat(this.state.totalChip);
                 let drinkTotal = parseFloat(this.state.totalBottled) + parseFloat(this.state.totalIzze) + parseFloat(this.state.totalArizona) + parseFloat(this.state.totalGatorade) + parseFloat(this.state.totalSnapple) + parseFloat(this.state.totalStewart) + parseFloat(this.state.totalCan);
@@ -717,7 +723,7 @@ class Orders extends Component {
                     let subtotal = parseFloat(this.state.itemsTotal) + parseFloat(this.state.largeSandwichTotal) + parseFloat(this.state.saladTotal) + parseFloat(this.state.sidesTotal) + parseFloat(this.state.drinkTotal) + parseFloat(this.state.dessertTotal) + parseFloat(this.state.extraTotal);
                     let gratuity = parseFloat(subtotal) * 0.1;
                     let itemsQT = itemsQuantityTotal(this.state.quantityPlatter, this.state.quantityGlutenFree, this.state.quantityBrownBag, this.state.quantityBoxLunch);
-                    let largeSandwichQT = largSandwichQuantityTotal(this.state.quantityRegNovice, this.state.quantityRegSnarf, this.state.quantityRegPro);
+                    let largeSandwichQT = largSandwichQuantityTotal(this.state.quantityRegNovice, this.state.quantityRegSnarf, this.state.quantityRegPro, this.state.quantitySpecSnarf, this.state.quantitySpecPro);
                     let saladQT = saladQuantityTotal(this.state.quantityCobb, this.state.quantityGreek, this.state.quantitySnarf, this.state.quantityTossed);
                     let sidesQT = sidesQuantityTotal(this.state.quantityMacaroni, this.state.quantityPotato, this.state.quantityColeslaw, this.state.quantityPickles, this.state.quantityChips);
                     let drinksQT = drinksQuantityTotal(this.state.quantityBottled, this.state.quantityIzze, this.state.quantityArizona, this.state.quantityGatorade, this.state.quantitySnapple, this.state.quantityStewart, this.state.quantityCan);
@@ -756,6 +762,8 @@ class Orders extends Component {
             regNovice: this.state.quantityRegNovice,
             regSnarf: this.state.quantityRegSnarf,
             regPro: this.state.quantityRegPro,
+            specSnarf: this.state.quantitySpecSnarf,
+            specPro: this.state.quantitySpecPro,
             cobb: this.state.quantityCobb,
             greek: this.state.quantityGreek,
             snarf: this.state.quantitySnarf,
@@ -863,6 +871,8 @@ class Orders extends Component {
                                 quantityRegNovice={this.state.quantityRegNovice}
                                 quantityRegSnarf={this.state.quantityRegSnarf}
                                 quantityRegPro={this.state.quantityRegPro}
+                                quantitySpecSnarf={this.state.quantitySpecSnarf}
+                                quantitySpecPro={this.state.quantitySpecPro}
                                 pricePlatter={this.state.pricePlatter}
                                 priceGlutenFree={this.state.priceGlutenFree}
                                 priceBrownBag={this.state.priceBrownBag}
@@ -870,6 +880,8 @@ class Orders extends Component {
                                 priceRegNovice={this.state.priceRegNovice}
                                 priceRegSnarf={this.state.priceRegSnarf}
                                 priceRegPro={this.state.priceRegPro}
+                                priceSpecSnarf={this.state.priceSpecSnarf}
+                                priceSpecPro={this.state.priceSpecPro}
                                 totalPlatter={this.state.totalPlatter}
                                 totalGlutenFree={this.state.totalGlutenFree}
                                 totalBrownBag={this.state.totalBrownBag}
@@ -877,6 +889,8 @@ class Orders extends Component {
                                 totalRegNovice={this.state.totalRegNovice}
                                 totalRegSnarf={this.state.totalRegSnarf}
                                 totalRegPro={this.state.totalRegPro}
+                                totalSpecSnarf={this.state.totalSpecSnarf}
+                                totalSpecPro={this.state.totalSpecPro}
                                 quantityCobb={this.state.quantityCobb}
                                 quantityGreek={this.state.quantityGreek}
                                 quantitySnarf={this.state.quantitySnarf}
@@ -1016,6 +1030,8 @@ class Orders extends Component {
                     quantityRegNovice={this.state.quantityRegNovice}
                     quantityRegSnarf={this.state.quantityRegSnarf}
                     quantityRegPro={this.state.quantityRegPro}
+                    quantitySpecSnarf={this.state.quantitySpecSnarf}
+                    quantitySpecPro={this.state.quantitySpecPro}
                     pricePlatter={this.state.pricePlatter}
                     priceGlutenFree={this.state.priceGlutenFree}
                     priceBrownBag={this.state.priceBrownBag}
@@ -1023,6 +1039,8 @@ class Orders extends Component {
                     priceRegNovice={this.state.priceRegNovice}
                     priceRegSnarf={this.state.priceRegSnarf}
                     priceRegPro={this.state.priceRegPro}
+                    priceSpecSnarf={this.state.priceSpecSnarf}
+                    priceSpecPro={this.state.priceSpecPro}
                     totalPlatter={this.state.totalPlatter}
                     totalGlutenFree={this.state.totalGlutenFree}
                     totalBrownBag={this.state.totalBrownBag}
@@ -1030,6 +1048,8 @@ class Orders extends Component {
                     totalRegNovice={this.state.totalRegNovice}
                     totalRegSnarf={this.state.totalRegSnarf}
                     totalRegPro={this.state.totalRegPro}
+                    totalSpecSnarf={this.state.totalSpecSnarf}
+                    totalSpecPro={this.state.totalSpecPro}
                     quantityCobb={this.state.quantityCobb}
                     quantityGreek={this.state.quantityGreek}
                     quantitySnarf={this.state.quantitySnarf}
