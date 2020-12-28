@@ -19,7 +19,7 @@ export const largeSandwichCalc = (name, value, price1, price2, price3) => {
     }
 }
 
-export const largeSandwichTotal = (total1) => {
-    let total = parseFloat(total1);
+export const largeSandwichTotal = (total1, total2, total3) => {
+    let total = parseFloat(total1) + parseFloat(total2) + parseFloat(total3);
     return ["largeSandwichTotal", total.toFixed(2)];
 }

@@ -271,7 +271,8 @@ class Orders extends Component {
                 break
             case "quantityRegNovice":
             case "quantityRegSnarf":
-                calculation = largeSandwichCalc(name, value, this.state.priceRegNovice, this.state.priceRegSnarf);
+            case "quantityRegPro":
+                calculation = largeSandwichCalc(name, value, this.state.priceRegNovice, this.state.priceRegSnarf, this.state.priceRegPro);
                 break
             case "quantityCobb":
             case "quantityGreek":
@@ -322,6 +323,11 @@ class Orders extends Component {
                 case "totalBrownBag":
                 case "totalBoxLunch":
                     calculation = itemsTotal(this.state.totalPlatter, this.state.totalGlutenFree, this.state.totalBrownBag, this.state.totalBoxLunch)
+                    break
+                case "totalRegNovice":
+                case "totalRegSnarf":
+                case "totalRegPro":
+                    calculation = largeSandwichTotal(this.state.totalRegNovice, this.state.totalRegSnarf, this.state.totalRegPro);
                     break
                 case "totalCobb":
                 case "totalGreek":
