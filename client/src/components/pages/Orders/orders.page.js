@@ -41,7 +41,7 @@ class Orders extends Component {
         phone: "",
         lastOrder: "",
         frequentDay: "",
-        open: true,
+        open: false,
         newOrderDate: "",
         newOrderNumber: "",
         quantityPlatter: 0,
@@ -161,7 +161,7 @@ class Orders extends Component {
         modalOrderTotal: "",
         modalOrderNotes: "",
         modalOrderItemsArray: [],
-        modalOrderEditShow: true
+        modalOrderEditShow: false
     }
 
     componentDidMount() {
