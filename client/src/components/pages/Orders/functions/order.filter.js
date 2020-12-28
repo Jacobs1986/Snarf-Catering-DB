@@ -23,6 +23,12 @@ export const orderFilter = object => {
     if (object.regPro > 0) {
         itemsArray.push(`Regular Pro: ${object.regPro}`);
     }
+    if (object.specSnarf > 0) {
+        itemsArray.push(`Specialty Snarf: ${object.specSnarf}`);
+    }
+    if (object.specPro > 0) {
+        itemsArray.push(`Specialty Pro: ${object.specPro}`);
+    }
     // Salads
     if (object.cobb > 0) {
         itemsArray.push(`Cobb Salad: ${object.cobb}`);
