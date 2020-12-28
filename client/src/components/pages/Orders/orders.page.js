@@ -800,6 +800,9 @@ class Orders extends Component {
                                 quantityGlutenFree={this.state.quantityGlutenFree}
                                 quantityBrownBag={this.state.quantityBrownBag}
                                 quantityBoxLunch={this.state.quantityBoxLunch}
+                                quantityRegNovice={this.state.quantityRegNovice}
+                                quantityRegSnarf={this.state.quantityRegSnarf}
+                                quantityRegNovice={this.state.quantityRegPro}
                                 pricePlatter={this.state.pricePlatter}
                                 priceGlutenFree={this.state.priceGlutenFree}
                                 priceBrownBag={this.state.priceBrownBag}
