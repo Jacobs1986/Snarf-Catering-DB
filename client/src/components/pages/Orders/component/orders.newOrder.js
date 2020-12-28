@@ -142,6 +142,7 @@ function OrderForm(props) {
                         type="number"
                         name="quantityRegNovice"
                         value={props.quantityRegNovice}
+                        onChange={props.calculate}
                     />
                 </Col>
                 <Col md={2}>
