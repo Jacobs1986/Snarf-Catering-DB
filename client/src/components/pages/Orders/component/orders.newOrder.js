@@ -185,10 +185,10 @@ function OrderForm(props) {
                     />
                 </Col>
                 <Col md={2}>
-                    <Form.Label className="price-label">Price: ${props.priceRegSnarf}</Form.Label>
+                    <Form.Label className="price-label">Price: ${props.priceRegPro}</Form.Label>
                 </Col>
                 <Col md="auto">
-                    <Form.Label className="price-label">Total: ${props.totalRegSnarf}</Form.Label>
+                    <Form.Label className="price-label">Total: ${props.totalRegPro}</Form.Label>
                 </Col>
             </Form.Row>
             {/* Add Ons */}
