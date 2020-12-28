@@ -131,6 +131,7 @@ function OrderForm(props) {
             <Form.Row className="row-spacing">
                 <Col md="auto">Regular Sandwiches</Col>
             </Form.Row>
+            {/* Regular Novice */}
             <Form.Row className="row-spacing">
                 <Col md={1}></Col>
                 <Col md={1}>Novice</Col>
@@ -152,6 +153,7 @@ function OrderForm(props) {
                     <Form.Label className="price-label">Total: ${props.totalRegNovice}</Form.Label>
                 </Col>
             </Form.Row>
+            {/* Regular Snarf */}
             <Form.Row className="row-spacing">
                 <Col md={1}></Col>
                 <Col md={1}>Snarfs</Col>
@@ -173,6 +175,7 @@ function OrderForm(props) {
                     <Form.Label className="price-label">Total: ${props.totalRegSnarf}</Form.Label>
                 </Col>
             </Form.Row>
+            {/* Regular Pro */}
             <Form.Row className="row-spacing">
                 <Col md={1}></Col>
                 <Col md={1}>Pro</Col>
