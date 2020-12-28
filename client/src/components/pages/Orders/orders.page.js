@@ -41,7 +41,7 @@ class Orders extends Component {
         phone: "",
         lastOrder: "",
         frequentDay: "",
-        open: false,
+        open: true,
         newOrderDate: "",
         newOrderNumber: "",
         quantityPlatter: 0,
@@ -51,6 +51,8 @@ class Orders extends Component {
         quantityRegNovice: 0,
         quantityRegSnarf: 0,
         quantityRegPro: 0,
+        quantitySpecSnarf: 0,
+        quantitySpecPro: 0,
         pricePlatter: "85.00",
         priceGlutenFree: "125.00",
         priceBrownBag: "12.00",
@@ -58,6 +60,8 @@ class Orders extends Component {
         priceRegNovice: "6.15",
         priceRegSnarf: "8.85",
         priceRegPro: "11.85",
+        priceSpecSnarf: "9.85",
+        priceSpecPro: "12.95",
         totalPlatter: "0.00",
         totalGlutenFree: "0.00",
         totalBrownBag: "0.00",
@@ -65,6 +69,8 @@ class Orders extends Component {
         totalRegNovice: "0.00",
         totalRegSnarf: "0.00",
         totalRegPro: "0.00",
+        totalSpecSnarf: "0.00",
+        totalSpecPro: "0.00",
         itemsTotal: 0,
         largeSandwichTotal: 0,
         quantityCobb: 0,
@@ -272,7 +278,9 @@ class Orders extends Component {
             case "quantityRegNovice":
             case "quantityRegSnarf":
             case "quantityRegPro":
-                calculation = largeSandwichCalc(name, value, this.state.priceRegNovice, this.state.priceRegSnarf, this.state.priceRegPro);
+            case "quantitySpecSnarf":
+            case "quantitySpecPro":
+                calculation = largeSandwichCalc(name, value, this.state.priceRegNovice, this.state.priceRegSnarf, this.state.priceRegPro, this.state.priceSpecSnarf, this.state.priceSpecPro);
                 break
             case "quantityCobb":
             case "quantityGreek":
@@ -327,7 +335,9 @@ class Orders extends Component {
                 case "totalRegNovice":
                 case "totalRegSnarf":
                 case "totalRegPro":
-                    calculation = largeSandwichTotal(this.state.totalRegNovice, this.state.totalRegSnarf, this.state.totalRegPro);
+                case "totalSpecSnarf":
+                case "totalSpecPro":
+                    calculation = largeSandwichTotal(this.state.totalRegNovice, this.state.totalRegSnarf, this.state.totalRegPro, this.state.totalSpecSnarf, this.state.totalSpecPro);
                     break
                 case "totalCobb":
                 case "totalGreek":
@@ -375,7 +385,7 @@ class Orders extends Component {
                 let gratuity = parseFloat(subtotal) * 0.1;
                 let orderTotal = parseFloat(subtotal) + parseFloat(gratuity) + parseFloat(this.state.delivery) + parseFloat(this.state.salesTax) + parseFloat(this.state.adjustment);
                 let itemsQT = itemsQuantityTotal(this.state.quantityPlatter, this.state.quantityGlutenFree, this.state.quantityBrownBag, this.state.quantityBoxLunch);
-                let largeSandwichQT = largSandwichQuantityTotal(this.state.quantityRegNovice, this.state.quantityRegSnarf, this.state.quantityRegPro);
+                let largeSandwichQT = largSandwichQuantityTotal(this.state.quantityRegNovice, this.state.quantityRegSnarf, this.state.quantityRegPro, this.state.quantitySpecSnarf, this.state.quantitySpecPro);
                 let saladQT = saladQuantityTotal(this.state.quantityCobb, this.state.quantityGreek, this.state.quantitySnarf, this.state.quantityTossed);
                 let sidesQT = sidesQuantityTotal(this.state.quantityMacaroni, this.state.quantityPotato, this.state.quantityColeslaw, this.state.quantityPickles, this.state.quantityChips);
                 let drinksQT = drinksQuantityTotal(this.state.quantityBottled, this.state.quantityIzze, this.state.quantityArizona, this.state.quantityGatorade, this.state.quantitySnapple, this.state.quantityStewart, this.state.quantityCan);
