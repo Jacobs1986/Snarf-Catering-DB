@@ -582,6 +582,9 @@ class Orders extends Component {
             quantityGlutenFree: orderInfo.glutenFree,
             quantityBrownBag: orderInfo.brownBag,
             quantityBoxLunch: orderInfo.boxLunch,
+            quantityRegNovice: orderInfo.regNovice,
+            quantityRegSnarf: orderInfo.regSnarf,
+            quantityRegPro: orderInfo.regPro,
             quantityCobb: orderInfo.cobb,
             quantityGreek: orderInfo.greek,
             quantitySnarf: orderInfo.snarf,
@@ -617,6 +620,9 @@ class Orders extends Component {
             let glutenFree = parseFloat(this.state.quantityGlutenFree) * parseFloat(this.state.priceGlutenFree);
             let brownBag = parseFloat(this.state.quantityBrownBag) * parseFloat(this.state.priceBrownBag);
             let boxLunch = parseFloat(this.state.quantityBoxLunch) * parseFloat(this.state.priceBoxLunch);
+            let regNovice = parseFloat(this.state.quantityRegNovice) * parseFloat(this.state.priceRegNovice);
+            let regSnarf = parseFloat(this.state.quantityRegSnarf) * parseFloat(this.state.priceRegSnarf);
+            let regPro = parseFloat(this.state.quantityRegPro) * parseFloat(this.state.priceRegPro);
             let cobb = parseFloat(this.state.quantityCobb) * parseFloat(this.state.priceCobb);
             let greek = parseFloat(this.state.quantityGreek) * parseFloat(this.state.priceGreek);
             let snarf = parseFloat(this.state.quantitySnarf) * parseFloat(this.state.priceSnarf);
@@ -646,6 +652,9 @@ class Orders extends Component {
                 totalGlutenFree: glutenFree.toFixed(2),
                 totalBrownBag: brownBag.toFixed(2),
                 totalBoxLunch: boxLunch.toFixed(2),
+                totalRegNovice: regNovice.toFixed(2),
+                totalRegSnarf: regSnarf.toFixed(2),
+                totalRegPro: regPro.toFixed(2),
                 totalCobb: cobb.toFixed(2),
                 totalGreek: greek.toFixed(2),
                 totalSnarf: snarf.toFixed(2),
@@ -673,6 +682,7 @@ class Orders extends Component {
             }, () => {
                 // calculate the totals for each group
                 let itemsTotal = parseFloat(this.state.totalPlatter) + parseFloat(this.state.totalGlutenFree) + parseFloat(this.state.totalBrownBag) + parseFloat(this.state.totalBoxLunch);
+                let largeSandwichTotal = parseFloat(this.state.totalRegNovice) + parseFloat(this.state.totalRegSnarf) + parseFloat(this.state.totalRegPro);
                 let saladTotal = parseFloat(this.state.totalCobb) + parseFloat(this.state.totalGreek) + parseFloat(this.state.totalSnarf) + parseFloat(this.state.totalTossed);
                 let sidesTotal = parseFloat(this.state.totalMacaroni) + parseFloat(this.state.totalPotato) + parseFloat(this.state.totalColeslaw) + parseFloat(this.state.totalPickle) + parseFloat(this.state.totalChip);
                 let drinkTotal = parseFloat(this.state.totalBottled) + parseFloat(this.state.totalIzze) + parseFloat(this.state.totalArizona) + parseFloat(this.state.totalGatorade) + parseFloat(this.state.totalSnapple) + parseFloat(this.state.totalStewart) + parseFloat(this.state.totalCan);
@@ -680,6 +690,7 @@ class Orders extends Component {
                 let extraTotal = parseFloat(this.state.totalArtichoke) + parseFloat(this.state.totalBacon) + parseFloat(this.state.totalPortobello) + parseFloat(this.state.totalAvocado) + parseFloat(this.state.totalMeat) + parseFloat(this.state.totalGFBread);
                 this.setState({
                     itemsTotal: itemsTotal.toFixed(2),
+                    largeSandwichTotal: largeSandwichTotal.toFixed(2),
                     saladTotal: saladTotal.toFixed(2),
                     sidesTotal: sidesTotal.toFixed(2),
                     drinkTotal: drinkTotal.toFixed(2),
@@ -687,14 +698,15 @@ class Orders extends Component {
                     extraTotal: extraTotal.toFixed(2)
                 }, () => {
                     // caluclate subtotal and gratuity
-                    let subtotal = parseFloat(this.state.itemsTotal) + parseFloat(this.state.saladTotal) + parseFloat(this.state.sidesTotal) + parseFloat(this.state.drinkTotal) + parseFloat(this.state.dessertTotal) + parseFloat(this.state.extraTotal);
+                    let subtotal = parseFloat(this.state.itemsTotal) + parseFloat(this.state.largeSandwichTotal) + parseFloat(this.state.saladTotal) + parseFloat(this.state.sidesTotal) + parseFloat(this.state.drinkTotal) + parseFloat(this.state.dessertTotal) + parseFloat(this.state.extraTotal);
                     let gratuity = parseFloat(subtotal) * 0.1;
                     let itemsQT = itemsQuantityTotal(this.state.quantityPlatter, this.state.quantityGlutenFree, this.state.quantityBrownBag, this.state.quantityBoxLunch);
+                    let largeSandwichQT = largSandwichQuantityTotal(this.state.quantityRegNovice, this.state.quantityRegSnarf, this.state.quantityRegPro);
                     let saladQT = saladQuantityTotal(this.state.quantityCobb, this.state.quantityGreek, this.state.quantitySnarf, this.state.quantityTossed);
                     let sidesQT = sidesQuantityTotal(this.state.quantityMacaroni, this.state.quantityPotato, this.state.quantityColeslaw, this.state.quantityPickles, this.state.quantityChips);
                     let drinksQT = drinksQuantityTotal(this.state.quantityBottled, this.state.quantityIzze, this.state.quantityArizona, this.state.quantityGatorade, this.state.quantitySnapple, this.state.quantityStewart, this.state.quantityCan);
                     let dessertQT = dessertQuantityTotal(this.state.quantityCookie, this.state.quantityBrownie);
-                    let totalNumberofItems = parseFloat(itemsQT) + parseFloat(saladQT) + parseFloat(sidesQT) + parseFloat(drinksQT) + parseFloat(dessertQT);
+                    let totalNumberofItems = parseFloat(itemsQT) + parseFloat(largeSandwichQT) + parseFloat(saladQT) + parseFloat(sidesQT) + parseFloat(drinksQT) + parseFloat(dessertQT);
                     this.setState({
                         subtotal: subtotal.toFixed(2),
                         gratuity: gratuity.toFixed(2),
