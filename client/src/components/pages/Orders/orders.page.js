@@ -270,7 +270,9 @@ class Orders extends Component {
                 calculation = itemsCalc(name, value, this.state.pricePlatter, this.state.priceGlutenFree, this.state.priceBrownBag, this.state.priceBoxLunch);
                 break
             case "quantityRegNovice":
-                calculation = largeSandwichCalc(name, value, this.state.priceRegNovice);
+            case "quantityRegSnarf":
+            case "quantityRegPro":
+                calculation = largeSandwichCalc(name, value, this.state.priceRegNovice, this.state.priceRegSnarf, this.state.priceRegPro);
                 break
             case "quantityCobb":
             case "quantityGreek":
