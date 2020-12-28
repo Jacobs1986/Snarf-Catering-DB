@@ -24,6 +24,18 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             allowNull: false
         },
+        regNovice: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        regSnarf: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        regPro: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
         cobb: {
             type: DataTypes.INTEGER,
             allowNull: false
