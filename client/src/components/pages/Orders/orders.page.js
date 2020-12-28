@@ -323,7 +323,7 @@ class Orders extends Component {
                     calculation = itemsTotal(this.state.totalPlatter, this.state.totalGlutenFree, this.state.totalBrownBag, this.state.totalBoxLunch)
                     break
                 case "totalRegNovice":
-                    calculation = largeSandwichTotal(this.totalRegNovice)
+                    calculation = largeSandwichTotal(this.state.totalRegNovice)
                     break
                 case "totalCobb":
                 case "totalGreek":
@@ -367,7 +367,7 @@ class Orders extends Component {
             this.setState({
                 [stateName]: total
             }, () => {
-                let subtotal = parseFloat(this.state.itemsTotal) + parseFloat + parseFloat(this.state.saladTotal) + parseFloat(this.state.sidesTotal) + parseFloat(this.state.drinkTotal) + parseFloat(this.state.dessertTotal) + parseFloat(this.state.extraTotal);
+                let subtotal = parseFloat(this.state.itemsTotal) + parseFloat(this.state.largeSandwichTotal) + parseFloat(this.state.saladTotal) + parseFloat(this.state.sidesTotal) + parseFloat(this.state.drinkTotal) + parseFloat(this.state.dessertTotal) + parseFloat(this.state.extraTotal);
                 let gratuity = parseFloat(subtotal) * 0.1;
                 let orderTotal = parseFloat(subtotal) + parseFloat(gratuity) + parseFloat(this.state.delivery) + parseFloat(this.state.salesTax) + parseFloat(this.state.adjustment);
                 let itemsQT = itemsQuantityTotal(this.state.quantityPlatter, this.state.quantityGlutenFree, this.state.quantityBrownBag, this.state.quantityBoxLunch);
