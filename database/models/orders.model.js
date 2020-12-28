@@ -36,6 +36,14 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             allowNull: false
         },
+        specSnarf: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        specPro: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
         cobb: {
             type: DataTypes.INTEGER,
             allowNull: false
