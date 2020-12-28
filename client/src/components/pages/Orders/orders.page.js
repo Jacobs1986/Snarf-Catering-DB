@@ -61,6 +61,9 @@ class Orders extends Component {
         totalGlutenFree: "0.00",
         totalBrownBag: "0.00",
         totalBoxLunch: "0.00",
+        totalRegNovice: "0.00",
+        totalRegSnarf: "0.00",
+        totalRegPro: "0.00",
         itemsTotal: 0,
         quantityCobb: 0,
         quantityGreek: 0,
@@ -817,6 +820,9 @@ class Orders extends Component {
                                 totalGlutenFree={this.state.totalGlutenFree}
                                 totalBrownBag={this.state.totalBrownBag}
                                 totalBoxLunch={this.state.totalBoxLunch}
+                                totalRegNovice={this.state.totalRegNovice}
+                                totalRegSnarf={this.state.totalSnarf}
+                                totalRegPro={this.state.totalRegPro}
                                 quantityCobb={this.state.quantityCobb}
                                 quantityGreek={this.state.quantityGreek}
                                 quantitySnarf={this.state.quantitySnarf}
