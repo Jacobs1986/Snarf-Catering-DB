@@ -17,7 +17,7 @@ import { sideCalc, sideTotal } from "./functions/calc.sides";
 import { drinkCalc, drinkTotal } from "./functions/calc.drinks";
 import { dessertCalc, dessertTotal } from "./functions/calc.desserts";
 import { extraCalc, extraTotal } from "./functions/calc.extras";
-import { itemsQuantityTotal, saladQuantityTotal, sidesQuantityTotal, drinksQuantityTotal, dessertQuantityTotal } from './functions/calc.totalItems'
+import { itemsQuantityTotal, largSandwichQuantityTotal, saladQuantityTotal, sidesQuantityTotal, drinksQuantityTotal, dessertQuantityTotal } from './functions/calc.totalItems'
 import { orderFilter } from "./functions/order.filter"
 
 // API routes
@@ -66,6 +66,7 @@ class Orders extends Component {
         totalRegSnarf: "0.00",
         totalRegPro: "0.00",
         itemsTotal: 0,
+        largeSandwichTotal: 0,
         quantityCobb: 0,
         quantityGreek: 0,
         quantitySnarf: 0,
@@ -366,15 +367,16 @@ class Orders extends Component {
             this.setState({
                 [stateName]: total
             }, () => {
-                let subtotal = parseFloat(this.state.itemsTotal) + parseFloat(this.state.saladTotal) + parseFloat(this.state.sidesTotal) + parseFloat(this.state.drinkTotal) + parseFloat(this.state.dessertTotal) + parseFloat(this.state.extraTotal);
+                let subtotal = parseFloat(this.state.itemsTotal) + parseFloat + parseFloat(this.state.saladTotal) + parseFloat(this.state.sidesTotal) + parseFloat(this.state.drinkTotal) + parseFloat(this.state.dessertTotal) + parseFloat(this.state.extraTotal);
                 let gratuity = parseFloat(subtotal) * 0.1;
                 let orderTotal = parseFloat(subtotal) + parseFloat(gratuity) + parseFloat(this.state.delivery) + parseFloat(this.state.salesTax) + parseFloat(this.state.adjustment);
                 let itemsQT = itemsQuantityTotal(this.state.quantityPlatter, this.state.quantityGlutenFree, this.state.quantityBrownBag, this.state.quantityBoxLunch);
+                let largeSandwichQT = largSandwichQuantityTotal(this.state.quantityRegNovice);
                 let saladQT = saladQuantityTotal(this.state.quantityCobb, this.state.quantityGreek, this.state.quantitySnarf, this.state.quantityTossed);
                 let sidesQT = sidesQuantityTotal(this.state.quantityMacaroni, this.state.quantityPotato, this.state.quantityColeslaw, this.state.quantityPickles, this.state.quantityChips);
                 let drinksQT = drinksQuantityTotal(this.state.quantityBottled, this.state.quantityIzze, this.state.quantityArizona, this.state.quantityGatorade, this.state.quantitySnapple, this.state.quantityStewart, this.state.quantityCan);
                 let dessertQT = dessertQuantityTotal(this.state.quantityCookie, this.state.quantityBrownie);
-                let totalNumberofItems = parseFloat(itemsQT) + parseFloat(saladQT) + parseFloat(sidesQT) + parseFloat(drinksQT) + parseFloat(dessertQT);
+                let totalNumberofItems = parseFloat(itemsQT) + parseFloat(largeSandwichQT) + parseFloat(saladQT) + parseFloat(sidesQT) + parseFloat(drinksQT) + parseFloat(dessertQT);
                 this.setState({
                     subtotal: subtotal.toFixed(2),
                     gratuity: gratuity.toFixed(2),

@@ -12,5 +12,5 @@ export const largeSandwichCalc= (name, value, price1) => {
 
 export const largeSandwichTotal = (total1) => {
     let total = parseFloat(total1);
-    return ["itemsTotal", total.toFixed(2)];
+    return ["largeSandwichTotal", total.toFixed(2)];
 }
