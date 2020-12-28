@@ -10,6 +10,10 @@ export const largeSandwichCalc = (name, value, price1, price2, price3) => {
             stateName = "totalRegSnarf"
             total = parseFloat(value) * parseFloat(price2)
             return [stateName, total.toFixed(2)]
+        case "quantityRegPro":
+            stateName = "totalRegPro"
+            total = parseFloat(value) * parseFloat(price3)
+            return [stateName, total.toFixed(2)]
         default:
             console.log("There is something wrong!")
     }
