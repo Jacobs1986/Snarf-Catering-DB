@@ -123,6 +123,10 @@ function OrderForm(props) {
                     <Form.Label className="price-label">Total: ${props.totalBoxLunch}</Form.Label>
                 </Col>
             </Form.Row>
+            {/* Large Sandwich Orders */}
+            <Form.Row>
+                <h5>Large Sandwich Orders</h5>
+            </Form.Row>
             {/* Add Ons */}
             <Form.Row>
                 <h5>Add Ons</h5>
