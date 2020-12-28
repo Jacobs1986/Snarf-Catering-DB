@@ -2,8 +2,8 @@ export const itemsQuantityTotal = (quantity1, quantity2, quantity3, quantity4) =
     return parseFloat(quantity1) + parseFloat(quantity2) + parseFloat(quantity3) + parseFloat(quantity4);
 }
 
-export const largSandwichQuantityTotal = (quantity1) => {
-    return parseFloat(quantity1);
+export const largSandwichQuantityTotal = (quantity1, quantity2, quantity3) => {
+    return parseFloat(quantity1) + parseFloat(quantity2) + parseFloat(quantity3);
 }
 
 export const saladQuantityTotal = (quantity1, quantity2, quantity3, quantity4) => {
