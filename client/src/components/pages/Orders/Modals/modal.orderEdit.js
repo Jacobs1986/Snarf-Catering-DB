@@ -141,7 +141,7 @@ function OrderEdit(props) {
                         <Col md="auto">
                             <Form.Label>Quantity: </Form.Label>
                         </Col>
-                        <Col md={1}>
+                        <Col md={2}>
                             <Form.Control
                                 type="number"
                                 name="quantityRegNovice"
@@ -162,7 +162,7 @@ function OrderEdit(props) {
                         <Col md="auto">
                             <Form.Label>Quantity: </Form.Label>
                         </Col>
-                        <Col md={1}>
+                        <Col md={2}>
                             <Form.Control
                                 type="number"
                                 name="quantityRegSnarf"
@@ -183,7 +183,7 @@ function OrderEdit(props) {
                         <Col md="auto">
                             <Form.Label>Quantity: </Form.Label>
                         </Col>
-                        <Col md={1}>
+                        <Col md={2}>
                             <Form.Control
                                 type="number"
                                 name="quantityRegPro"
