@@ -127,6 +127,67 @@ function OrderForm(props) {
             <Form.Row>
                 <h5>Large Sandwich Orders</h5>
             </Form.Row>
+            {/* Regular Sandwiches */}
+            <Form.Row className="row-spacing">
+                <Col md="auto">Regular Sandwiches</Col>
+            </Form.Row>
+            <Form.Row className="row-spacing">
+                <Col md={1}></Col>
+                <Col md={1}>Novice</Col>
+                <Col md="auto">
+                    <Form.Label>Quantity: </Form.Label>
+                </Col>
+                <Col md={1}>
+                    <Form.Control
+                        type="number"
+                        name="quantityRegNovice"
+                    />
+                </Col>
+                <Col md={2}>
+                    <Form.Label className="price-label">Price: ${props.priceRegNovice}</Form.Label>
+                </Col>
+                <Col md="auto">
+                    <Form.Label className="price-label">Total: ${props.totalRegNovice}</Form.Label>
+                </Col>
+            </Form.Row>
+            <Form.Row className="row-spacing">
+                <Col md={1}></Col>
+                <Col md={1}>Snarfs</Col>
+                <Col md="auto">
+                    <Form.Label>Quantity: </Form.Label>
+                </Col>
+                <Col md={1}>
+                    <Form.Control
+                        type="number"
+                        name="quantityRegSnarf"
+                    />
+                </Col>
+                <Col md={2}>
+                    <Form.Label className="price-label">Price: ${props.priceRegSnarf}</Form.Label>
+                </Col>
+                <Col md="auto">
+                    <Form.Label className="price-label">Total: ${props.totalRegSnarf}</Form.Label>
+                </Col>
+            </Form.Row>
+            <Form.Row className="row-spacing">
+                <Col md={1}></Col>
+                <Col md={1}>Pro</Col>
+                <Col md="auto">
+                    <Form.Label>Quantity: </Form.Label>
+                </Col>
+                <Col md={1}>
+                    <Form.Control
+                        type="number"
+                        name="quantityRegPro"
+                    />
+                </Col>
+                <Col md={2}>
+                    <Form.Label className="price-label">Price: ${props.priceRegSnarf}</Form.Label>
+                </Col>
+                <Col md="auto">
+                    <Form.Label className="price-label">Total: ${props.totalRegSnarf}</Form.Label>
+                </Col>
+            </Form.Row>
             {/* Add Ons */}
             <Form.Row>
                 <h5>Add Ons</h5>
