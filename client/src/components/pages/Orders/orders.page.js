@@ -40,7 +40,7 @@ class Orders extends Component {
         phone: "",
         lastOrder: "",
         frequentDay: "",
-        open: false,
+        open: true,
         newOrderDate: "",
         newOrderNumber: "",
         quantityPlatter: 0,
