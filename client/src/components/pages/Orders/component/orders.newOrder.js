@@ -163,6 +163,7 @@ function OrderForm(props) {
                         type="number"
                         name="quantityRegSnarf"
                         value={props.quantityRegSnarf}
+                        onChange={props.calculate}
                     />
                 </Col>
                 <Col md={2}>
@@ -183,6 +184,7 @@ function OrderForm(props) {
                         type="number"
                         name="quantityRegPro"
                         value={props.quantityRegPro}
+                        onChange={props.calculate}
                     />
                 </Col>
                 <Col md={2}>
