@@ -167,7 +167,7 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     Orders.associate = models => {
-        models.Orders.belongsTo(models.Customer, {
+        models.Orders.belongsTo(models.Organizations, {
             onDelete: "CASCADE",
             foreginKey: {
                 allowNull: false
