@@ -1,4 +1,5 @@
-
+.vscode
+client/db.json
 .DS_Store
 node_modules
-.vscode
+seeders/
