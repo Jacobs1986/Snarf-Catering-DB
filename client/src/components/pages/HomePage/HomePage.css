@@ -1,0 +1,52 @@
+/* Customer Cards */
+.card {
+    width: 21rem;
+    height: 11rem;
+}
+
+.col-md-auto {
+    margin-bottom: 1rem;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.card-footer > button {
+    margin-right: 1rem;
+}
+
+/* Modal */
+.modal-header {
+    background-color: deepskyblue;
+}
+
+.viewer-modal {
+    width: 56rem !important;
+    max-width: 56rem !important;
+}
+
+.input-needed {
+    color: red;
+}
+
+/* Card button */
+.card-btn {
+    padding: 0 !important; 
+    font-size: 22px !important;
+}
+
+/* Search Bar */
+#searchBar {
+    margin-bottom: 1rem;
+    padding-left: 0;
+}
+
+#sortOptions {
+    padding-top: 7px;
+}
+
+/* Table styling */
+.table-btn {
+    padding: 0 .375rem !important;
+}
