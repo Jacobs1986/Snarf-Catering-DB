@@ -4,6 +4,7 @@ const app = express();
 const routes = require('./routes');
 const db = require('./database/models');
 
+// Testing this out
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
