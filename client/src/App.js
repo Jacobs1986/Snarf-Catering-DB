@@ -1,24 +1,23 @@
-// Imports
 import React from "react";
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-
-// Pages
-import HomePage from "./components/pages/HomePage/HomePage";
-import Footer from './components/Footer/Footer';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 // Styling
 import './App.css'
 
+// Components
+import Footer from './components/Footer/Footer';
+
+// Pages
+import HomePage from './components/Pages/HomePage/HomePage';
+import OrderPage from './components/Pages/OrderPage/OrderPage';
+
 function App() {
     return (
         <div>
-            <BrowserRouter>
-                <Switch>
-                    <Route path="/">
-                        <HomePage />
-                    </Route>
-                </Switch>
-            </BrowserRouter>
+            <Router>
+                <Route exact path='/' component={HomePage} />
+                <Route exact path='/orders' component={OrderPage} />
+            </Router>
             <Footer />
         </div>
     );

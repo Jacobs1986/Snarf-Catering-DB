@@ -6,26 +6,16 @@ import { Col, Container, Form, Row } from 'react-bootstrap';
 // Contexts
 import { StoreContext } from '../HomePage';
 
-// API
-import { searchOrg, searchAdd } from '../../../services/API.search';
+// Functions
+import { reducer as searchReducer } from '../../../../services/functions/reducers';
 
-// Search Reducer
-const searchReducer = (state, event) => {
-    if (event.reset) {
-        return {
-            searchFor: ''
-        }
-    }
-    return {
-        ...state,
-        [event.name]: event.value
-    }
-}
+// API 
+import { searchOrg, searchAdd } from '../../../../services/api/API.search';
 
 export default function SearchBar() {
-    const { setSearchArray, storeId } = useContext(StoreContext)
-    const [searchSelect, setSearchSelect] = useState('organization');
-    const [searchText, setSearchText] = useReducer(searchReducer, {})
+    const { storeId, setSearchArray, setUpdateInfo } = useContext(StoreContext);
+    const [ selectValue, setSelectValue ] = useState('organization');
+    const [ searchText, setSearchText ] = useReducer(searchReducer, {});
 
     useEffect(() => {
         if (Object.keys(searchText).length === 0) {
@@ -35,7 +25,7 @@ export default function SearchBar() {
                 ...searchText,
                 storeId: storeId
             }
-            switch (searchSelect) {
+            switch (selectValue) {
                 case "organization":
                     searchOrg(search).then(results => {
                         setSearchArray(results.data);
@@ -49,15 +39,15 @@ export default function SearchBar() {
                 default:
             }
         }
-    }, [searchText, storeId, setSearchArray, searchSelect])
+    }, [searchText, selectValue, setSearchArray, storeId, setUpdateInfo])
 
-    // Handle when the select value changes
+    // Change the select value
     const handleSelectChange = event => {
-        setSearchSelect(event.target.value)
+        setSelectValue(event.target.value);
     }
 
     // Handle search text input
-    const handleSearch = event => {
+    const handleSearchText = event => {
         setSearchText({
             name: event.target.name,
             value: event.target.value
@@ -73,13 +63,13 @@ export default function SearchBar() {
                         <Form>
                             <Form.Row>
                                 <Col xs={4}>
-                                    <Form.Control as='select' name='searchFor' value={searchSelect} onChange={handleSelectChange}>
+                                    <Form.Control as='select' name='searchFor' value={selectValue} onChange={handleSelectChange}>
                                         <option value="organization">Organization</option>
                                         <option value="address">Address</option>
                                     </Form.Control>
                                 </Col>
                                 <Col>
-                                    <Form.Control name="searchFor" value={searchText.searchFor || ''} onChange={handleSearch} />
+                                    <Form.Control name="searchFor" value={searchText.searchFor || ''} onChange={handleSearchText} />
                                 </Col>
                             </Form.Row>
                         </Form>

@@ -4,28 +4,18 @@ import React, { useContext, useReducer } from "react";
 import { Form, Col, Button } from 'react-bootstrap';
 
 // Context
-import { ModalContext } from './ViewCustomerModal';
+import { CustomerContext } from '../OrderPage';
+import { ModalContext } from './ModalViewContacts';
 
 // API
-import { addContact } from '../../../services/API.contacts';
+import { addContact } from '../../../../services/api/API.contacts';
 
-// Add Reducer
-const conReducer = (state, event) => {
-    if (event.reset) {
-        return {
-            name: '',
-            phone: '',
-            email: ''
-        }
-    }
-    return {
-        ...state,
-        [event.name]: event.value
-    }
-}
+// Functions
+import { reducer as conReducer } from '../../../../services/functions/reducers';
 
 export default function AddContact() {
-    const { customerInfo, setShowAdd, setUpdate } = useContext(ModalContext);
+    const { customerInfo, setUpdateArray } = useContext(CustomerContext);
+    const { setShowAdd } = useContext(ModalContext);
     const [ addInfo, setAddInfo ] = useReducer(conReducer, {});
 
     // Hide the add Contact form
@@ -50,7 +40,7 @@ export default function AddContact() {
             OrganizationId: customerInfo.id
         }
         addContact(info).then(() => {
-            setUpdate(true);
+            setUpdateArray(true);
             setAddInfo({ reset: true });
             setShowAdd(false);
         })

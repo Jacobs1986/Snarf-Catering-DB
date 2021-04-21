@@ -1,0 +1,62 @@
+/* Buttons */
+#jumbo-contact-btn {
+    font-size: 1.5rem;
+    padding: 0;
+}
+
+#input-button {
+    font-size: 2rem;
+    padding: 0;
+    text-decoration: underline;
+}
+
+/* Modal */
+.contact-modal {
+    width: 56rem !important;
+    max-width: 56rem !important;
+}
+
+.order-modal {
+    width: 35rem !important;
+    max-width: 35rem !important;
+}
+
+.order-modal > .modal-content >.modal-body > h5 {
+    text-decoration: underline;
+}
+
+.modal-styling {
+    font-weight: 700;
+    font-style: italic;
+    font-size: 17px;
+}
+
+.item-list {
+    margin-left: 2rem;
+    font-size: 18px;
+}
+
+/* Forms */
+.order-rows {
+    margin-bottom: 1rem;
+}
+
+/* Tables */
+.td-order-table {
+    font-weight: 700;
+}
+
+.table-link {
+    padding: 0 !important;
+    font-weight: 700 !important;
+}
+
+/* Accordion styling */
+.accordion {
+    width: 47rem;
+    margin-bottom: 1rem;
+}
+
+.menu-accordion {
+    cursor: pointer;
+}

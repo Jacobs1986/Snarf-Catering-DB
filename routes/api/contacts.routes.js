@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const { request, response } = require('express');
 const db = require('../../database/models');
 const Contacts = db.Contacts;
 

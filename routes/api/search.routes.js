@@ -10,7 +10,10 @@ router.route('/organization')
             where: {
                 name: { [Op.like]: '%' + request.body.searchFor + '%' },
                 StoreId: request.body.storeId
-            }
+            },
+            order: [
+                ['name', 'asc']
+            ],
         }).then(results => {
             response.json(results);
         })
@@ -23,7 +26,10 @@ router.route('/address')
             where: {
                 address: { [Op.like]: '%' + request.body.searchFor + '%' },
                 StoreId: request.body.storeId
-            }
+            },
+            order: [
+                ['name', 'asc']
+            ],
         }).then(results => {
             response.json(results);
         })

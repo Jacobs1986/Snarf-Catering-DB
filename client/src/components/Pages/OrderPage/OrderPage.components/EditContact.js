@@ -4,28 +4,18 @@ import React, { useContext, useReducer } from "react";
 import { Form, Col, Button } from 'react-bootstrap';
 
 // Context
-import { ModalContext } from './ViewCustomerModal';
+import { CustomerContext } from '../OrderPage';
+import { ModalContext } from './ModalViewContacts';
 
 // API 
-import { editContact } from '../../../services/API.contacts';
+import { editContact } from '../../../../services/api/API.contacts';
 
-// Reducer
-const editReducer = (state, event) => {
-    if (event.reset) {
-        return {
-            name: '',
-            phone: '',
-            email: ''
-        }
-    }
-    return {
-        ...state,
-        [event.name]: event.value
-    }
-}
+// Functions
+import { reducer as editReducer } from '../../../../services/functions/reducers';
 
 export default function EditContact() {
-    const { editInfo, setShowEdit, setUpdate } = useContext(ModalContext)
+    const { setUpdateArray } = useContext(CustomerContext)
+    const { editInfo, setShowEdit } = useContext(ModalContext)
     const [ editReduc, setEditReduc ] = useReducer(editReducer, editInfo)
 
     // Hide the edit Form
@@ -43,7 +33,7 @@ export default function EditContact() {
         event.preventDefault()
         editContact(editReduc).then(() => {
             setShowEdit(false);
-            setUpdate(true);
+            setUpdateArray(true);
         })
     }
 

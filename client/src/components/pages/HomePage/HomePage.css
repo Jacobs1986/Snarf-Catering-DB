@@ -1,7 +1,7 @@
 /* Customer Cards */
-.card {
+.customer-card {
     width: 21rem;
-    height: 11rem;
+    height: 13rem;
 }
 
 .col-md-auto {

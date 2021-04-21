@@ -1,18 +1,19 @@
-const router = require("express").Router();
-const db = require("../../database/models");
+const router = require('express').Router();
+const db = require('../../database/models');
 const Orders = db.Orders;
 
 // Add a new order
-router.route("/add")
+router.route('/add')
     .post((request, response) => {
-        // console.log(request.body);
         Orders.create(request.body).then(result => {
             response.json(result)
+        }).catch(error => {
+            response.json(error)
         });
-});
+    });
 
-// Edit an existing order /api/order/edit
-router.route("/edit")
+// Edit an existing order
+router.route('/edit')
     .put((request, response) => {
         Orders.update(
             request.body,
@@ -22,12 +23,13 @@ router.route("/edit")
                 }
             }
         ).then(results => {
-            response.json(results)
+            response.json("Success!")
         }).catch(error => {
-            response.json("The information could not be updated.");
+            response.json(error)
         })
-    });
+    })
 
+// Delete an order
 router.route("/delete/:id")
     .delete((request, response) => {
         Orders.destroy({
@@ -36,7 +38,9 @@ router.route("/delete/:id")
             }
         }).then(results => {
             response.json(results);
+        }).catch(error => {
+            response.json(error)
         })
-    })
+    });
 
 module.exports = router;

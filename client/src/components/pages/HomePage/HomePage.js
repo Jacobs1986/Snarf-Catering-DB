@@ -1,56 +1,50 @@
 import React, { createContext, useEffect, useState } from "react";
 
-// Styling
+// CSS File
 import './HomePage.css';
+
+// Bootstrap
 import { Container } from 'react-bootstrap';
 
 // Components
-import Jumbo from './components/Jumbo'
-import CustomerCard from './components/CustomerCard';
-import CustomerModal from './components/CustomerModal';
-import SearchBar from './components/SearchBar';
+import Jumbo from './HomePage.components/Jumbo';
+import CustomerCard from './HomePage.components/CustomerCard';
+import AddCustomerModal from './HomePage.components/ModalAddCustomer';
+import SearchBar from './HomePage.components/SearchBar';
 
-// API
-import { getStoreInfo } from '../../services/API.store';
+// API routes
+import { getStoreInfo } from '../../../services/api/API.store';
 
-// Create context
+// Contexts
 export const StoreContext = createContext();
-export const ArrayContext = createContext();
 
 export default function HomePage() {
-    const [storeId, setStoreId] = useState();
-    const [storeArray, setStoreArray] = useState();
-    const [updateArray, setUpdateArray] = useState(false);
-    const [searchArray, setSearchArray] = useState([])
+    const [ storeInfo, setStoreInfo ] = useState([]);
+    const [ storeId, setStoreId ] = useState();
+    const [ updateInfo, setUpdateInfo ] = useState(false);
+    const [ searchArray, setSearchArray ] = useState([]);
 
-    // set the storeId
+    // get the store info
     useEffect(() => {
-        setStoreId(1)
-        let mounted = true;
+        setStoreId(1);
         getStoreInfo(storeId).then(items => {
-            if (mounted) {
-                setStoreArray(items.data)
-            }
+            // console.log(items.data);
+            setStoreInfo(items.data);
         })
-        return () => mounted = false;
-    }, [storeId, updateArray])
+        if (updateInfo) {
+            setUpdateInfo(false);
+        }
+    }, [updateInfo, storeId])
 
     return (
-        <StoreContext.Provider value={{ storeArray, storeId, searchArray, setSearchArray }}>
-            <div>
-                {!storeArray ? <div></div> :
-                    <Container>
-                        <Jumbo />
-                        <SearchBar />
-                        <ArrayContext.Provider value={{ updateArray, setUpdateArray }}>
-                            <CustomerModal />
-                            <hr></hr>
-                            <h2>Customer List</h2>
-                            <CustomerCard />
-                        </ArrayContext.Provider>
-                    </Container>
-                }
-            </div>
+        <StoreContext.Provider value={{ storeInfo, setUpdateInfo, storeId, setStoreInfo, searchArray, setSearchArray }}>
+            {!storeInfo ? <div></div> :
+                <Container>
+                    <Jumbo storeInfo={storeInfo} />
+                    <SearchBar />
+                    <AddCustomerModal />
+                    <CustomerCard />
+                </Container>}
         </StoreContext.Provider>
     );
 };

@@ -22,6 +22,9 @@ router.route("/:id")
             include: [
                 { model: db.Contacts, as: 'Contacts' },
                 { model: db.Orders, as: 'Orders' }
+            ],
+            order: [
+                [db.Orders, 'date', 'desc']
             ]
         }).then(result => {
             response.json(result);
